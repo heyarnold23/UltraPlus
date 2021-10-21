@@ -1,17 +1,29 @@
-
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
-import styles from './WhosWatching.module.css'
+import {getProfilesThunk} from '../../store/profiles'
+import styles from './WhosWatching.module.css';
+
 
 export default function WhosWatching() {
-    const sessionUser = useSelector(state => state.session.user)
+    const sessionUser = useSelector(state => state.session.user);
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getProfilesThunk(sessionUser.id))
+      },[dispatch, sessionUser])
+
 
     // if (!sessionUser) {
     //     return <Redirect to='/main' />;
     // }
+
+    const profiles = useSelector(store => store?.profiles)
+    console.log("\n\n\n\n\n\n profilessss",profiles, "\n\n\n\n\n\n\n\n\n\n");
+
 
     return (
         <>
