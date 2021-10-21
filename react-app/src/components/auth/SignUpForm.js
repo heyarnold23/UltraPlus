@@ -38,7 +38,7 @@ const SignUpForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/main' />;
+    return <Redirect to='/whos-watching' />;
   }
 
   return (

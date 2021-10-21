@@ -12,6 +12,7 @@ import MainSplash from './components/MainSplash';
 import LoginPage from './components/LoginPage';
 import SignUpPage from './components/SignUpPage'
 import Footer from './components/Footer';
+import WhosWatching from './components/WhosWatching';
 import { authenticate } from './store/session';
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpPage />
         </Route>
+        <ProtectedRoute path='/whos-watching' exact={true} >
+          <WhosWatching/>
+        </ProtectedRoute>
         <ProtectedRoute path='/main' exact={true} >
           <MainSplash/>
         </ProtectedRoute>
