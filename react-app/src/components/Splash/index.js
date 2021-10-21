@@ -10,7 +10,7 @@ export default function Splash() {
     const sessionUser = useSelector(state => state.session.user)
 
     if (sessionUser) {
-        return <Redirect to='/main' />;
+        return <Redirect to='/whos-watching' />;
     }
 
     return (
