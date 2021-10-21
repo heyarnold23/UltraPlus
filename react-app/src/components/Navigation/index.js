@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+import LogoutButton from '../auth/LogoutButton';
+import styles from './Navigation.module.css'
 
-const NavBar = () => {
+export default function Navigation () {
   return (
-    <nav>
-      <ul>
+    <nav id={styles.navbarListContainer}>
+      <ul id={styles.navbarList}>
         <li>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
@@ -34,5 +35,3 @@ const NavBar = () => {
     </nav>
   );
 }
-
-export default NavBar;
