@@ -16,6 +16,7 @@ export default function WhosWatching() {
     return (
         <>
             <div id={styles.navContainer}>
+                <div id={styles.navPic} />
                 <NavLink id={styles.editProfileButton} to='/edit-profile'>
                     <span id={styles.editProfile}>EDIT PROFILES</span>
                 </NavLink>
