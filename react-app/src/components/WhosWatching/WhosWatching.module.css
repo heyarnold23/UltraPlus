@@ -71,8 +71,20 @@
     margin-top: 50px;
 }
 
-#profileDiv{
+.profileDiv{
+    display: flex;
     width: 176px;
     height: 228px;
     background-color: red;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profilePic{
+    width: 140px;
+    height: 140px;
+}
+
+#profileName{
+    margin-top: 20px;
 }

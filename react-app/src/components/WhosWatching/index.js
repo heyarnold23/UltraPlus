@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
-import {getProfilesThunk} from '../../store/profiles'
+import { getProfilesThunk } from '../../store/profiles'
 import styles from './WhosWatching.module.css';
 
 
@@ -14,7 +14,7 @@ export default function WhosWatching() {
 
     useEffect(() => {
         dispatch(getProfilesThunk(sessionUser.id))
-      },[dispatch, sessionUser])
+    }, [dispatch, sessionUser])
 
 
     // if (!sessionUser) {
@@ -22,7 +22,8 @@ export default function WhosWatching() {
     // }
 
     const profiles = useSelector(store => store?.profiles)
-    console.log("\n\n\n\n\n\n profilessss",profiles, "\n\n\n\n\n\n\n\n\n\n");
+    const profileArr = Object.values(profiles)
+    console.log("\n\n\n\n\n\n profilessss", profileArr, "\n\n\n\n\n\n\n\n\n\n");
 
 
     return (
@@ -40,21 +41,21 @@ export default function WhosWatching() {
                     </div>
                     <div id={styles.profileContainer}>
                         {/* here, do mappings for profiles based on user's id */}
-                        {/* <div id={styles.profileDiv}>
-                            <div id={styles.profilePic}>
-                                PlaceholderPic
-                            </div>
-                            <div id={styles.profileName}>
-                                PlaceholderName
-                            </div>
-                        </div> */}
-                        {/* and if they don't have profiles then show below */}
-                        <div id={styles.profileDiv}>
-                            <div id={styles.profilePic}>
-                                <NavLink to='/select-avatar'>
-                                Plus Button
+                        {profileArr.map((profile) =>
+                            <div key={profile.id} className={styles.profileDiv}>
+                                <NavLink to='/main'>
+                                    <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                                 </NavLink>
+                                <div id={styles.profileName}>
+                                    {profile.name}
+                                </div>
                             </div>
+                        )}
+                        {/* and if they don't have profiles then show below */}
+                        <div className={styles.profileDiv}>
+                                <NavLink to='/select-avatar'>
+                                <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                </NavLink>
                             <div id={styles.profileName}>
                                 Add Profile
                             </div>
