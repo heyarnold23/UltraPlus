@@ -11,6 +11,7 @@ import User from './components/User';
 import MainSplash from './components/MainSplash';
 import LoginPage from './components/LoginPage';
 import SignUpPage from './components/SignUpPage'
+import Footer from './components/Footer';
 import { authenticate } from './store/session';
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
           <h1>My Home Page</h1>
         </ProtectedRoute> */}
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
