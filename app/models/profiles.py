@@ -30,9 +30,10 @@ class Profile(db.Model):
             'id': self.id,
             'name': self.name,
             'user_id': self.user_id,
-            'avatar_pic_id': self.avatar_pic_id,
+            'avatar_pic_id': self.avatar_id,
             # can establish new keys for relationships above like below
             # 'user_name': self.runnings.to_dict(),
+            'avatar_pic': self.avatar.to_dict()
             # 'comments': [comment.to_dict() for comment in self.comments]
 
         }
