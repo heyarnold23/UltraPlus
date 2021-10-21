@@ -23,5 +23,5 @@ def seed_profiles():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_profiles():
-    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE profiles RESTART IDENTITY CASCADE;')
     db.session.commit()
