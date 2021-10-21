@@ -1,11 +1,16 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
 from app.forms.profile_form import ProfileForm
-from app.models import Profile, db
+from app.models import Profile, db, Avatar
 from app.api.auth_routes import validation_errors_to_error_messages
 
 
 profile_routes = Blueprint('profiles', __name__)
+
+@profile_routes.route('/avatars')
+def avatars():
+    avatars = Avatar.query.all()
+    return {avatar.id:avatar.to_dict() for avatar in avatars}
 
 @profile_routes.route('/<int:id>')
 def profiles_by_user_id(id):
