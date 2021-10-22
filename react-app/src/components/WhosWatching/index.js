@@ -41,21 +41,27 @@ export default function WhosWatching() {
                     </div>
                     <div id={styles.profileContainer}>
                         {/* here, do mappings for profiles based on user's id */}
-                        {profileArr.map((profile) =>
-                            <div key={profile.id} className={styles.profileDiv}>
-                                <NavLink to='/main'>
-                                    <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
-                                </NavLink>
-                                <div id={styles.profileName}>
-                                    {profile.name}
-                                </div>
-                            </div>
+                        {profileArr.map((profile) => {
+                            return (
+                                (sessionUser.id === profile.user_id) && (
+                                    <div key={profile.id} className={styles.profileDiv}>
+                                        <NavLink to='/main'>
+                                            <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                        </NavLink>
+                                        <div id={styles.profileName}>
+                                            {profile.name}
+                                        </div>
+                                    </div>
+                                )
+                            )
+                        }
+
                         )}
                         {/* and if they don't have profiles then show below */}
                         <div className={styles.profileDiv}>
-                                <NavLink to='/select-avatar'>
+                            <NavLink to='/select-avatar'>
                                 <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
-                                </NavLink>
+                            </NavLink>
                             <div id={styles.profileName}>
                                 Add Profile
                             </div>
