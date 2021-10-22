@@ -24,17 +24,33 @@
     height: 910px;
     /* justify-content: center; */
     /* align-items: center; */
-    margin-top: 80px;
-    margin-left: 80px;
+    /* margin-top: 80px;
+    margin-left: 80px; */
     flex-direction: column;
+    background-color: #090b13;
 }
 
 #chooseDiv{
     font-size: 32px;
+    color: white;
+    margin-top: 80px;
+    margin-left: 100px;
 }
 
 #avatarContainer{
+    margin-top: 50px;
+    margin-left: 80px;
     display: flex;
+    width: 100%;
     height: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+#avatarPic{
+    width: 207px;
+    height: 207px;
+    flex: 1;
+
 }
