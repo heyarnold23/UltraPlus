@@ -67,8 +67,11 @@ export default function WhosWatching() {
                                             <>
                                                 <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                                                 <div id={styles.buttonDiv}>
-                                                    <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
-                                                    <div id={styles.editDeleteButton}><TiDeleteOutline /></div>
+                                                    <NavLink to={{pathname:'/edit-profile', state: {avatar_id: `${profile.avatar_pic_id}`, profile_name: `${profile.name}`, profile_id: `${profile.id}`}}}>
+                                                        <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
+                                                        {profile.avatar_id}
+                                                    </NavLink>
+                                                        <div id={styles.editDeleteButton}><TiDeleteOutline /></div>
                                                 </div>
                                             </>
                                         )

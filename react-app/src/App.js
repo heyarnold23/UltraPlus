@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import WhosWatching from './components/WhosWatching';
 import SelectAvatar from './components/SelectAvatar';
 import CreateProfile from './components/CreateProfile';
+import EditProfile from './components/EditProfile';
 import { authenticate } from './store/session';
 
 function App() {
@@ -52,6 +53,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/create-profile' exact={true} >
           <CreateProfile/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/edit-profile' exact={true} >
+          <EditProfile/>
         </ProtectedRoute>
         <ProtectedRoute path='/main' exact={true} >
           <MainSplash/>
