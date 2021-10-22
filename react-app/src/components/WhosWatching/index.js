@@ -1,21 +1,35 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
 import { getProfilesThunk } from '../../store/profiles'
+import { MdOutlineEditLocationAlt } from 'react-icons/md'
+import { TiDeleteOutline } from 'react-icons/ti'
 import styles from './WhosWatching.module.css';
 
 
 export default function WhosWatching() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
+    const [showMenu, setShowMenu] = useState(false);
+
 
     useEffect(() => {
         dispatch(getProfilesThunk(sessionUser.id))
     }, [dispatch, sessionUser])
 
+
+    const openMenu = () => {
+        if (showMenu) return;
+        setShowMenu(true);
+    };
+
+    const closeMenu = (e) => {
+        e.preventDefault()
+        setShowMenu(false)
+    }
 
     // if (!sessionUser) {
     //     return <Redirect to='/main' />;
@@ -30,9 +44,9 @@ export default function WhosWatching() {
         <>
             <div id={styles.navContainer}>
                 <div id={styles.navPic} />
-                <NavLink id={styles.editProfileButton} to='/edit-profile'>
-                    <span id={styles.editProfile}>EDIT PROFILES</span>
-                </NavLink>
+                {!showMenu ? (
+                    <span id={styles.editProfile} onClick={openMenu}>EDIT PROFILES</span>
+                ) : <span id={styles.editProfile} onClick={closeMenu}>CANCEL</span>}
             </div>
             <div id={styles.page}>
                 <div id={styles.midContainer}>
@@ -45,9 +59,20 @@ export default function WhosWatching() {
                             return (
                                 (sessionUser.id === profile.user_id) && (
                                     <div key={profile.id} className={styles.profileDiv}>
-                                        <NavLink to='/main'>
-                                            <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
-                                        </NavLink>
+                                        {!showMenu ? (
+                                            <NavLink to='/main'>
+                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                            </NavLink>
+                                        ) : (
+                                            <>
+                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                                <div id={styles.buttonDiv}>
+                                                    <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
+                                                    <div id={styles.editDeleteButton}><TiDeleteOutline /></div>
+                                                </div>
+                                            </>
+                                        )
+                                        }
                                         <div id={styles.profileName}>
                                             {profile.name}
                                         </div>
