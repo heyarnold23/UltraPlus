@@ -13,6 +13,7 @@ export default function CreateProfile() {
     const dispatch = useDispatch();
     let location = useLocation();
     const avatarId = location?.state?.avatar_id;
+    const avatarImageUrl = location?.state?.avatar_image_url;
     const [body, setBody] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
@@ -20,20 +21,6 @@ export default function CreateProfile() {
     useEffect(() => {
         dispatch(getAvatarsThunk())
     }, [dispatch])
-
-    const avatars = useSelector(store => store?.avatars)
-    const avatarsArr = Object.values(avatars)
-    let found;
-
-    avatarsArr.forEach(element => {
-        if (element.id == avatarId) {
-            found = element.image_url
-        }
-    });
-
-    // const found = avatarsArr.find(element => element[0]?.id === avatarId)
-    console.log("\n\n\n\n\n\n avatarsArr", avatarsArr, "\n\n\n\n\n\n\n\n\n\n");
-    console.log("\n\n\n\n\n\n found", found, "\n\n\n\n\n\n\n\n\n\n");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -94,7 +81,7 @@ export default function CreateProfile() {
                             SAVE
                         </button>
                     </div>
-                    <div id={styles.picDiv} style={{ backgroundImage: `url(${found})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                    <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarImageUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 
                     </div>
                 </div>
