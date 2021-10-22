@@ -16,17 +16,49 @@ export default function CreateProfile() {
 
 
     useEffect(() => {
-        // dispatch(getAvatarsThunk())
+        dispatch(getAvatarsThunk())
     }, [dispatch])
 
-    // const avatars = useSelector(store => store?.avatars)
-    // const avatarsArr = Object.values(avatars)
-    // console.log("\n\n\n\n\n\n avatars", avatarsArr, "\n\n\n\n\n\n\n\n\n\n");
+    const avatars = useSelector(store => store?.avatars)
+    const avatarsArr = Object.values(avatars)
+    let found;
+
+    avatarsArr.forEach(element => {
+        if (element.id == avatarId) {
+            found = element.image_url
+        }
+    });
+
+    // const found = avatarsArr.find(element => element[0]?.id === avatarId)
+    console.log("\n\n\n\n\n\n avatarsArr", avatarsArr, "\n\n\n\n\n\n\n\n\n\n");
+    console.log("\n\n\n\n\n\n found", found, "\n\n\n\n\n\n\n\n\n\n");
+
 
     return (
         <>
-            <div>
-                INSIDE CREATE PROFILE
+            <div id={styles.navContainer}>
+                <div id={styles.navPic} />
+                {/* <NavLink id={styles.skipButton} to='/edit-profile'>
+                    <span id={styles.skip}>SKIP</span>
+                </NavLink> */}
+            </div>
+            <div id={styles.page}>
+                <div id={styles.midContainer}>
+                    <div id={styles.addProfileDiv}>
+                        <div id={styles.text}>
+                            ADD PROFILE
+                        </div>
+                        <div id={styles.profileForm}>
+                            FORM
+                        </div>
+                        <div id={styles.saveDiv}>
+                            SAVE
+                        </div>
+                    </div>
+                    <div id={styles.picDiv} style={{ backgroundImage: `url(${found})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+
+                    </div>
+                </div>
             </div>
         </>
     );
