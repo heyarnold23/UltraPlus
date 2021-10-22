@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
@@ -12,7 +12,8 @@ export default function CreateProfile() {
     const dispatch = useDispatch();
     let location = useLocation();
     const avatarId = location?.state?.avatar_id;
-    console.log(avatarId);
+    const [body, setBody] = useState('');
+    const [errors, setErrors] = useState([]);
 
 
     useEffect(() => {
@@ -33,6 +34,20 @@ export default function CreateProfile() {
     console.log("\n\n\n\n\n\n avatarsArr", avatarsArr, "\n\n\n\n\n\n\n\n\n\n");
     console.log("\n\n\n\n\n\n found", found, "\n\n\n\n\n\n\n\n\n\n");
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const newProfile = {
+        name: body,
+        user_id: sessionUser.id,
+        avatar_id: found
+        };
+
+        if(body.length > 0 || body.length === 0){
+        setErrors([]);
+        // dispatch(createComment(newComment));
+        }
+    };
 
     return (
         <>
@@ -49,11 +64,27 @@ export default function CreateProfile() {
                             ADD PROFILE
                         </div>
                         <div id={styles.profileForm}>
-                            FORM
+                            <form onSubmit={handleSubmit}>
+                                <div>
+                                    {errors.map((error, ind) => (
+                                    <div key={ind}>{error}</div>
+                                    ))}
+                                </div>
+                                <div>
+                                    <label>Name</label>
+                                    <input
+                                    type='text'
+                                    name='name'
+                                    onChange={(e) => setBody(e.target.value)}
+                                    value={body}
+                                    ></input>
+                                </div>
+                                {/* <button type='submit'>Sign Up</button> */}
+                            </form>
                         </div>
-                        <div id={styles.saveDiv}>
+                        <button id={styles.saveDiv} type='submit'>
                             SAVE
-                        </div>
+                        </button>
                     </div>
                     <div id={styles.picDiv} style={{ backgroundImage: `url(${found})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 
