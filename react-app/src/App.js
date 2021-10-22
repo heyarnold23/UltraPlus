@@ -14,6 +14,7 @@ import SignUpPage from './components/SignUpPage'
 import Footer from './components/Footer';
 import WhosWatching from './components/WhosWatching';
 import SelectAvatar from './components/SelectAvatar';
+import CreateProfile from './components/CreateProfile';
 import { authenticate } from './store/session';
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/select-avatar' exact={true} >
           <SelectAvatar/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/create-profile' exact={true} >
+          <CreateProfile/>
         </ProtectedRoute>
         <ProtectedRoute path='/main' exact={true} >
           <MainSplash/>
