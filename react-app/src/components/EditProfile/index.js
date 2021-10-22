@@ -13,6 +13,7 @@ export default function EditProfile() {
     const dispatch = useDispatch();
     let location = useLocation();
     const avatarId = location?.state?.avatar_id;
+    const avatarUrl = location?.state?.avatar_url;
     const profileName = location?.state?.profile_name;
     const profileId = location?.state?.profile_id;
     const [errors, setErrors] = useState([]);
@@ -24,23 +25,13 @@ export default function EditProfile() {
         dispatch(getAvatarsThunk())
     }, [dispatch])
 
-    const avatars = useSelector(store => store?.avatars)
-    const avatarsArr = Object.values(avatars)
 
 
 
-    let found;
-    avatarsArr.forEach(element => {
-        if (element.id === avatarId) {
-            found = element.image_url
-        }
-    });
 
-    // const found = avatarsArr.find(element => element[0]?.id === avatarId)
-    // console.log("\n\n\n\n\n\n avatarsArr", avatarsArr, "\n\n\n\n\n\n\n\n\n\n");
-    console.log("\n\n\n\n\n\n found", avatarId, "\n\n\n\n\n\n\n\n\n\n");
+    // console.log("\n\n\n\n\n\n found", avatarId, "\n\n\n\n\n\n\n\n\n\n");
 
-    const updateBody = (e) => setBody(e.target.value);
+    // const updateBody = (e) => setBody(e.target.value);
 
 
     const handleSubmit = async (e) => {
@@ -48,6 +39,7 @@ export default function EditProfile() {
 
 
         const updateProfile = {
+            id: profileId,
             name: body,
             user_id: sessionUser.id,
             avatar_id: avatarId
@@ -93,7 +85,6 @@ export default function EditProfile() {
                                         name='name'
                                         onChange={(e) => setBody(e.target.value)}
                                         value={body}
-                                        // onChange={updateBody}
                                     ></input>
                                 </div>
                                 <button type='submit'>SAVE</button>
@@ -103,7 +94,7 @@ export default function EditProfile() {
                             SAVE
                         </button> */}
                     </div>
-                    <div id={styles.picDiv} style={{ backgroundImage: `url(${found})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                    <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                 </div>
             </div>
         </>
