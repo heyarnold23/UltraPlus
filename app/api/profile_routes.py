@@ -44,18 +44,18 @@ def profiles_by_user_id(id):
 #     comments = Comment.query.all()
 #     return {comment.id:comment.to_dict() for comment in comments}
 
-# @comment_routes.route('', methods=["POST"])
-# @login_required
-# def postComment():
-#     form = CommentForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
-#     if form.validate_on_submit():
-#         comment = Comment(
-#             body=form.data['body'],
-#             author_id=form.data['author_id'],
-#             run_id=form.data['run_id']
-#         )
-#         db.session.add(comment)
-#         db.session.commit()
-#         return comment.to_dict()
-#     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+@profile_routes.route('', methods=["POST"])
+@login_required
+def postComment():
+    form = ProfileForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        profile = Profile(
+            name=form.data['name'],
+            user_id=form.data['user_id'],
+            avatar_id=form.data['avatar_id']
+        )
+        db.session.add(profile)
+        db.session.commit()
+        return profile.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401

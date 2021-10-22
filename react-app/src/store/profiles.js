@@ -1,5 +1,5 @@
 const GET_PROFILES = 'profiles/GET_PROFILES'
-// const ADD_COMMENT = 'comments/addComment'
+const ADD_PROFILE = 'profiles/ADD_PROFILE'
 // const UPDATE_COMMENT = "comments/update";
 // const DELETE_COMMENT = 'comment/DELETE'
 
@@ -10,10 +10,10 @@ const getProfiles = (profiles) => {
     }
 }
 
-// const addComment = (newComment) => ({
-//     type: ADD_COMMENT,
-//     newComment
-// })
+const addProfile = (profile) => ({
+    type: ADD_PROFILE,
+    profile
+})
 
 // const update = (comment) => ({
 //     type: UPDATE_COMMENT,
@@ -40,30 +40,30 @@ export const getProfilesThunk = (id) => async (dispatch) => {
 }
 
 
-// export const setComments = (newComment) => async dispatch => {
-//     // const commentBody = JSON.stringify({body: newComment.body, author_id: newComment.author_id, run_id: newComment.run_id})
-//     const response = await fetch('/api/comments', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(newComment)
-//     });
+export const setProfile = (profile) => async dispatch => {
+    // const commentBody = JSON.stringify({body: newComment.body, author_id: newComment.author_id, run_id: newComment.run_id})
+    const response = await fetch('/api/profiles', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(profile)
+    });
 
-//     if(response.ok){
-//         const data = await response.json();
-//         dispatch(addComment(data));
-//         return (data);
-//     } else if (response.status < 500) {
-//         const data = await response.json();
-//         if (data.errors) {
-//           return data.errors;
-//         }
-//     } else {
-//         return ['An error occurred. Please try again.']
-//       }
+    if(response.ok){
+        const data = await response.json();
+        dispatch(addProfile(data));
+        return (data);
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+          return data.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
+      }
 
-// }
+}
 
 
 // export const editComment = (commentData) => async (dispatch) => {
@@ -100,12 +100,11 @@ export default function profilesReducer(state= initialState, action) {
             console.log("THIS IS ACTION PAYLOAD",action.payload)
             newState = {...state, ...action.payload}
             return newState
-        // case ADD_COMMENT:
-        //     return {
-        //         ...state,
-        //             [action.newComment.id]: action.newComment,
-        //             // ...action.newComment,
-        //         };
+        case ADD_PROFILE:
+            return {
+                ...state,
+                    [action.profile.id]: action.profile,
+                };
         // case UPDATE_COMMENT: {
         //     return {
         //         ...state,

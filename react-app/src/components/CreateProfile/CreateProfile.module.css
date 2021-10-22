@@ -22,34 +22,39 @@
 #page{
     display: flex;
     height: 910px;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* margin-top: 80px;
-    margin-left: 80px; */
-    flex-direction: column;
-    background-color: #090b13;
+    /* background-color: #090b13; */
+    justify-content: center;
 }
 
-#chooseDiv{
-    font-size: 32px;
-    color: white;
-    margin-top: 80px;
-    margin-left: 100px;
-}
-
-#avatarContainer{
-    margin-top: 50px;
-    margin-left: 80px;
+#midContainer{
     display: flex;
-    height: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1;
+    width: 700px;
+    height: 310px;
+    margin-top: 80px;
+    background-color: tomato;
 }
 
-#avatarPic{
+#text{
+    color: white;
+    font-size: 30px;
+}
+
+#picDiv{
     width: 207px;
     height: 207px;
-    flex: 1;
+    position: relative;
+    top: 50px;
+}
 
+#profileForm{
+    margin-top: 25px;
+}
+#saveDiv{
+    margin-top: 25px;
+}
+
+#addProfileDiv{
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 70%;
 }

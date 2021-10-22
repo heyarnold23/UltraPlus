@@ -69,6 +69,11 @@
 #profileContainer{
     display: flex;
     margin-top: 50px;
+    /* height: 100%; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
 }
 
 .profileDiv{

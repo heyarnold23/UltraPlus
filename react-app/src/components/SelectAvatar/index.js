@@ -1,17 +1,24 @@
-
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
+import { getAvatarsThunk } from '../../store/avatars'
 import styles from './SelectAvatar.module.css'
 
 export default function SelectAvatar() {
-    const sessionUser = useSelector(state => state.session.user)
+    const sessionUser = useSelector(state => state.session.user);
+    const dispatch = useDispatch();
 
-    // if (!sessionUser) {
-    //     return <Redirect to='/main' />;
-    // }
+
+    useEffect(() => {
+        dispatch(getAvatarsThunk())
+    }, [dispatch])
+
+    const avatars = useSelector(store => store?.avatars)
+    const avatarsArr = Object.values(avatars)
+    console.log("\n\n\n\n\n\n avatars", avatarsArr, "\n\n\n\n\n\n\n\n\n\n");
 
     return (
         <>
@@ -26,13 +33,15 @@ export default function SelectAvatar() {
                     <span id={styles.chooseText}>Choose Avatar</span>
                 </div>
                 {/* here, do mappings for avatars*/}
-                <div id={styles.avatarRow}>
-                    <div id={styles.avatarPic}>
+                <div id={styles.avatarContainer}>
+                    {/* <div id={styles.avatarRow}> */}
+                    {avatarsArr.map((avatar) =>
+                    <NavLink key={avatar.id} to={{pathname:'/create-profile', state: {avatar_id: `${avatar.id}`}}}>
                         {/* pass in prop to navlink? */}
-                        <NavLink to='/create-profile'>
-                            Pic
-                        </NavLink>
-                    </div>
+                        <div id={styles.avatarPic} style={{ backgroundImage: `url(${avatar.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                    </NavLink>
+                    )}
+                    {/* </div> */}
                 </div>
             </div>
 
