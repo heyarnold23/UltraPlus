@@ -1,10 +1,11 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
+import { setProfile } from '../../store/profiles';
 import styles from './CreateProfile.module.css'
 
 export default function CreateProfile() {
@@ -14,7 +15,7 @@ export default function CreateProfile() {
     const avatarId = location?.state?.avatar_id;
     const [body, setBody] = useState('');
     const [errors, setErrors] = useState([]);
-
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(getAvatarsThunk())
@@ -37,16 +38,23 @@ export default function CreateProfile() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+
         const newProfile = {
         name: body,
         user_id: sessionUser.id,
-        avatar_id: found
+        avatar_id: avatarId
         };
+        console.log(newProfile);
 
-        if(body.length > 0 || body.length === 0){
-        setErrors([]);
-        // dispatch(createComment(newComment));
+        if(body.length > 0){
+            const data = dispatch(setProfile(newProfile));
+            if (data) {
+                setErrors(data)
+            }
         }
+        history.push('/whos-watching')
+        setErrors(['NO WORK']);
+
     };
 
     return (
@@ -79,7 +87,7 @@ export default function CreateProfile() {
                                     value={body}
                                     ></input>
                                 </div>
-                                {/* <button type='submit'>Sign Up</button> */}
+                                <button type='submit'>SAVE</button>
                             </form>
                         </div>
                         <button id={styles.saveDiv} type='submit'>
