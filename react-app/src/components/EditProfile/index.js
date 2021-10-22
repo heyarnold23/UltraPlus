@@ -32,7 +32,7 @@ export default function EditProfile() {
 
     // console.log("\n\n\n\n\n\n found", avatarId, "\n\n\n\n\n\n\n\n\n\n");
 
-    // const updateBody = (e) => setBody(e.target.value);
+    const updateBody = (e) => setBody(e.target.value);
 
 
     const handleSubmit = async (e) => {
@@ -48,12 +48,11 @@ export default function EditProfile() {
         console.log(updateProfile);
 
         if (body.length > 0) {
-            const data = dispatch(editProfile(updateProfile));
-            // if (data) {
-            //     setErrors(data)
-            // }
+            const data = await dispatch(editProfile(updateProfile));
+            if (data) {
+                history.push('/whos-watching')
+            }
         }
-        history.push('/whos-watching')
         setErrors(['NO WORK']);
 
     };
@@ -84,7 +83,7 @@ export default function EditProfile() {
                                     <input
                                         type='text'
                                         name='name'
-                                        onChange={(e) => setBody(e.target.value)}
+                                        onChange={updateBody}
                                         value={body}
                                     ></input>
                                 </div>
