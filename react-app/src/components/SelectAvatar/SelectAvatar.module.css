@@ -24,6 +24,17 @@
     height: 910px;
     /* justify-content: center; */
     /* align-items: center; */
-    margin-top: 50px;
+    margin-top: 80px;
+    margin-left: 80px;
+    flex-direction: column;
+}
+
+#chooseDiv{
+    font-size: 32px;
+}
+
+#avatarContainer{
+    display: flex;
+    height: 100%;
     flex-direction: column;
 }

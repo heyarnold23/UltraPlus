@@ -26,12 +26,14 @@ export default function SelectAvatar() {
                     <span id={styles.chooseText}>Choose Avatar</span>
                 </div>
                 {/* here, do mappings for avatars*/}
-                <div id={styles.avatarRow}>
-                    <div id={styles.avatarPic}>
-                        {/* pass in prop to navlink? */}
-                        <NavLink to='/create-profile'>
-                            Pic
-                        </NavLink>
+                <div id={styles.avatarContainer}>
+                    <div id={styles.avatarRow}>
+                        <div id={styles.avatarPic}>
+                            {/* pass in prop to navlink? */}
+                            <NavLink to='/create-profile'>
+                                Pic
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
