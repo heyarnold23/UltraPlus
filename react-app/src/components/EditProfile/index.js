@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
-import { setProfile } from '../../store/profiles';
+import { editProfile, setProfile } from '../../store/profiles';
 import styles from './EditProfile.module.css'
+
 
 export default function EditProfile() {
     const sessionUser = useSelector(state => state.session.user);
@@ -47,7 +48,7 @@ export default function EditProfile() {
         console.log(updateProfile);
 
         if (body.length > 0) {
-            // const data = dispatch(setProfile(newProfile));
+            const data = dispatch(editProfile(updateProfile));
             // if (data) {
             //     setErrors(data)
             // }

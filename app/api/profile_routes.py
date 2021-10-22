@@ -19,14 +19,15 @@ def profiles_by_user_id(id):
     )
     return {profile.id:profile.to_dict() for profile in profiles}
 
-# @comment_routes.route('/edit/<int:id>', methods=["PUT"])
-# @login_required
-# def updateComment(id):
-#     print("inside api routeee id", id)
-#     comment = Comment.query.get(id)
-#     comment.body = request.json.get('body', comment.body)
-#     db.session.commit()
-#     return comment.to_dict()
+@profile_routes.route('/edit/<int:id>', methods=["PUT"])
+@login_required
+def update_profile(id):
+    # print("inside api routeee id", id)
+    profile = Profile.query.get(id)
+    profile.name = request.json.get('name', profile.name)
+    profile.avatar_id = request.json.get('avatar_id', profile.avatar_id)
+    db.session.commit()
+    return profile.to_dict()
 
 # @comment_routes.route('/delete/<int:id>')
 # @login_required
