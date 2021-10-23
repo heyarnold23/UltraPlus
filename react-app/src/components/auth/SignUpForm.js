@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import { login, signUp } from '../../store/session';
 import styles from './SignUpForm.module.css'
 
@@ -44,8 +44,9 @@ const SignUpForm = () => {
 
   return (
     <div id={styles.formHolder}>
+      <span id={styles.loginText}>Sign up with your email</span>
       <form onSubmit={onSignUp} id={styles.form}>
-        <div>
+        <div id={styles.errors}>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
@@ -86,7 +87,13 @@ const SignUpForm = () => {
         <button type='submit' id={styles.loginDiv}>Sign Up</button>
       </form>
       <span id={styles.signUpMssg}>
-        Or Sign In As A <span id={styles.signUpText} onClick={() => { dispatch(login("demo@aa.io", "password")) }}>Demo User</span>
+        Already have an account? <NavLink id={styles.signUpText} to='/login'>Sign in</NavLink>
+      </span>
+      <span id={styles.signUpMssg}>
+        Or
+      </span>
+      <span id={styles.signUpMssg}>
+        Sign In As A <span id={styles.signUpText} onClick={() => { dispatch(login("demo@aa.io", "password")) }}>Demo User</span>
       </span>
     </div>
   );

@@ -75,3 +75,8 @@
     color: rgb(109, 177, 233);
     text-decoration: underline;
 }
+
+#errors{
+    margin-top: 20px;
+    color: white;
+}

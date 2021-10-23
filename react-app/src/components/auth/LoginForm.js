@@ -35,7 +35,7 @@ const LoginForm = () => {
     <div id={styles.formHolder}>
       <span id={styles.loginText}>Log in with your email</span>
       <form onSubmit={onLogin} id={styles.form}>
-        <div>
+        <div id={styles.errors}>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
@@ -68,7 +68,10 @@ const LoginForm = () => {
           New to Ultra+? <NavLink id={styles.signUpText} to='/sign-up'>Sign Up</NavLink>
       </span>
       <span id={styles.signUpMssg}>
-          Or Sign In As A <span id={styles.signUpText}  onClick = {()=>{dispatch(login("demo@aa.io","password"))}}>Demo User</span>
+          Or
+      </span>
+      <span id={styles.signUpMssg}>
+          Sign In As A <span id={styles.signUpText}  onClick = {()=>{dispatch(login("demo@aa.io","password"))}}>Demo User</span>
       </span>
     </div>
   );
