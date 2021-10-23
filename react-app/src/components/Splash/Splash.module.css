@@ -67,5 +67,16 @@
 
 #signUpInMid{
     margin-top: 50px;
-    background-color: cornsilk;
+    background-color: transparent;
+}
+
+#signButton{
+    color: white;
+    transition: color 200ms ;
+}
+
+#signButton:hover{
+    background-color: transparent;
+    color: rgb(109, 177, 233);
+
 }
