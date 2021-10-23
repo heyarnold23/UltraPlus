@@ -3,7 +3,7 @@
     height: 960px;
     flex-direction: column;
     align-items: center;
-    background-color: #090b13;
+    background-color: rgb(26, 29, 41)
 }
 
 #picDiv{
