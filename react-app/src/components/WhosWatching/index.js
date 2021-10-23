@@ -8,12 +8,16 @@ import { getProfilesThunk } from '../../store/profiles'
 import { MdOutlineEditLocationAlt } from 'react-icons/md'
 import { TiDeleteOutline } from 'react-icons/ti'
 import styles from './WhosWatching.module.css';
+import { addModal, toggleModalView } from '../../store/session';
+import FormModal from '../Modal';
 
 
 export default function WhosWatching() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
+
+    const modalView = useSelector(state => state.session.modalView)
 
 
     useEffect(() => {
@@ -31,6 +35,11 @@ export default function WhosWatching() {
         setShowMenu(false)
     }
 
+    const modal = (e) => {
+        e.preventDefault()
+        dispatch(addModal("deleteProfile"))
+        dispatch(toggleModalView(true))
+    }
     // if (!sessionUser) {
     //     return <Redirect to='/main' />;
     // }
@@ -67,11 +76,11 @@ export default function WhosWatching() {
                                             <>
                                                 <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                                                 <div id={styles.buttonDiv}>
-                                                    <NavLink to={{pathname:'/edit-profile', state: {avatar_id: `${profile.avatar_pic_id}`, avatar_url: `${profile.avatar_pic.image_url}`, profile_name: `${profile.name}`, profile_id: `${profile.id}`}}}>
+                                                    <NavLink to={{ pathname: '/edit-profile', state: { avatar_id: `${profile.avatar_pic_id}`, avatar_url: `${profile.avatar_pic.image_url}`, profile_name: `${profile.name}`, profile_id: `${profile.id}` } }}>
                                                         <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
                                                         {profile.avatar_id}
                                                     </NavLink>
-                                                        <div id={styles.editDeleteButton}><TiDeleteOutline /></div>
+                                                    <div id={styles.editDeleteButton} onClick={modal}><TiDeleteOutline /></div>
                                                 </div>
                                             </>
                                         )
@@ -97,6 +106,7 @@ export default function WhosWatching() {
                     </div>
                 </div>
             </div>
+            {modalView ? (<FormModal />) : null}
         </>
     );
 }
