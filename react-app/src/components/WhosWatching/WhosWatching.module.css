@@ -93,6 +93,9 @@
 
 #profileName{
     margin-top: 20px;
+    overflow-wrap: break-word;
+    width: 140px;
+    text-align: center;
 }
 
 
