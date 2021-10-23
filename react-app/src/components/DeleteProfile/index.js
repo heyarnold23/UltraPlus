@@ -35,7 +35,7 @@ export default function DeleteProfile() {
     // const updateBody = (e) => setBody(e.target.value);
 
 
-    const handleSubmit = async (e) => {
+    const handleDelete = async (e) => {
         e.preventDefault();
 
 
@@ -59,42 +59,22 @@ export default function DeleteProfile() {
 
     return (
         <>
-            <div id={styles.navContainer}>
-                {/* <div id={styles.navPic} />
-                <NavLink id={styles.cancelButton} to='/whos-watching'>
-                    <span id={styles.cancel}>CANCEL</span>
-                </NavLink> */}
-                LETS GOOOOO
-            </div>
-            {/* <div id={styles.page}>
-                <div id={styles.midContainer}>
-                    <div id={styles.addProfileDiv}>
-                        <div id={styles.text}>
-                            EDIT PROFILE
-                        </div>
-                        <div id={styles.profileForm}>
-                            <form onSubmit={handleSubmit}>
-                                <div>
-                                    {errors.map((error, ind) => (
-                                        <div key={ind}>{error}</div>
-                                    ))}
-                                </div>
-                                <div>
-                                    <label>Name</label>
-                                    <input
-                                        type='text'
-                                        name='name'
-                                        onChange={updateBody}
-                                        value={body}
-                                    ></input>
-                                </div>
-                                <button type='submit'>SAVE</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+            <div id={styles.main}>
+                <div id={styles.heading}>
+                    Delete placeholder's profile?
                 </div>
-            </div> */}
+                <div id={styles.warning}>
+                    This profile along with its watchlist will also be deleted. There is no way to undo this.
+                </div>
+                <div id={styles.buttonDiv}>
+                    <div id={styles.cancelButton}>
+                        CANCEL
+                    </div>
+                    <div id={styles.deleteButton} onClick>
+                        DELETE
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
