@@ -47,13 +47,13 @@ export default function EditProfile() {
         };
         console.log(updateProfile);
 
-        if (body.length > 0) {
-            const data = await dispatch(editProfile(updateProfile));
-            if (data) {
-                history.push('/whos-watching')
-            }
+
+        const data = await dispatch(editProfile(updateProfile));
+        if (Array.isArray(data)) {
+            await setErrors(data)
+        } else {
+            history.push('/whos-watching')
         }
-        setErrors(['NO WORK']);
 
     };
 

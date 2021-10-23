@@ -24,6 +24,9 @@ def profiles_by_user_id(id):
 def update_profile(id):
     # print("inside api routeee id", id)
     profile = Profile.query.get(id)
+    got_name = request.json.get('name', profile.name)
+    if len(got_name) < 1 or len(got_name) > 25 or got_name.isspace():
+        return {'errors': 'Must be between 1 to 25 characters'}, 401
     profile.name = request.json.get('name', profile.name)
     profile.avatar_id = request.json.get('avatar_id', profile.avatar_id)
     db.session.commit()

@@ -76,9 +76,14 @@ export const editProfile = (profile) => async (dispatch) => {
       const editProfile = await response.json();
       dispatch(updateProfile(editProfile));
       return editProfile;
-    }
-    else{
-        console.log("RESPONSE WAS NOT OK");
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            const errors = Object.values(data)
+            return errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 };
 
