@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../store/session';
+import { login, signUp } from '../../store/session';
+import styles from './SignUpForm.module.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -42,42 +43,52 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label>Email</label>
-        <input
-          type='text'
-          name='email'
-          onChange={updateEmail}
-          value={email}
-        ></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type='password'
-          name='password'
-          onChange={updatePassword}
-          value={password}
-        ></input>
-      </div>
-      <div>
-        <label>Repeat Password</label>
-        <input
-          type='password'
-          name='repeat_password'
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-        ></input>
-      </div>
-      <button type='submit'>Sign Up</button>
-    </form>
+    <div id={styles.formHolder}>
+      <form onSubmit={onSignUp} id={styles.form}>
+        <div>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
+        <div>
+          {/* <label>Email</label> */}
+          <input
+            id={styles.emailDiv}
+            type='text'
+            name='email'
+            onChange={updateEmail}
+            value={email}
+          ></input>
+        </div>
+        <div>
+          {/* <label>Password</label> */}
+          <input
+            id={styles.passwordDiv}
+            type='password'
+            name='password'
+            onChange={updatePassword}
+            value={password}
+            placeholder='Password'
+          ></input>
+        </div>
+        <div>
+          {/* <label>Repeat Password</label> */}
+          <input
+            id={styles.passwordDiv}
+            type='password'
+            name='repeat_password'
+            placeholder='Repeat Password'
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+            required={true}
+          ></input>
+        </div>
+        <button type='submit' id={styles.loginDiv}>Sign Up</button>
+      </form>
+      <span id={styles.signUpMssg}>
+        Or Sign In As A <span id={styles.signUpText} onClick={() => { dispatch(login("demo@aa.io", "password")) }}>Demo User</span>
+      </span>
+    </div>
   );
 };
 
