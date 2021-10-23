@@ -29,15 +29,15 @@ def update_profile(id):
     db.session.commit()
     return profile.to_dict()
 
-# @comment_routes.route('/delete/<int:id>')
-# @login_required
-# def deleteComment(id):
-#     comment = Comment.query.get(id)
-#     db.session.delete(comment)
-#     db.session.commit()
-#     return {
-#         'deleted_comment': comment.to_dict()
-#     }
+@profile_routes.route('/delete/<int:id>')
+@login_required
+def delete_profile(id):
+    profile = Profile.query.get(id)
+    db.session.delete(profile)
+    db.session.commit()
+    return {
+        'deleted_profile': profile.to_dict()
+    }
 
 # @comment_routes.route('')
 # def comments():

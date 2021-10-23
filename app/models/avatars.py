@@ -12,7 +12,7 @@ class Avatar(db.Model):
 
 
     # create a one to many relationship with profiles
-    avatar_profiles = db.relationship("Profile", back_populates="avatar")
+    avatar_profiles = db.relationship("Profile", back_populates="avatar", lazy='subquery')
 
 
 # to dict function here

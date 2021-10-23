@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
-import { editProfile, setProfile } from '../../store/profiles';
+import { editProfile, setProfile, deleteProfileThunk } from '../../store/profiles';
 import styles from './DeleteProfile.module.css'
 
 
@@ -41,10 +41,10 @@ export default function DeleteProfile() {
 
         // console.log("\n\n\n\n\n\n PROFILE DATA", profileData, "\n\n\n\n\n\n\n\n\n\n");
 
-        // const data = await dispatch(editProfile(profileData));
-        // if (data) {
-        //     history.push('/whos-watching')
-        // }
+        const data = dispatch(deleteProfileThunk(profileData));
+        if (data) {
+            history.push('/whos-watching')
+        }
 
 
     };

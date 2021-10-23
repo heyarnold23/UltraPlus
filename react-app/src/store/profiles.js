@@ -1,7 +1,7 @@
 const GET_PROFILES = 'profiles/GET_PROFILES'
 const ADD_PROFILE = 'profiles/ADD_PROFILE'
 const UPDATE_PROFILE = "profiles/UPDATE_PROFILE";
-// const DELETE_COMMENT = 'comment/DELETE'
+const DELETE_PROFILE = 'profiles/DELETE_PROFILE'
 
 const getProfiles = (profiles) => {
     return {
@@ -20,12 +20,12 @@ const updateProfile = (profile) => ({
     profile,
 });
 
-// const deleteComment = (deletedComment) => {
-//     return {
-//         type: DELETE_COMMENT,
-//         payload: deletedComment
-//     }
-// }
+const deleteProfile = (deletedProfile) => {
+    return {
+        type: DELETE_PROFILE,
+        payload: deletedProfile
+    }
+}
 
 
 
@@ -83,14 +83,14 @@ export const editProfile = (profile) => async (dispatch) => {
 };
 
 
-// export const deleteCommentThunk = (commentData) => async (dispatch) => {
-//     const response = await fetch(`/api/comments/delete/${commentData.id}`);
-//     if(response.ok){
-//         dispatch(deleteComment(commentData.id))
-//     }else{
-//         //error stuff
-//     }
-// }
+export const deleteProfileThunk = (profileData) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/delete/${profileData.id}`);
+    if(response.ok){
+        dispatch(deleteProfile(profileData.id))
+    }else{
+        //error stuff
+    }
+}
 
 const initialState = {}
 export default function profilesReducer(state= initialState, action) {
@@ -111,9 +111,9 @@ export default function profilesReducer(state= initialState, action) {
                 [action.profile.id]: action.profile,
             };
         }
-        // case DELETE_COMMENT:
-        //     delete newState[action.payload]
-        //     return newState
+        case DELETE_PROFILE:
+            delete newState[action.payload]
+            return newState
         default:
             return state
     }
