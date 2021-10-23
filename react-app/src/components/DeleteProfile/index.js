@@ -12,14 +12,9 @@ import styles from './DeleteProfile.module.css'
 export default function DeleteProfile() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
-    let location = useLocation();
-    // const avatarId = location?.state?.avatar_id;
-    // const avatarUrl = location?.state?.avatar_url;
-    // const profileName = location?.state?.profile_name;
-    // const profileId = location?.state?.profile_id;
+    const data = useSelector(state => state.session.passingData)
     const [errors, setErrors] = useState([]);
     const history = useHistory();
-    // const [body, setBody] = useState(profileName);
 
 
     useEffect(() => {
@@ -30,7 +25,7 @@ export default function DeleteProfile() {
 
 
 
-    // console.log("\n\n\n\n\n\n found", avatarId, "\n\n\n\n\n\n\n\n\n\n");
+    // console.log("\n\n\n\n\n\n PASSING DATA", data, "\n\n\n\n\n\n\n\n\n\n");
 
     // const updateBody = (e) => setBody(e.target.value);
 
@@ -61,7 +56,7 @@ export default function DeleteProfile() {
         <>
             <div id={styles.main}>
                 <div id={styles.heading}>
-                    Delete placeholder's profile?
+                    Delete {data?.name}'s profile?
                 </div>
                 <div id={styles.warning}>
                     This profile along with its watchlist will also be deleted. There is no way to undo this.
