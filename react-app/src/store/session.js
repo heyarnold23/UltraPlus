@@ -4,6 +4,7 @@ const REMOVE_USER = 'session/REMOVE_USER';
 const ADD_MODAL_TYPE = "session/ADD_MODAL_TYPE"
 const MODAL_VIEW = "session/MODAL_VIEW"
 const MODAL_REQUIRED = "session/MODAL_REQUIRED"
+const PASSING_DATA = "session/PASSING_DATA"
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -25,6 +26,13 @@ export const toggleModalView = (visible) => {
   return {
     type:MODAL_VIEW,
     payload:visible
+  }
+}
+
+export const passData = (data) => {
+  return{
+    type: PASSING_DATA,
+    payload: data
   }
 }
 
@@ -130,6 +138,10 @@ export default function reducer(state = initialState, action) {
     }
     case MODAL_REQUIRED:{
       newState.modalRequired=action.payload
+      return newState
+    }
+    case PASSING_DATA:{
+      newState.passingData=action.payload
       return newState
     }
     default:

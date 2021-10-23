@@ -8,7 +8,7 @@ import { getProfilesThunk } from '../../store/profiles'
 import { MdOutlineEditLocationAlt } from 'react-icons/md'
 import { TiDeleteOutline } from 'react-icons/ti'
 import styles from './WhosWatching.module.css';
-import { addModal, toggleModalView } from '../../store/session';
+import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
 
 
@@ -35,10 +35,15 @@ export default function WhosWatching() {
         setShowMenu(false)
     }
 
-    const modal = (e) => {
+    const modal = (e, id, name) => {
         e.preventDefault()
+        const data ={
+            id,
+            name
+        }
         dispatch(addModal("deleteProfile"))
         dispatch(toggleModalView(true))
+        dispatch(passData(data))
     }
     // if (!sessionUser) {
     //     return <Redirect to='/main' />;
@@ -80,7 +85,7 @@ export default function WhosWatching() {
                                                         <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
                                                         {profile.avatar_id}
                                                     </NavLink>
-                                                    <div id={styles.editDeleteButton} onClick={modal}><TiDeleteOutline /></div>
+                                                    <div id={styles.editDeleteButton} onClick={(e) => { modal(e, profile?.id, profile.name)}}><TiDeleteOutline /></div>
                                                 </div>
                                             </>
                                         )
