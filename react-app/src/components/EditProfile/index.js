@@ -5,41 +5,54 @@ import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
-import { setProfile } from '../../store/profiles';
-import styles from './CreateProfile.module.css'
+import { editProfile, setProfile } from '../../store/profiles';
+import styles from './EditProfile.module.css'
 
-export default function CreateProfile() {
+
+export default function EditProfile() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     let location = useLocation();
     const avatarId = location?.state?.avatar_id;
-    const avatarImageUrl = location?.state?.avatar_image_url;
-    const [body, setBody] = useState('');
+    const avatarUrl = location?.state?.avatar_url;
+    const profileName = location?.state?.profile_name;
+    const profileId = location?.state?.profile_id;
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const [body, setBody] = useState(profileName);
+
 
     useEffect(() => {
         dispatch(getAvatarsThunk())
     }, [dispatch])
 
+
+
+
+
+    // console.log("\n\n\n\n\n\n found", avatarId, "\n\n\n\n\n\n\n\n\n\n");
+
+    const updateBody = (e) => setBody(e.target.value);
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
 
-        const newProfile = {
-        name: body,
-        user_id: sessionUser.id,
-        avatar_id: avatarId
+        const updateProfile = {
+            id: profileId,
+            name: body,
+            user_id: sessionUser.id,
+            avatar_id: avatarId
         };
-        console.log(newProfile);
+        console.log(updateProfile);
 
-        if(body.length > 0){
-            const data = dispatch(setProfile(newProfile));
+        if (body.length > 0) {
+            const data = await dispatch(editProfile(updateProfile));
             if (data) {
-                setErrors(data)
+                history.push('/whos-watching')
             }
         }
-        history.push('/whos-watching')
         setErrors(['NO WORK']);
 
     };
@@ -48,42 +61,40 @@ export default function CreateProfile() {
         <>
             <div id={styles.navContainer}>
                 <div id={styles.navPic} />
-                {/* <NavLink id={styles.skipButton} to='/edit-profile'>
-                    <span id={styles.skip}>SKIP</span>
-                </NavLink> */}
+                <NavLink id={styles.cancelButton} to='/whos-watching'>
+                    <span id={styles.cancel}>CANCEL</span>
+                </NavLink>
             </div>
             <div id={styles.page}>
                 <div id={styles.midContainer}>
                     <div id={styles.addProfileDiv}>
                         <div id={styles.text}>
-                            ADD PROFILE
+                            EDIT PROFILE
                         </div>
                         <div id={styles.profileForm}>
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     {errors.map((error, ind) => (
-                                    <div key={ind}>{error}</div>
+                                        <div key={ind}>{error}</div>
                                     ))}
                                 </div>
                                 <div>
                                     <label>Name</label>
                                     <input
-                                    type='text'
-                                    name='name'
-                                    onChange={(e) => setBody(e.target.value)}
-                                    value={body}
+                                        type='text'
+                                        name='name'
+                                        onChange={updateBody}
+                                        value={body}
                                     ></input>
                                 </div>
                                 <button type='submit'>SAVE</button>
                             </form>
                         </div>
-                        <button id={styles.saveDiv} type='submit'>
+                        {/* <button id={styles.saveDiv} type='submit'>
                             SAVE
-                        </button>
+                        </button> */}
                     </div>
-                    <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarImageUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-
-                    </div>
+                    <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                 </div>
             </div>
         </>

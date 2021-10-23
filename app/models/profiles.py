@@ -17,7 +17,7 @@ class Profile(db.Model):
     user = db.relationship("User", back_populates='user_profiles')
 
     # create a many to one relationship with avatar_pics (receiving end)
-    avatar = db.relationship("Avatar", back_populates='avatar_profiles')
+    avatar = db.relationship("Avatar", back_populates='avatar_profiles', lazy='subquery')
 
     # create a one to many relationship with watchlists
     profile_watchlists = db.relationship('Watchlist', back_populates="profile")

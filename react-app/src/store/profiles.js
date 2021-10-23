@@ -1,7 +1,7 @@
 const GET_PROFILES = 'profiles/GET_PROFILES'
 const ADD_PROFILE = 'profiles/ADD_PROFILE'
-// const UPDATE_COMMENT = "comments/update";
-// const DELETE_COMMENT = 'comment/DELETE'
+const UPDATE_PROFILE = "profiles/UPDATE_PROFILE";
+const DELETE_PROFILE = 'profiles/DELETE_PROFILE'
 
 const getProfiles = (profiles) => {
     return {
@@ -15,17 +15,17 @@ const addProfile = (profile) => ({
     profile
 })
 
-// const update = (comment) => ({
-//     type: UPDATE_COMMENT,
-//     comment,
-// });
+const updateProfile = (profile) => ({
+    type: UPDATE_PROFILE,
+    profile,
+});
 
-// const deleteComment = (deletedComment) => {
-//     return {
-//         type: DELETE_COMMENT,
-//         payload: deletedComment
-//     }
-// }
+const deleteProfile = (deletedProfile) => {
+    return {
+        type: DELETE_PROFILE,
+        payload: deletedProfile
+    }
+}
 
 
 
@@ -66,31 +66,31 @@ export const setProfile = (profile) => async dispatch => {
 }
 
 
-// export const editComment = (commentData) => async (dispatch) => {
-//     const response = await fetch (`/api/comments/edit/${commentData.id}`, {
-//       method: 'PUT',
-//       headers: {'Content-Type': 'application/json'},
-//       body: JSON.stringify(commentData),
-//     });
-//     if(response.ok) {
-//       const editComment = await response.json();
-//       dispatch(update(editComment));
-//       return editComment;
-//     }
-//     else{
-//         console.log("RESPONSE WAS NOT OK");
-//     }
-// };
+export const editProfile = (profile) => async (dispatch) => {
+    const response = await fetch (`/api/profiles/edit/${profile.id}`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(profile),
+    });
+    if(response.ok) {
+      const editProfile = await response.json();
+      dispatch(updateProfile(editProfile));
+      return editProfile;
+    }
+    else{
+        console.log("RESPONSE WAS NOT OK");
+    }
+};
 
 
-// export const deleteCommentThunk = (commentData) => async (dispatch) => {
-//     const response = await fetch(`/api/comments/delete/${commentData.id}`);
-//     if(response.ok){
-//         dispatch(deleteComment(commentData.id))
-//     }else{
-//         //error stuff
-//     }
-// }
+export const deleteProfileThunk = (profileData) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/delete/${profileData.id}`);
+    if(response.ok){
+        dispatch(deleteProfile(profileData.id))
+    }else{
+        //error stuff
+    }
+}
 
 const initialState = {}
 export default function profilesReducer(state= initialState, action) {
@@ -105,15 +105,15 @@ export default function profilesReducer(state= initialState, action) {
                 ...state,
                     [action.profile.id]: action.profile,
                 };
-        // case UPDATE_COMMENT: {
-        //     return {
-        //         ...state,
-        //         [action.comment.id]: action.comment,
-        //     };
-        // }
-        // case DELETE_COMMENT:
-        //     delete newState[action.payload]
-        //     return newState
+        case UPDATE_PROFILE: {
+            return {
+                ...state,
+                [action.profile.id]: action.profile,
+            };
+        }
+        case DELETE_PROFILE:
+            delete newState[action.payload]
+            return newState
         default:
             return state
     }

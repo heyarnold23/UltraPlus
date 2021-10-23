@@ -36,7 +36,7 @@ export default function SelectAvatar() {
                 <div id={styles.avatarContainer}>
                     {/* <div id={styles.avatarRow}> */}
                     {avatarsArr.map((avatar) =>
-                    <NavLink key={avatar.id} to={{pathname:'/create-profile', state: {avatar_id: `${avatar.id}`}}}>
+                    <NavLink key={avatar.id} to={{pathname:'/create-profile', state: {avatar_id: `${avatar.id}`, avatar_image_url: `${avatar.image_url}`}}}>
                         {/* pass in prop to navlink? */}
                         <div id={styles.avatarPic} style={{ backgroundImage: `url(${avatar.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                     </NavLink>

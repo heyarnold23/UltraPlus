@@ -19,7 +19,7 @@
 
 }
 
-#editProfileButton{
+#editProfile{
     display: flex;
     width: 160px;
     height: 40px;
@@ -32,10 +32,11 @@
     color: white;
     padding: 5px;
     font-weight: bold;
+    cursor: pointer;
     transition: background-color 200ms, color 200ms ;
 }
 
-#editProfileButton:hover{
+#editProfile:hover{
     background-color: rgba(99, 99, 99);
 }
 
@@ -92,4 +93,18 @@
 
 #profileName{
     margin-top: 20px;
+}
+
+
+#buttonDiv{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+    /* padding: 10px; */
+}
+
+#editDeleteButton{
+    font-size: 30px;
 }

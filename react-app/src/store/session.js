@@ -1,6 +1,10 @@
 // constants
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
+const ADD_MODAL_TYPE = "session/ADD_MODAL_TYPE"
+const MODAL_VIEW = "session/MODAL_VIEW"
+const MODAL_REQUIRED = "session/MODAL_REQUIRED"
+const PASSING_DATA = "session/PASSING_DATA"
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -9,7 +13,28 @@ const setUser = (user) => ({
 
 const removeUser = () => ({
   type: REMOVE_USER,
-})
+});
+
+export const addModal = (type) => {
+  return {
+    type:ADD_MODAL_TYPE,
+    payload:type
+  }
+}
+
+export const toggleModalView = (visible) => {
+  return {
+    type:MODAL_VIEW,
+    payload:visible
+  }
+}
+
+export const passData = (data) => {
+  return{
+    type: PASSING_DATA,
+    payload: data
+  }
+}
 
 const initialState = { user: null };
 
@@ -97,11 +122,28 @@ export const signUp = (email, password) => async (dispatch) => {
 }
 
 export default function reducer(state = initialState, action) {
+  const newState = {...state};
   switch (action.type) {
     case SET_USER:
       return { user: action.payload }
     case REMOVE_USER:
       return { user: null }
+    case ADD_MODAL_TYPE:{
+      newState.modalType=action.payload
+      return newState
+    }
+    case MODAL_VIEW:{
+      newState.modalView=action.payload
+      return newState
+    }
+    case MODAL_REQUIRED:{
+      newState.modalRequired=action.payload
+      return newState
+    }
+    case PASSING_DATA:{
+      newState.passingData=action.payload
+      return newState
+    }
     default:
       return state;
   }
