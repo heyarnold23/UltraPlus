@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
 import { editProfile, setProfile, deleteProfileThunk } from '../../store/profiles';
 import styles from './DeleteProfile.module.css'
+import { toggleModalView } from '../../store/session';
 
 
 export default function DeleteProfile() {
@@ -44,6 +45,8 @@ export default function DeleteProfile() {
         const data = dispatch(deleteProfileThunk(profileData));
         if (data) {
             history.push('/whos-watching')
+             dispatch(toggleModalView(false))
+
         }
 
 
