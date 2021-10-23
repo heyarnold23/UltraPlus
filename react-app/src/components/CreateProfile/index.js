@@ -1,9 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
-import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
 import { setProfile } from '../../store/profiles';
 import styles from './CreateProfile.module.css'
@@ -24,6 +23,7 @@ export default function CreateProfile() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setErrors([])
 
 
         const newProfile = {
@@ -31,16 +31,14 @@ export default function CreateProfile() {
         user_id: sessionUser.id,
         avatar_id: avatarId
         };
-        console.log(newProfile);
 
-        if(body.length > 0){
-            const data = dispatch(setProfile(newProfile));
-            if (data) {
-                setErrors(data)
-            }
+        const data = await dispatch(setProfile(newProfile));
+        if (Array.isArray(data)) {
+            await setErrors(data)
+        } else{
+            history.push('/whos-watching')
         }
-        history.push('/whos-watching')
-        setErrors(['NO WORK']);
+
 
     };
 
