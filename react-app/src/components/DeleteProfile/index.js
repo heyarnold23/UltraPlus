@@ -12,9 +12,10 @@ import styles from './DeleteProfile.module.css'
 export default function DeleteProfile() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
-    const data = useSelector(state => state.session.passingData)
+    let data = useSelector(state => state.session.passingData)
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const [id] = useState(data.id)
 
 
     useEffect(() => {
@@ -34,21 +35,17 @@ export default function DeleteProfile() {
         e.preventDefault();
 
 
-        // const updateProfile = {
-        //     id: profileId,
-        //     name: body,
-        //     user_id: sessionUser.id,
-        //     avatar_id: avatarId
-        // };
-        // console.log(updateProfile);
+        const profileData = {
+            id: id
+        };
 
-        // if (body.length > 0) {
-        //     const data = await dispatch(editProfile(updateProfile));
-        //     if (data) {
-        //         history.push('/whos-watching')
-        //     }
+        // console.log("\n\n\n\n\n\n PROFILE DATA", profileData, "\n\n\n\n\n\n\n\n\n\n");
+
+        // const data = await dispatch(editProfile(profileData));
+        // if (data) {
+        //     history.push('/whos-watching')
         // }
-        // setErrors(['NO WORK']);
+
 
     };
 
@@ -65,7 +62,7 @@ export default function DeleteProfile() {
                     <div id={styles.cancelButton}>
                         CANCEL
                     </div>
-                    <div id={styles.deleteButton} onClick>
+                    <div id={styles.deleteButton} onClick={handleDelete}>
                         DELETE
                     </div>
                 </div>
