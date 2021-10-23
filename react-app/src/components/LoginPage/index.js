@@ -4,10 +4,10 @@ import styles from './LoginPage.module.css'
 export default function LoginPage() {
     return (
         <>
-            <div>
-                Login Page
+            <div id={styles.page}>
+                <div id={styles.picDiv} />
+                <LoginForm />
             </div>
-            <LoginForm />
         </>
     );
 }

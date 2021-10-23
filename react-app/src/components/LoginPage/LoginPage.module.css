@@ -1,0 +1,17 @@
+#page{
+    display: flex;
+    height: 960px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #090b13;
+}
+
+#picDiv{
+    margin-top: 50px;
+    width: 700px;
+    height: 162px;
+    background-image: url(https://i.ibb.co/x50TSXN/Ultra-Plus-Logo.png);
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
