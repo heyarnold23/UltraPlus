@@ -68,6 +68,7 @@
     color: white;
     text-decoration: none;
     transition: color 200ms ;
+    cursor: pointer;
 }
 
 #signUpText:hover{

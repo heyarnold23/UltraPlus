@@ -67,6 +67,9 @@ const LoginForm = () => {
       <span id={styles.signUpMssg}>
           New to Ultra+? <NavLink id={styles.signUpText} to='/sign-up'>Sign Up</NavLink>
       </span>
+      <span id={styles.signUpMssg}>
+          Or Sign In As A <span id={styles.signUpText}  onClick = {()=>{dispatch(login("demo@aa.io","password"))}}>Demo User</span>
+      </span>
     </div>
   );
 };
