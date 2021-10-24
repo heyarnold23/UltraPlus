@@ -37,7 +37,7 @@ export default function WhosWatching() {
 
     const modal = (e, id, name) => {
         e.preventDefault()
-        const data ={
+        const data = {
             id,
             name
         }
@@ -79,13 +79,14 @@ export default function WhosWatching() {
                                             </NavLink>
                                         ) : (
                                             <>
-                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
-                                                <div id={styles.buttonDiv}>
-                                                    <NavLink to={{ pathname: '/edit-profile', state: { avatar_id: `${profile.avatar_pic_id}`, avatar_url: `${profile.avatar_pic.image_url}`, profile_name: `${profile.name}`, profile_id: `${profile.id}` } }}>
-                                                        <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
-                                                        {profile.avatar_id}
-                                                    </NavLink>
-                                                    <div id={styles.editDeleteButton} onClick={(e) => { modal(e, profile?.id, profile.name)}}><TiDeleteOutline /></div>
+                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                                    <div id={styles.buttonDiv}>
+                                                        <NavLink to={{ pathname: '/edit-profile', state: { avatar_id: `${profile.avatar_pic_id}`, avatar_url: `${profile.avatar_pic.image_url}`, profile_name: `${profile.name}`, profile_id: `${profile.id}` } }}>
+                                                            <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
+                                                            {profile.avatar_id}
+                                                        </NavLink>
+                                                        <div id={styles.editDeleteButton} onClick={(e) => { modal(e, profile?.id, profile.name) }}><TiDeleteOutline /></div>
+                                                    </div>
                                                 </div>
                                             </>
                                         )

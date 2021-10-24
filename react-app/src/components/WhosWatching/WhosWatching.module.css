@@ -117,8 +117,8 @@
     display: flex;
     justify-content: space-around;
     position: relative;
-    bottom: 20px;
     width: 100%;
+    top: 120px;
     /* padding: 10px; */
 }
 
