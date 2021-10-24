@@ -102,7 +102,7 @@ export default function WhosWatching() {
                         {/* and if they don't have profiles then show below */}
                         <div className={styles.profileDiv}>
                             <NavLink to='/select-avatar'>
-                                <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                             </NavLink>
                             <div id={styles.profileName}>
                                 Add Profile
