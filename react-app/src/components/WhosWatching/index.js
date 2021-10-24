@@ -75,11 +75,11 @@ export default function WhosWatching() {
                                     <div key={profile.id} className={styles.profileDiv}>
                                         {!showMenu ? (
                                             <NavLink to='/main'>
-                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                                             </NavLink>
                                         ) : (
                                             <>
-                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                                                 <div id={styles.buttonDiv}>
                                                     <NavLink to={{ pathname: '/edit-profile', state: { avatar_id: `${profile.avatar_pic_id}`, avatar_url: `${profile.avatar_pic.image_url}`, profile_name: `${profile.name}`, profile_id: `${profile.id}` } }}>
                                                         <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
