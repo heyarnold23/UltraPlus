@@ -115,3 +115,8 @@
     font-size: 25px;
     z-index: 1;
 }
+
+#errors{
+    margin-top: 20px;
+    color: white;
+}

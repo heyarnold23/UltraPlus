@@ -58,7 +58,7 @@ export default function CreateProfile() {
                         </div>
                         <div id={styles.profileForm}>
                             <form onSubmit={handleSubmit}>
-                                <div>
+                                <div id={styles.errors}>
                                     {errors.map((error, ind) => (
                                     <div key={ind}>{error}</div>
                                     ))}
