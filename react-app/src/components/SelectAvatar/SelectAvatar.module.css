@@ -5,7 +5,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #090b13;
+    background-color: rgb(26, 29, 41);
+    border-bottom: 1px solid rgb(75, 78, 90);
 
 }
 
@@ -27,7 +28,8 @@
     /* margin-top: 80px;
     margin-left: 80px; */
     flex-direction: column;
-    background-color: #090b13;
+    background-color: rgb(26, 29, 41)
+
 }
 
 #chooseDiv{
