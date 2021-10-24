@@ -64,20 +64,18 @@ export default function CreateProfile() {
                                     ))}
                                 </div>
                                 <div>
-                                    <label>Name</label>
                                     <input
+                                    id={styles.nameInput}
                                     type='text'
                                     name='name'
+                                    placeholder='Enter Name'
                                     onChange={(e) => setBody(e.target.value)}
                                     value={body}
                                     ></input>
                                 </div>
-                                <button type='submit'>SAVE</button>
+                                <button type='submit' id={styles.saveButton}>SAVE</button>
                             </form>
                         </div>
-                        <button id={styles.saveDiv} type='submit'>
-                            SAVE
-                        </button>
                     </div>
                     <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarImageUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 

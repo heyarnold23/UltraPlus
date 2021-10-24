@@ -7,6 +7,7 @@
     align-items: center;
     background-color: rgb(26, 29, 41);
     border-bottom: 1px solid rgb(75, 78, 90);
+
 }
 
 #navPic{
@@ -32,19 +33,33 @@
     width: 700px;
     height: 310px;
     margin-top: 80px;
-    background-color: tomato;
+    background-color: transparent
+}
+
+#nameInput{
+    margin-top: 5px;
+    width: 350px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: rgb(62, 65, 78);
+    color: white;
+    border: none;
 }
 
 #text{
     color: white;
     font-size: 30px;
+    font-weight: bold;
 }
 
 #picDiv{
     width: 207px;
     height: 207px;
     position: relative;
-    top: 50px;
+    top: 45px;
+    z-index: 0;
 }
 
 #profileForm{
@@ -58,4 +73,45 @@
     margin-top: 20px;
     margin-left: 50px;
     width: 70%;
+}
+
+#cancelButton{
+    display: flex;
+    width: 160px;
+    height: 40px;
+    background-color: rgb(75, 78, 90);
+    border-radius: 5px;
+    margin-right: 30px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 200ms, color 200ms ;
+}
+
+#saveButton{
+    width: 369px;
+    height: 54px;
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: rgb(0, 114, 210);
+    color: white;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+#editButton{
+    position: relative;
+    top: 215px;
+    right: 50px;
+    color: white;
+    font-size: 25px;
+    z-index: 1;
 }
