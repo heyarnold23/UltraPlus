@@ -81,15 +81,15 @@ export default function EditProfile() {
                                     ))}
                                 </div>
                                 <div>
-                                    <label>Name</label>
                                     <input
+                                        id={styles.nameInput}
                                         type='text'
                                         name='name'
                                         onChange={updateBody}
                                         value={body}
                                     ></input>
                                 </div>
-                                <button type='submit'>SAVE</button>
+                                <button type='submit' id={styles.saveButton}>SAVE</button>
                             </form>
                         </div>
                         {/* <button id={styles.saveDiv} type='submit'>

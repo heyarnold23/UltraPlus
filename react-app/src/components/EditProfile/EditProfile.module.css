@@ -33,12 +33,25 @@
     width: 700px;
     height: 310px;
     margin-top: 80px;
-    background-color: tomato;
+    background-color: transparent
+}
+
+#nameInput{
+    margin-top: 5px;
+    width: 350px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: rgb(62, 65, 78);
+    color: white;
+    border: none;
 }
 
 #text{
     color: white;
     font-size: 30px;
+    font-weight: bold;
 }
 
 #picDiv{
@@ -76,4 +89,19 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 200ms, color 200ms ;
+}
+
+#saveButton{
+    width: 369px;
+    height: 54px;
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: rgb(0, 114, 210);
+    color: white;
+    cursor: pointer;
+    transition: background-color 300ms;
 }
