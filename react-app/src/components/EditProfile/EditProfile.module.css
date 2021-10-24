@@ -59,6 +59,7 @@
     height: 207px;
     position: relative;
     top: 50px;
+    z-index: 0;
 }
 
 #profileForm{
@@ -104,4 +105,13 @@
     color: white;
     cursor: pointer;
     transition: background-color 300ms;
+}
+
+#editButton{
+    position: relative;
+    top: 215px;
+    right: 50px;
+    color: white;
+    font-size: 25px;
+    z-index: 1;
 }

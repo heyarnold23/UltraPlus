@@ -99,7 +99,7 @@ export default function EditProfile() {
                     <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                     <NavLink to={{ pathname: '/select-avatar', state: { fromEditProfile: true, profileName: profileName, profileId: profileId } }}>
                         <div id={styles.buttonDiv}>
-                            <div id={styles.editDeleteButton}><MdOutlineEditLocationAlt /></div>
+                            <div id={styles.editButton}><MdOutlineEditLocationAlt /></div>
                         </div>
                     </NavLink>
 
