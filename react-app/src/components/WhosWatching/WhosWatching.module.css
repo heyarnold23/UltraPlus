@@ -97,6 +97,12 @@
     transition: box-shadow 300ms, transform 300ms;
 }
 
+#profilePicEdit{
+    width: 135px;
+    height: 140px;
+    border-radius: 50%;
+}
+
 #profilePic:hover{
     box-shadow: 0px 0px 15px rgb(224, 224, 224);
     transform:scale(1.1);
