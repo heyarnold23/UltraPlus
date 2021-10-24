@@ -9,10 +9,7 @@
     align-items: center;
 }
 
-#secondHalf{
-    height: 1140px;
-    background-color: #090b13;
-}
+
 
 #invisibleNav{
     position: fixed;
@@ -67,5 +64,54 @@
 
 #signUpInMid{
     margin-top: 50px;
-    background-color: cornsilk;
+    background-color: transparent;
+}
+
+#signButton{
+    color: white;
+    transition: color 200ms ;
+}
+
+#signButton:hover{
+    background-color: transparent;
+    color: rgb(109, 177, 233);
+
+}
+
+
+#secondHalf{
+    /* height: 1140px; */
+    background-color: #090b13;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#headerText{
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 125px;
+    color: white;
+}
+
+#subText{
+    color: #A5A5A5;
+    margin-top: 25px;
+}
+
+#showContainer{
+    margin-top: 25px;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 25px;
+    margin-bottom: 100px;
+}
+
+#showImage{
+    width: 450px;
+    height: 244px;
+    border-radius: 4px;
 }

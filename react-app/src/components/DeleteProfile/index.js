@@ -14,7 +14,6 @@ export default function DeleteProfile() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     let data = useSelector(state => state.session.passingData)
-    const [errors, setErrors] = useState([]);
     const history = useHistory();
     const [id] = useState(data.id)
 
@@ -52,6 +51,10 @@ export default function DeleteProfile() {
 
     };
 
+    const closeModal = async () => {
+        dispatch(toggleModalView(false))
+    };
+
     return (
         <>
             <div id={styles.main}>
@@ -62,7 +65,7 @@ export default function DeleteProfile() {
                     This profile along with its watchlist will also be deleted. There is no way to undo this.
                 </div>
                 <div id={styles.buttonDiv}>
-                    <div id={styles.cancelButton}>
+                    <div id={styles.cancelButton} onClick={closeModal}>
                         CANCEL
                     </div>
                     <div id={styles.deleteButton} onClick={handleDelete}>

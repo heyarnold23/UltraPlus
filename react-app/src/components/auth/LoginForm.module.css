@@ -1,0 +1,82 @@
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+#loginText{
+    color: white;
+    font-size: 24px;
+}
+
+#formHolder{
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    margin-top: 35px;
+}
+
+#emailDiv{
+    margin-top: 25px;
+    width: 374px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: rgb(62, 65, 78);
+    color: white;
+    border: none;
+}
+
+#passwordDiv{
+    margin-top: 25px;
+    width: 374px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: rgb(62, 65, 78);
+    color: white;
+    border: none;
+}
+
+#loginDiv{
+    width: 394px;
+    height: 54px;
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: rgb(0, 114, 210);
+    color: white;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+#loginDiv:hover{
+    background-color: rgb(1, 129, 233);
+}
+
+#signUpMssg{
+    margin-top: 40px;
+    color: #A5A5A5;
+    font-size: 15px;
+}
+
+#signUpText{
+    color: white;
+    text-decoration: none;
+    transition: color 200ms ;
+    cursor: pointer;
+}
+
+#signUpText:hover{
+    color: rgb(109, 177, 233);
+    text-decoration: underline;
+}
+
+#errors{
+    margin-top: 20px;
+    color: white;
+}

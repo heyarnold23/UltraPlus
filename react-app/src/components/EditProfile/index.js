@@ -7,6 +7,8 @@ import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
 import { editProfile, setProfile } from '../../store/profiles';
 import styles from './EditProfile.module.css'
+import { MdOutlineEditLocationAlt } from 'react-icons/md'
+
 
 
 export default function EditProfile() {
@@ -47,13 +49,13 @@ export default function EditProfile() {
         };
         console.log(updateProfile);
 
-        if (body.length > 0) {
-            const data = await dispatch(editProfile(updateProfile));
-            if (data) {
-                history.push('/whos-watching')
-            }
+
+        const data = await dispatch(editProfile(updateProfile));
+        if (Array.isArray(data)) {
+            await setErrors(data)
+        } else {
+            history.push('/whos-watching')
         }
-        setErrors(['NO WORK']);
 
     };
 
@@ -73,21 +75,21 @@ export default function EditProfile() {
                         </div>
                         <div id={styles.profileForm}>
                             <form onSubmit={handleSubmit}>
-                                <div>
+                                <div id={styles.errors}>
                                     {errors.map((error, ind) => (
                                         <div key={ind}>{error}</div>
                                     ))}
                                 </div>
                                 <div>
-                                    <label>Name</label>
                                     <input
+                                        id={styles.nameInput}
                                         type='text'
                                         name='name'
                                         onChange={updateBody}
                                         value={body}
                                     ></input>
                                 </div>
-                                <button type='submit'>SAVE</button>
+                                <button type='submit' id={styles.saveButton}>SAVE</button>
                             </form>
                         </div>
                         {/* <button id={styles.saveDiv} type='submit'>
@@ -95,6 +97,12 @@ export default function EditProfile() {
                         </button> */}
                     </div>
                     <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                    <NavLink to={{ pathname: '/select-avatar', state: { fromEditProfile: true, profileName: profileName, profileId: profileId } }}>
+                        <div id={styles.buttonDiv}>
+                            <div id={styles.editButton}><MdOutlineEditLocationAlt /></div>
+                        </div>
+                    </NavLink>
+
                 </div>
             </div>
         </>

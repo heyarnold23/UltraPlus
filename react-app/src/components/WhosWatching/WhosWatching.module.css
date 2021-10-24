@@ -5,7 +5,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #090b13;
+    background-color: rgb(26, 29, 41);
+    border-bottom: 1px solid rgb(75, 78, 90);
 
 }
 
@@ -46,20 +47,23 @@
     height: 910px;
     justify-content: center;
     /* align-items: center; */
-    margin-top: 80px;
+    /* margin-top: 80px; */
+    background-color: rgb(26, 29, 41);
 }
 
 #midContainer{
     display: flex;
     width: 1343px;
     height: 800px;
-    background-color: rgb(7, 7, 124);
+    background-color: rgb(26, 29, 41);
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 #whosDiv{
     display: flex;
+    margin-top: 80px;
     height: 62px;
     align-items: center;
     font-size: 32px;
@@ -81,18 +85,37 @@
     display: flex;
     width: 176px;
     height: 228px;
-    background-color: red;
+    background-color: transparent;
     flex-direction: column;
     align-items: center;
 }
 
 #profilePic{
-    width: 140px;
+    width: 135px;
     height: 140px;
+    border-radius: 50%;
+    transition: box-shadow 300ms, transform 300ms;
+}
+
+#profilePicEdit{
+    width: 135px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+#profilePic:hover{
+    box-shadow: 0px 0px 15px rgb(224, 224, 224);
+    transform:scale(1.1);
+
 }
 
 #profileName{
     margin-top: 20px;
+    overflow-wrap: break-word;
+    width: 140px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 
@@ -100,11 +123,35 @@
     display: flex;
     justify-content: space-around;
     position: relative;
-    bottom: 20px;
     width: 100%;
+    top: 120px;
     /* padding: 10px; */
 }
 
 #editDeleteButton{
     font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#editButton{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+#editButton:hover{
+    color: rgb(109, 177, 233);
+}
+
+#deleteButton{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+#deleteButton:hover{
+    color: red;
 }
