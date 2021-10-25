@@ -28,7 +28,20 @@
 }
 
 #profileDiv{
-    margin-right: 30px;
+    display: flex;
+    /* margin-right: 30px; */
+    width: 165px;
+    align-items: center;
+}
+
+#nameText{
+    width: 80px;
+    /* margin-right: 20px; */
+}
+
+#profilePic{
+    width: 60px;
+    height: 60px;
 }
 
 #linksDiv{

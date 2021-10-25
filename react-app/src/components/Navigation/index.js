@@ -42,8 +42,9 @@ export default function Navigation() {
           </NavLink>
         </div>
       </div>
-      <div id={styles.profileDiv}>
-        Profile Pic
+      <div id={styles.profileDiv} >
+        <div id={styles.nameText}>{foundProfile?.name}</div>
+        <div id={styles.profilePic} style={{ backgroundImage: `url(${foundProfile?.avatar_pic?.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
       </div>
     </div>
   );
