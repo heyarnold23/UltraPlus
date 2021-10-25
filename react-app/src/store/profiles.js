@@ -10,7 +10,7 @@ const getProfiles = (profiles) => {
     }
 }
 
-const addProfile = (profile) => ({
+const postProfile = (profile) => ({
     type: ADD_PROFILE,
     profile
 })
@@ -40,7 +40,7 @@ export const getProfilesThunk = (id) => async (dispatch) => {
 }
 
 
-export const setProfile = (profile) => async dispatch => {
+export const addProfile = (profile) => async dispatch => {
     // const commentBody = JSON.stringify({body: newComment.body, author_id: newComment.author_id, run_id: newComment.run_id})
     const response = await fetch('/api/profiles', {
         method: 'POST',
@@ -52,7 +52,7 @@ export const setProfile = (profile) => async dispatch => {
 
     if(response.ok){
         const data = await response.json();
-        dispatch(addProfile(data));
+        dispatch(postProfile(data));
         return (data);
     } else if (response.status < 500) {
         const data = await response.json();
