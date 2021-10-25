@@ -41,11 +41,17 @@ class Show(db.Model):
             'details_body': self.details_body,
             'studio': self.studio,
             'year': self.year,
-            'duration': self.duration,
             'video_url': self.video_url
 
             # can establish new keys for relationships above like below
             # 'user_name': self.runnings.to_dict(),
             # 'comments': [comment.to_dict() for comment in self.comments]
 
+        }
+
+    def main_to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'thumbnail_url': self.thumbnail_url
         }
