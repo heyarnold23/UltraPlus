@@ -1,5 +1,6 @@
 const GET_PROFILES = 'profiles/GET_PROFILES'
 const SET_PROFILE = 'profiles/SET_PROFILE'
+const REMOVE_PROFILE = 'profiles/REMOVE_PROFILE'
 const ADD_PROFILE = 'profiles/ADD_PROFILE'
 const UPDATE_PROFILE = "profiles/UPDATE_PROFILE";
 const DELETE_PROFILE = 'profiles/DELETE_PROFILE'
@@ -18,6 +19,10 @@ const setProfile = (profile) => {
         payload: profile
     }
 }
+
+const removeProfile = () => ({
+    type: REMOVE_PROFILE
+});
 
 const postProfile = (profile) => ({
     type: ADD_PROFILE,
@@ -50,13 +55,7 @@ export const getProfilesThunk = (id) => async (dispatch) => {
 
 // setOneProfile thunk
 export const setProfileThunk = (id) => async (dispatch) => {
-    const response = await fetch(`/api/profiles/set/${id}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(id)
-    });
+    const response = await fetch(`/api/profiles/set/${id}`);
 
 
     if (response.ok) {
@@ -72,7 +71,12 @@ export const setProfileThunk = (id) => async (dispatch) => {
       return ['An error occurred. Please try again.']
     }
 
-  }
+}
+
+export const removeProfileThunk = () => async (dispatch) => {
+      dispatch(removeProfile());
+};
+
 
 
 export const addProfile = (profile) => async dispatch => {
@@ -142,6 +146,9 @@ export default function profilesReducer(state= initialState, action) {
             return newState
         case SET_PROFILE:
             return { profile: action.payload }
+        case REMOVE_PROFILE:
+            delete newState['profile']
+            return newState
         case ADD_PROFILE:
             return {
                 ...state,

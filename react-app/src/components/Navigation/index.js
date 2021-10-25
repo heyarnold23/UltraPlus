@@ -9,6 +9,8 @@ import {AiOutlineSearch} from 'react-icons/ai'
 
 export default function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  //need to get profile every time
+  // const profileUser = useSelector(state => state?.profiles?.profile)
   const dispatch = useDispatch();
 
     useEffect(() => {
