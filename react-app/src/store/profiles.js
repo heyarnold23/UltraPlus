@@ -1,4 +1,5 @@
 const GET_PROFILES = 'profiles/GET_PROFILES'
+const SET_PROFILE = 'profiles/SET_PROFILE'
 const ADD_PROFILE = 'profiles/ADD_PROFILE'
 const UPDATE_PROFILE = "profiles/UPDATE_PROFILE";
 const DELETE_PROFILE = 'profiles/DELETE_PROFILE'
@@ -7,6 +8,14 @@ const getProfiles = (profiles) => {
     return {
         type: GET_PROFILES,
         payload: profiles
+    }
+}
+
+// set one profile thunk
+const setProfile = (profile) => {
+    return {
+        type: SET_PROFILE,
+        payload: profile
     }
 }
 
@@ -38,6 +47,32 @@ export const getProfilesThunk = (id) => async (dispatch) => {
         return data
     }
 }
+
+// setOneProfile thunk
+export const setProfileThunk = (id) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/set/${id}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(id)
+    });
+
+
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(setProfile(data))
+      return null;
+    } else if (response.status < 500) {
+      const data = await response.json();
+      if (data.errors) {
+        return data.errors;
+      }
+    } else {
+      return ['An error occurred. Please try again.']
+    }
+
+  }
 
 
 export const addProfile = (profile) => async dispatch => {
@@ -105,6 +140,8 @@ export default function profilesReducer(state= initialState, action) {
             console.log("THIS IS ACTION PAYLOAD",action.payload)
             newState = {...state, ...action.payload}
             return newState
+        case SET_PROFILE:
+            return { profile: action.payload }
         case ADD_PROFILE:
             return {
                 ...state,

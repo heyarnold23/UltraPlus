@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
-import { getProfilesThunk } from '../../store/profiles'
+import { getProfilesThunk, setProfileThunk } from '../../store/profiles'
 import { MdOutlineEditLocationAlt } from 'react-icons/md'
 import { TiDeleteOutline } from 'react-icons/ti'
 import styles from './WhosWatching.module.css';
@@ -45,9 +45,11 @@ export default function WhosWatching() {
         dispatch(toggleModalView(true))
         dispatch(passData(data))
     }
-    // if (!sessionUser) {
-    //     return <Redirect to='/main' />;
-    // }
+
+    // Add onclick function here to dispatch the setProfile thunk
+    const setProfile = (id) => {
+        dispatch(setProfileThunk(id))
+    }
 
     const profiles = useSelector(store => store?.profiles)
     const profileArr = Object.values(profiles)
@@ -75,7 +77,7 @@ export default function WhosWatching() {
                                     <div key={profile.id} className={styles.profileDiv}>
                                         {!showMenu ? (
                                             <NavLink to='/main'>
-                                                <div id={styles.profilePic} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                                <div id={styles.profilePic} onClick={(e) => {setProfile(profile?.id)}} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                                             </NavLink>
                                         ) : (
                                             <>
