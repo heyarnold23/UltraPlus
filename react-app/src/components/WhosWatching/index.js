@@ -48,7 +48,8 @@ export default function WhosWatching() {
 
     // Add onclick function here to dispatch the setProfile thunk
     const setProfile = (id) => {
-        dispatch(setProfileThunk(id))
+        // dispatch(setProfileThunk(id))
+        localStorage.setItem('profile', id)
     }
 
     const profiles = useSelector(store => store?.profiles)
