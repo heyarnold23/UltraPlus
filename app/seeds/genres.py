@@ -3,10 +3,8 @@ from app.models import db, Genre
 
 
 def seed_genres():
-    action = Genre(
-        name='Action')
-    adventure = Genre(
-        name='Adventure')
+    action_adventure = Genre(
+        name='Action/Adventure')
     comedy = Genre(
         name='Comedy')
     drama = Genre(
@@ -28,8 +26,7 @@ def seed_genres():
     sports = Genre(
         name='Sports')
 
-    db.session.add(action)
-    db.session.add(adventure)
+    db.session.add(action_adventure)
     db.session.add(comedy)
     db.session.add(drama)
     db.session.add(fantasy)

@@ -19,7 +19,6 @@ class Show(db.Model):
     details_body = db.Column(db.Text, nullable = False)
     studio = db.Column(db.String(50), nullable = False)
     year = db.Column(db.String(50), nullable = False)
-    duration = db.Column(db.String(50), nullable = False)
     video_url = db.Column(db.Text, nullable = False)
 
 

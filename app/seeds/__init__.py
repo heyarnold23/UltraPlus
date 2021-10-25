@@ -3,6 +3,7 @@ from .users import seed_users, undo_users
 from .avatars import seed_avatars, undo_avatars
 from .profiles import seed_profiles, undo_profiles
 from .genres import seed_genres, undo_genres
+from .shows import seed_shows, undo_shows
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -16,6 +17,7 @@ def seed():
     seed_avatars()
     seed_profiles()
     seed_genres()
+    seed_shows()
     # Add other seed functions here
 
 
@@ -26,4 +28,5 @@ def undo():
     undo_avatars()
     undo_profiles()
     undo_genres()
+    undo_shows()
     # Add other undo functions here
