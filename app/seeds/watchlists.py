@@ -11,7 +11,9 @@ def seed_watchlists():
         name="ThisisMarnie's", profile_id=3)
 
 
-    db.session.add()
+    db.session.add(demo)
+    db.session.add(demo2)
+    db.session.add(marnie)
 
     db.session.commit()
 
