@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import styles from './Navigation.module.css'
+import { useDispatch, useSelector } from 'react-redux'
 import {AiFillHome} from 'react-icons/ai'
 import {AiOutlinePlus} from 'react-icons/ai'
 import {AiOutlineSearch} from 'react-icons/ai'
 
 export default function Navigation() {
+  const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+
+    useEffect(() => {
+      // have dispatch here to get the profile set after choosing a profile
+      // dispatch(getAvatarsThunk())
+  }, [dispatch])
+
   return (
     <div id={styles.navContainer}>
       <div id={styles.navPicLinkDiv}>

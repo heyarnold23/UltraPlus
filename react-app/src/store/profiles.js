@@ -28,7 +28,7 @@ const deleteProfile = (deletedProfile) => {
 }
 
 
-
+// this gets all profiles one user has
 export const getProfilesThunk = (id) => async (dispatch) => {
     const response = await fetch(`/api/profiles/${id}`)
 
