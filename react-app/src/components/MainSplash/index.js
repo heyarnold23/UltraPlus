@@ -8,16 +8,21 @@ import styles from './MainSplash.module.css'
 export default function MainSplash() {
 
 
-    const profileId = localStorage.getItem('profile')
-    console.log(profileId);
+    // dispatch for shows
+    // const profileId = localStorage.getItem('profile')
+    // console.log(profileId);
 
     return (
-        <>
-            <div id={styles.page}>
-                MAIN SPLASH
-
+        <div id={styles.page}>
+            <div id={styles.carousel}>
+                PLACEHOLDER
             </div>
-            <LogoutButton />
-        </>
+            <div id={styles.studiosContainer}>
+                studios placeholder
+            </div>
+            <div id={styles.showContainer}>
+                {/* map out the shows object */}
+            </div>
+        </div>
     );
 }
