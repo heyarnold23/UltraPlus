@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {AiFillHome} from 'react-icons/ai'
 import {AiOutlinePlus} from 'react-icons/ai'
 import {AiOutlineSearch} from 'react-icons/ai'
+import { getProfilesThunk } from '../../store/profiles';
 
 export default function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -13,15 +14,14 @@ export default function Navigation() {
   // const profileUser = useSelector(state => state?.profiles?.profile)
   const dispatch = useDispatch();
   const userArr = sessionUser?.profiles
-  const profileId = localStorage.getItem('profile')
+  const profileId = localStorage?.getItem('profile')
   const foundProfile = userArr?.find((profile) => profile?.id == profileId)
 
     console.log('foundProfile in nav',foundProfile);
 
     useEffect(() => {
-      // have dispatch here to get the profile set after choosing a profile
-      // dispatch(getAvatarsThunk())
-  }, [dispatch])
+      dispatch(getProfilesThunk(sessionUser.id))
+    }, [dispatch, sessionUser])
 
   return (
     <div id={styles.navContainer}>

@@ -77,9 +77,9 @@ export default function WhosWatching() {
                                 (sessionUser.id === profile.user_id) && (
                                     <div key={profile.id} className={styles.profileDiv}>
                                         {!showMenu ? (
-                                            <NavLink to='/main'>
+                                            <a href='/main'>
                                                 <div id={styles.profilePic} onClick={(e) => {setProfile(profile?.id)}} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
-                                            </NavLink>
+                                            </a>
                                         ) : (
                                             <>
                                                 <div id={styles.profilePicEdit} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>

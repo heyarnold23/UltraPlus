@@ -15,7 +15,7 @@ export default function MainSplash() {
         <>
             <div id={styles.page}>
                 MAIN SPLASH
-                
+
             </div>
             <LogoutButton />
         </>
