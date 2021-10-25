@@ -1,37 +1,34 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import styles from './Navigation.module.css'
+import {AiFillHome} from 'react-icons/ai'
+import {AiOutlinePlus} from 'react-icons/ai'
+import {AiOutlineSearch} from 'react-icons/ai'
 
-export default function Navigation () {
+export default function Navigation() {
   return (
-    <nav id={styles.navbarListContainer}>
-      <ul id={styles.navbarList}>
-        <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
+    <div id={styles.navContainer}>
+      <div id={styles.navPicLinkDiv}>
+        <div id={styles.navPic} />
+        <div id={styles.linksDiv}>
+          <NavLink to='/main' className={styles.link}>
+            <AiFillHome className={styles.icon}/>
+            HOME
           </NavLink>
-        </li>
-        <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
+          <NavLink to='/watchlist' className={styles.link}>
+            <AiOutlinePlus className={styles.icon}/>
+            WATCHLIST
           </NavLink>
-        </li>
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
+          <NavLink to='/search' className={styles.link}>
+            <AiOutlineSearch className={styles.icon}/>
+            SEARCH
           </NavLink>
-        </li>
-        <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton />
-        </li>
-      </ul>
-    </nav>
+        </div>
+      </div>
+      <div id={styles.profileDiv}>
+        Profile Pic
+      </div>
+    </div>
   );
 }
