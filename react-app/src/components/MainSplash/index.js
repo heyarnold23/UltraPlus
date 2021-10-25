@@ -7,7 +7,7 @@ import styles from './MainSplash.module.css'
 export default function MainSplash() {
     return (
         <>
-            <div>
+            <div id={styles.page}>
                 MAIN SPLASH
             </div>
             <LogoutButton />

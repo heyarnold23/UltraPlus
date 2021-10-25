@@ -14,15 +14,15 @@ export default function Navigation() {
         <div id={styles.linksDiv}>
           <NavLink to='/main' className={styles.link}>
             <AiFillHome className={styles.icon}/>
-            HOME
+            <span className={styles.text}>HOME</span>
           </NavLink>
           <NavLink to='/watchlist' className={styles.link}>
             <AiOutlinePlus className={styles.icon}/>
-            WATCHLIST
+            <span className={styles.text}>WATCHLIST</span>
           </NavLink>
           <NavLink to='/search' className={styles.link}>
             <AiOutlineSearch className={styles.icon}/>
-            SEARCH
+            <span className={styles.text}>SEARCH</span>
           </NavLink>
         </div>
       </div>

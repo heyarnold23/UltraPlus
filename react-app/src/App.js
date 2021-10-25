@@ -57,8 +57,8 @@ function App() {
         <ProtectedRoute path='/edit-profile' exact={true} >
           <EditProfile/>
         </ProtectedRoute>
-      <NavBar />
         <ProtectedRoute path='/main' exact={true} >
+          <NavBar />
           <MainSplash/>
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
