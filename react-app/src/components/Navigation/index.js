@@ -12,6 +12,11 @@ export default function Navigation() {
   //need to get profile every time
   // const profileUser = useSelector(state => state?.profiles?.profile)
   const dispatch = useDispatch();
+  const userArr = sessionUser?.profiles
+  const profileId = localStorage.getItem('profile')
+  const foundProfile = userArr?.find((profile) => profile?.id == profileId)
+
+    console.log('foundProfile in nav',foundProfile);
 
     useEffect(() => {
       // have dispatch here to get the profile set after choosing a profile
