@@ -17,6 +17,7 @@ import SelectAvatar from './components/SelectAvatar';
 import CreateProfile from './components/CreateProfile';
 import EditProfile from './components/EditProfile';
 import { authenticate } from './store/session';
+import Watchlist from './components/Watchlist';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -58,7 +59,12 @@ function App() {
           <EditProfile/>
         </ProtectedRoute>
         <ProtectedRoute path='/main' exact={true} >
+          <NavBar />
           <MainSplash/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/watchlist' exact={true} >
+          <NavBar />
+          <Watchlist/>
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -66,7 +72,6 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-      <NavBar />
         {/* <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute> */}

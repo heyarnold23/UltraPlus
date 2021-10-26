@@ -1,4 +1,6 @@
 const GET_PROFILES = 'profiles/GET_PROFILES'
+const SET_PROFILE = 'profiles/SET_PROFILE'
+const REMOVE_PROFILE = 'profiles/REMOVE_PROFILE'
 const ADD_PROFILE = 'profiles/ADD_PROFILE'
 const UPDATE_PROFILE = "profiles/UPDATE_PROFILE";
 const DELETE_PROFILE = 'profiles/DELETE_PROFILE'
@@ -10,7 +12,19 @@ const getProfiles = (profiles) => {
     }
 }
 
-const addProfile = (profile) => ({
+// set one profile thunk
+const setProfile = (profile) => {
+    return {
+        type: SET_PROFILE,
+        payload: profile
+    }
+}
+
+const removeProfile = () => ({
+    type: REMOVE_PROFILE
+});
+
+const postProfile = (profile) => ({
     type: ADD_PROFILE,
     profile
 })
@@ -28,7 +42,7 @@ const deleteProfile = (deletedProfile) => {
 }
 
 
-
+// this gets all profiles one user has
 export const getProfilesThunk = (id) => async (dispatch) => {
     const response = await fetch(`/api/profiles/${id}`)
 
@@ -39,8 +53,33 @@ export const getProfilesThunk = (id) => async (dispatch) => {
     }
 }
 
+// setOneProfile thunk
+export const setProfileThunk = (id) => async (dispatch) => {
+    const response = await fetch(`/api/profiles/set/${id}`);
 
-export const setProfile = (profile) => async dispatch => {
+
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(setProfile(data))
+      return null;
+    } else if (response.status < 500) {
+      const data = await response.json();
+      if (data.errors) {
+        return data.errors;
+      }
+    } else {
+      return ['An error occurred. Please try again.']
+    }
+
+}
+
+export const removeProfileThunk = () => async (dispatch) => {
+      dispatch(removeProfile());
+};
+
+
+
+export const addProfile = (profile) => async dispatch => {
     // const commentBody = JSON.stringify({body: newComment.body, author_id: newComment.author_id, run_id: newComment.run_id})
     const response = await fetch('/api/profiles', {
         method: 'POST',
@@ -52,7 +91,7 @@ export const setProfile = (profile) => async dispatch => {
 
     if(response.ok){
         const data = await response.json();
-        dispatch(addProfile(data));
+        dispatch(postProfile(data));
         return (data);
     } else if (response.status < 500) {
         const data = await response.json();
@@ -104,6 +143,11 @@ export default function profilesReducer(state= initialState, action) {
         case GET_PROFILES:
             console.log("THIS IS ACTION PAYLOAD",action.payload)
             newState = {...state, ...action.payload}
+            return newState
+        case SET_PROFILE:
+            return { profile: action.payload }
+        case REMOVE_PROFILE:
+            delete newState['profile']
             return newState
         case ADD_PROFILE:
             return {

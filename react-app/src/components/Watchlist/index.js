@@ -7,12 +7,12 @@ import { Redirect } from 'react-router-dom';
 import { getProfilesThunk, setProfileThunk } from '../../store/profiles'
 import { MdOutlineEditLocationAlt } from 'react-icons/md'
 import { TiDeleteOutline } from 'react-icons/ti'
-import styles from './WhosWatching.module.css';
+import styles from './Watchlist.module.css';
 import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
 
 
-export default function WhosWatching() {
+export default function Watchlist() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
@@ -35,26 +35,27 @@ export default function WhosWatching() {
         setShowMenu(false)
     }
 
+    // maybe make a delete modal and an edit modal?
     const modal = (e, id, name) => {
         e.preventDefault()
         const data = {
             id,
             name
         }
-        dispatch(addModal("deleteProfile"))
+        // dispatch(addModal("deleteProfile"))
         dispatch(toggleModalView(true))
         dispatch(passData(data))
     }
 
     // Add onclick function here to dispatch the setProfile thunk
-    const setProfile = (id) => {
-        // dispatch(setProfileThunk(id))
-        localStorage.setItem('profile', id)
-    }
+    // const setProfile = (id) => {
+    //     // dispatch(setProfileThunk(id))
+    //     localStorage.setItem('profile', id)
+    // }
 
-    const profiles = useSelector(store => store?.profiles)
-    const profileArr = Object.values(profiles)
-    console.log("\n\n\n\n\n\n profilessss", profileArr, "\n\n\n\n\n\n\n\n\n\n");
+    // const profiles = useSelector(store => store?.profiles)
+    // const profileArr = Object.values(profiles)
+    // console.log("\n\n\n\n\n\n profilessss", profileArr, "\n\n\n\n\n\n\n\n\n\n");
 
 
     return (
@@ -66,12 +67,11 @@ export default function WhosWatching() {
                 ) : <span id={styles.editProfile} onClick={closeMenu}>CANCEL</span>}
             </div>
             <div id={styles.page}>
-                <div id={styles.midContainer}>
+                {/* <div id={styles.midContainer}>
                     <div id={styles.whosDiv}>
                         <span id={styles.whosText}>Who's Watching?</span>
                     </div>
                     <div id={styles.profileContainer}>
-                        {/* here, do mappings for profiles based on user's id */}
                         {profileArr.map((profile) => {
                             return (
                                 (sessionUser.id === profile.user_id) && (
@@ -103,7 +103,6 @@ export default function WhosWatching() {
                         }
 
                         )}
-                        {/* and if they don't have profiles then show below */}
                         <div className={styles.profileDiv}>
                             <NavLink to='/select-avatar'>
                                 <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
@@ -113,7 +112,7 @@ export default function WhosWatching() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             {modalView ? (<FormModal />) : null}
         </>

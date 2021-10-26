@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
-import { editProfile, setProfile } from '../../store/profiles';
+import { editProfile, addProfile } from '../../store/profiles';
 import styles from './EditProfile.module.css'
 import { MdOutlineEditLocationAlt } from 'react-icons/md'
 

@@ -19,7 +19,6 @@ class Show(db.Model):
     details_body = db.Column(db.Text, nullable = False)
     studio = db.Column(db.String(50), nullable = False)
     year = db.Column(db.String(50), nullable = False)
-    duration = db.Column(db.String(50), nullable = False)
     video_url = db.Column(db.Text, nullable = False)
 
 
@@ -42,11 +41,17 @@ class Show(db.Model):
             'details_body': self.details_body,
             'studio': self.studio,
             'year': self.year,
-            'duration': self.duration,
             'video_url': self.video_url
 
             # can establish new keys for relationships above like below
             # 'user_name': self.runnings.to_dict(),
             # 'comments': [comment.to_dict() for comment in self.comments]
 
+        }
+
+    def main_to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'thumbnail_url': self.thumbnail_url
         }

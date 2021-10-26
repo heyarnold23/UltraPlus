@@ -4,7 +4,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import LogoutButton from '../auth/LogoutButton';
 import { getAvatarsThunk } from '../../store/avatars'
-import { setProfile } from '../../store/profiles';
+import { addProfile } from '../../store/profiles';
 import styles from './CreateProfile.module.css'
 
 export default function CreateProfile() {
@@ -32,7 +32,7 @@ export default function CreateProfile() {
         avatar_id: avatarId
         };
 
-        const data = await dispatch(setProfile(newProfile));
+        const data = await dispatch(addProfile(newProfile));
         if (Array.isArray(data)) {
             await setErrors(data)
         } else{

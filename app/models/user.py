@@ -28,5 +28,8 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
-            'email': self.email
+            'email': self.email,
+            'profiles': [profile.to_dict() for profile in self.user_profiles]
+            # 'comments': [comment.to_dict() for comment in self.comments]
+
         }

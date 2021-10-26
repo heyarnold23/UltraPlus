@@ -7,6 +7,7 @@ import configureStore from './store';
 import { ModalProvider } from './context/Modal';
 import * as profileActions from './store/profiles'
 import * as avatarActions from './store/avatars'
+import * as showActions from './store/shows'
 
 
 const store = configureStore();
@@ -15,6 +16,7 @@ if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.profileActions = profileActions;
   window.avatarActions = avatarActions;
+  window.showActions = showActions;
 }
 
 

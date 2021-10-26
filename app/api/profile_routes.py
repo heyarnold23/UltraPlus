@@ -19,6 +19,11 @@ def profiles_by_user_id(id):
     )
     return {profile.id:profile.to_dict() for profile in profiles}
 
+@profile_routes.route('/set/<int:id>')
+def profiles_by_profile_id(id):
+    profile = Profile.query.get(id)
+    return profile.to_dict()
+
 @profile_routes.route('/edit/<int:id>', methods=["PUT"])
 @login_required
 def update_profile(id):
