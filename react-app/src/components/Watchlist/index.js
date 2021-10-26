@@ -72,7 +72,7 @@ export default function Watchlist() {
                                 // (sessionUser.id === profile.user_id) && (
                                     <div key={watchlist.id} className={styles.profileDiv}>
                                         {!showMenu ? (
-                                            <a href='/watchlist/:id'>
+                                            <a href='/watchlists/:id'>
                                                 <div id={styles.profilePic} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                                                     placeholder
                                                 </div>
