@@ -6,6 +6,17 @@
     align-items: center;
 }
 
+#watchlistNameDiv{
+    display: flex;
+    /* width: 90%; */
+    margin-top: 125px;
+    margin-left: 125px;
+}
+
+#nameText{
+    font-size: 50px;
+}
+
 #showContainer{
     margin-top: 25px;
     display: flex;

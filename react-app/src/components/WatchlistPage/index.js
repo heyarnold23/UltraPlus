@@ -80,6 +80,10 @@ export default function WatchlistPage() {
                     <div id={styles.whosDiv}>
                         <span id={styles.whosText}>Watchlists</span>
                     </div> */}
+                <div id={styles.watchlistNameDiv}>
+                   <span id={styles.nameText}>WATCHLIST NAME</span>
+                   <div>Edit</div>
+                </div>
                 <div id={styles.showContainer}>
                     {showsArr?.map((show) => {
                         return (
