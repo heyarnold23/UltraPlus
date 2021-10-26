@@ -11,12 +11,10 @@ def shows():
     shows = Show.query.all()
     return {show.id:show.main_to_dict() for show in shows}
 
-# @profile_routes.route('/<int:id>')
-# def profiles_by_user_id(id):
-#     profiles = Profile.query.filter(
-#         Profile.user_id == id
-#     )
-#     return {profile.id:profile.to_dict() for profile in profiles}
+@show_routes.route('/<int:id>')
+def profiles_by_user_id(id):
+    show = Show.query.get(id)
+    return show.to_dict()
 
 # @profile_routes.route('/set/<int:id>')
 # def profiles_by_profile_id(id):

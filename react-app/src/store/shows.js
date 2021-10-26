@@ -1,4 +1,5 @@
 const GET_SHOWS = 'shows/GET_SHOWS'
+const GET_ONE_SHOW = 'shows/GET_ONE_SHOW'
 // const SET_PROFILE = 'profiles/SET_PROFILE'
 // const REMOVE_PROFILE = 'profiles/REMOVE_PROFILE'
 // const ADD_PROFILE = 'profiles/ADD_PROFILE'
@@ -9,6 +10,13 @@ const getShows = (shows) => {
     return {
         type: GET_SHOWS,
         payload: shows
+    }
+}
+
+const getOneShow = (show) => {
+    return {
+        type: GET_ONE_SHOW,
+        payload: show
     }
 }
 
@@ -49,6 +57,16 @@ export const getShowsThunk = () => async (dispatch) => {
     if (response.ok){
         let data = await response.json();
         dispatch(getShows(data))
+        return data
+    }
+}
+
+export const getOneShowThunk = (id) => async (dispatch) => {
+    const response = await fetch(`/api/shows/${id}`)
+
+    if (response.ok){
+        let data = await response.json();
+        dispatch(getOneShow(data))
         return data
     }
 }
@@ -141,7 +159,10 @@ export default function showsReducer(state= initialState, action) {
     let newState = {...state}
     switch (action.type) {
         case GET_SHOWS:
-            newState = {...state, ...action.payload}
+            newState = {...action.payload}
+            return newState
+        case GET_ONE_SHOW:
+            newState = {...action.payload}
             return newState
         // case SET_PROFILE:
         //     return { profile: action.payload }

@@ -2,16 +2,20 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import styles from './ShowPage.module.css'
-import { getShowsThunk } from '../../store/shows';
+import { getOneShowThunk } from '../../store/shows';
+import { useParams } from 'react-router-dom';
 
 
 export default function ShowPage() {
     const dispatch = useDispatch();
+    const {id} = useParams()
+    const showObj = useSelector(state => state?.shows)
+    console.log("This is show object", showObj);
 
     // dispatch for shows
     useEffect(() => {
-        dispatch(getShowsThunk())
-    }, [dispatch])
+        dispatch(getOneShowThunk(id))
+    }, [dispatch, id])
 
     // const showsObj = useSelector(state => state?.shows)
     // const showsArr = Object.values(showsObj)

@@ -1,3 +1,11 @@
+#page{
+    display: flex;
+    height: 960px;
+    background-color: crimson;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
 #showDetailsDiv{
     margin-top: 25px;
     display: flex;
@@ -9,4 +17,3 @@
     margin-bottom: 100px;
     background-color: blue;
 }
-
