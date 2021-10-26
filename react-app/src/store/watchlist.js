@@ -121,8 +121,8 @@ export default function watchlistsReducer(state= initialState, action) {
             newState = {...state, ...action.payload}
             return newState
         case GET_WATCHLIST_SHOWS:{
-            // newState.watchlistShows=action.payload
-            newState = {...state, ...action.payload}
+            newState.watchlistShows=action.payload
+            // newState = {...state, ...action.payload}
             return newState
         }
         case ADD_WATCHLIST:

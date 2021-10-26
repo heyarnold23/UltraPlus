@@ -10,7 +10,7 @@ import { editWatchlist, getWatchlistShowsThunk, getWatchlistsThunk } from '../..
 
 export default function WatchlistPage() {
     const sessionUser = useSelector(state => state.session.user);
-    const showsArr = useSelector(state => state?.watchlists?.shows)
+    const showsArr = useSelector(state => state?.watchlists?.watchlistShows?.shows)
 
 
     // console.log('SHOWTIME BAYBEE', showsArr);
