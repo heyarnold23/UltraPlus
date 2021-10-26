@@ -37,13 +37,23 @@ export default function Watchlist() {
     }
 
     // maybe make a delete modal and an edit modal?
-    const modal = (e, id, name) => {
+    const createModal = (e) => {
         e.preventDefault()
         const data = {
-            id,
-            name
+            id: profileId
         }
-        // dispatch(addModal("deleteProfile"))
+        dispatch(addModal("addWatchlist"))
+        dispatch(toggleModalView(true))
+        dispatch(passData(data))
+    }
+
+    const deleteModal = (e, id) => {
+        e.preventDefault()
+        console.log(id);
+        const data = {
+            id
+        }
+        dispatch(addModal("deleteProfile"))
         dispatch(toggleModalView(true))
         dispatch(passData(data))
     }
@@ -64,43 +74,43 @@ export default function Watchlist() {
             <div id={styles.page}>
                 <div id={styles.midContainer}>
                     <div id={styles.whosDiv}>
-                        <span id={styles.whosText}>Who's Watching?</span>
+                        <span id={styles.whosText}>Watchlists</span>
                     </div>
                     <div id={styles.profileContainer}>
                         {watchlistsArr.map((watchlist) => {
                             return (
                                 // (sessionUser.id === profile.user_id) && (
-                                    <div key={watchlist.id} className={styles.profileDiv}>
-                                        {!showMenu ? (
-                                            <a href='/watchlists/:id'>
-                                                <div id={styles.profilePic} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                                    placeholder
+                                <div key={watchlist.id} className={styles.profileDiv}>
+                                    {!showMenu ? (
+                                        <a href='/watchlists/:id'>
+                                            <div id={styles.profilePic} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                                placeholder
+                                            </div>
+                                        </a>
+                                    ) : (
+                                        <>
+                                            <div id={styles.profilePicEdit} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                                <div id={styles.buttonDiv}>
+                                                    <div id={styles.editButton}>Edit Modal</div>
+                                                    <div id={styles.deleteButton} onClick={(e) => { deleteModal(e, watchlist?.id, watchlist.name) }}>Delete modal</div>
                                                 </div>
-                                            </a>
-                                        ) : (
-                                            <>
-                                                <div id={styles.profilePicEdit} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                                    <div id={styles.buttonDiv}>
-                                                        <div id={styles.editButton}>Edit Modal</div>
-                                                        <div id={styles.deleteButton} onClick={(e) => { modal(e, watchlist?.id, watchlist.name) }}>Delete modal</div>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        )
-                                        }
-                                        <div id={styles.profileName}>
-                                            {watchlist.name}
-                                        </div>
+                                            </div>
+                                        </>
+                                    )
+                                    }
+                                    <div id={styles.profileName}>
+                                        {watchlist.name}
                                     </div>
+                                </div>
                                 // )
                             )
                         }
 
                         )}
                         <div className={styles.profileDiv}>
-                                <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                    {/* Add Watchlist modal onclicker here */}
-                                </div>
+                            <div id={styles.profilePic} onClick={(e) => { createModal(e) }} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                {/* Add Watchlist modal onclicker here */}
+                            </div>
                             <div id={styles.profileName}>
                                 Add Watchlist
                             </div>

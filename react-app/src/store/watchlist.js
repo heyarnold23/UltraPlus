@@ -105,12 +105,12 @@ export default function watchlistsReducer(state= initialState, action) {
         case ADD_WATCHLIST:
             return {
                 ...state,
-                    [action.profile.id]: action.profile,
+                    [action.watchlist.id]: action.watchlist,
                 };
         case UPDATE_WATCHLIST: {
             return {
                 ...state,
-                [action.profile.id]: action.profile,
+                [action.watchlist.id]: action.watchlist,
             };
         }
         case DELETE_WATCHLIST:

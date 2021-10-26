@@ -22,7 +22,7 @@ def postWatchlist():
     if form.validate_on_submit():
         watchlist = Watchlist(
             name=form.data['name'],
-            profile_id=form.data['user_id']
+            profile_id=form.data['profile_id']
         )
         db.session.add(watchlist)
         db.session.commit()
