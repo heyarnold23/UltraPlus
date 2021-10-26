@@ -38,23 +38,24 @@ export default function WatchlistPage() {
     }
 
     // maybe make a delete modal and an edit modal?
-    const createModal = (e) => {
+    const editModal = (e) => {
         e.preventDefault()
         const data = {
-            id: profileId
+            // passing in the watchlist id
+            id: id
         }
-        // dispatch(addModal("addWatchlist"))
+        dispatch(addModal("editWatchlist"))
         dispatch(toggleModalView(true))
         dispatch(passData(data))
     }
 
-    const deleteModal = (e, id) => {
+    const deleteModal = (e) => {
         e.preventDefault()
-        console.log(id);
+        // console.log(id);
         const data = {
-            id
+            id:id
         }
-        // dispatch(addModal("deleteProfile"))
+        dispatch(addModal("deleteWatchlist"))
         dispatch(toggleModalView(true))
         dispatch(passData(data))
     }
