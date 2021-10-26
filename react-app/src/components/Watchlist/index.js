@@ -10,11 +10,15 @@ import { getWatchlistsThunk } from '../../store/watchlist';
 
 export default function Watchlist() {
     const sessionUser = useSelector(state => state.session.user);
+    const watchlistsObj = useSelector(state => state?.watchlists)
+    const watchlistsArr = Object.values(watchlistsObj)
     const profileId = localStorage?.getItem('profile')
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
 
     const modalView = useSelector(state => state.session.modalView)
+
+    console.log("THIS WATCHLISTS ARR", watchlistsArr);
 
 
     useEffect(() => {
@@ -57,59 +61,52 @@ export default function Watchlist() {
 
     return (
         <>
-            <div id={styles.navContainer}>
-                <div id={styles.navPic} />
-                {!showMenu ? (
-                    <span id={styles.editProfile} onClick={openMenu}>EDIT PROFILES</span>
-                ) : <span id={styles.editProfile} onClick={closeMenu}>CANCEL</span>}
-            </div>
             <div id={styles.page}>
-                {/* <div id={styles.midContainer}>
+                <div id={styles.midContainer}>
                     <div id={styles.whosDiv}>
                         <span id={styles.whosText}>Who's Watching?</span>
                     </div>
                     <div id={styles.profileContainer}>
-                        {profileArr.map((profile) => {
+                        {watchlistsArr.map((watchlist) => {
                             return (
-                                (sessionUser.id === profile.user_id) && (
-                                    <div key={profile.id} className={styles.profileDiv}>
+                                // (sessionUser.id === profile.user_id) && (
+                                    <div key={watchlist.id} className={styles.profileDiv}>
                                         {!showMenu ? (
-                                            <a href='/main'>
-                                                <div id={styles.profilePic} onClick={(e) => {setProfile(profile?.id)}} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                            <a href='/watchlist/:id'>
+                                                <div id={styles.profilePic} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                                    placeholder
+                                                </div>
                                             </a>
                                         ) : (
                                             <>
-                                                <div id={styles.profilePicEdit} style={{ backgroundImage: `url(${profile.avatar_pic.image_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                                <div id={styles.profilePicEdit} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                                                     <div id={styles.buttonDiv}>
-                                                        <NavLink to={{ pathname: '/edit-profile', state: { avatar_id: `${profile.avatar_pic_id}`, avatar_url: `${profile.avatar_pic.image_url}`, profile_name: `${profile.name}`, profile_id: `${profile.id}` } }}>
-                                                            <div id={styles.editButton}><MdOutlineEditLocationAlt /></div>
-                                                            {profile.avatar_id}
-                                                        </NavLink>
-                                                        <div id={styles.deleteButton} onClick={(e) => { modal(e, profile?.id, profile.name) }}><TiDeleteOutline /></div>
+                                                        <div id={styles.editButton}>Edit Modal</div>
+                                                        <div id={styles.deleteButton} onClick={(e) => { modal(e, watchlist?.id, watchlist.name) }}>Delete modal</div>
                                                     </div>
                                                 </div>
                                             </>
                                         )
                                         }
                                         <div id={styles.profileName}>
-                                            {profile.name}
+                                            {watchlist.name}
                                         </div>
                                     </div>
-                                )
+                                // )
                             )
                         }
 
                         )}
                         <div className={styles.profileDiv}>
-                            <NavLink to='/select-avatar'>
-                                <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
-                            </NavLink>
+                                <div id={styles.profilePic} style={{ backgroundImage: `url(https://i.ibb.co/2tnCP4M/rough-draft-plus.png)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                    {/* Add Watchlist modal onclicker here */}
+                                </div>
                             <div id={styles.profileName}>
-                                Add Profile
+                                Add Watchlist
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
             {modalView ? (<FormModal />) : null}
         </>
