@@ -34,7 +34,8 @@ export default function MainSplash() {
                 {showsArr.map((show) => {
                     return(
                         <>
-                        <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
+                        {/* wrap this with a navlink to /show/id and pass in the showid with the navlink component */}
+                            <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
                         </>
                     )
                 })}
