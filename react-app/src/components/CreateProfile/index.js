@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import LogoutButton from '../auth/LogoutButton';
 import { getAvatarsThunk } from '../../store/avatars'
 import { addProfile } from '../../store/profiles';
 import styles from './CreateProfile.module.css'

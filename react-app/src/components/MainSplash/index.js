@@ -1,8 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
 import styles from './MainSplash.module.css'
 import { getShowsThunk } from '../../store/shows';
 
@@ -35,7 +33,7 @@ export default function MainSplash() {
                     return(
                         <>
                         {/* wrap this with a navlink to /show/id and pass in the showid with the navlink component */}
-                            <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
+                            <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
                         </>
                     )
                 })}

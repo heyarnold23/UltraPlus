@@ -1,7 +1,5 @@
 import React from 'react';
 import { Modal } from '../../context/Modal';
-import LoginForm from '../auth/LoginForm';
-import SignupForm from "../auth/SignUpForm"
 import {toggleModalView} from "../../store/session"
 import {useDispatch,useSelector} from "react-redux"
 import DeleteProfile from '../DeleteProfile'

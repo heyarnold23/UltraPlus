@@ -2,18 +2,15 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import LogoutButton from '../auth/LogoutButton';
-import { Redirect } from 'react-router-dom';
-import { getProfilesThunk, setProfileThunk } from '../../store/profiles'
-import { MdOutlineEditLocationAlt } from 'react-icons/md'
-import { TiDeleteOutline } from 'react-icons/ti'
 import styles from './Watchlist.module.css';
 import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
+import { getWatchlistsThunk } from '../../store/watchlist';
 
 
 export default function Watchlist() {
     const sessionUser = useSelector(state => state.session.user);
+    const profileId = localStorage?.getItem('profile')
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
 
@@ -21,8 +18,8 @@ export default function Watchlist() {
 
 
     useEffect(() => {
-        dispatch(getProfilesThunk(sessionUser.id))
-    }, [dispatch, sessionUser])
+        dispatch(getWatchlistsThunk(profileId))
+    }, [dispatch, profileId])
 
 
     const openMenu = () => {

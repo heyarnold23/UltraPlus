@@ -1,11 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import LogoutButton from '../auth/LogoutButton';
-import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
-import { editProfile, addProfile, deleteProfileThunk } from '../../store/profiles';
+import { deleteProfileThunk } from '../../store/profiles';
 import styles from './DeleteProfile.module.css'
 import { toggleModalView } from '../../store/session';
 
