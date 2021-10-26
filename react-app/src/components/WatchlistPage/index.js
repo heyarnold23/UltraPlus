@@ -59,7 +59,8 @@ export default function WatchlistPage() {
         e.preventDefault()
         // console.log(id);
         const data = {
-            id: id
+            id: id,
+            name: foundName?.name
         }
         dispatch(addModal("deleteWatchlist"))
         dispatch(toggleModalView(true))
@@ -123,7 +124,7 @@ export default function WatchlistPage() {
                             </form>
                         </span>
                         <span onClick={closeMenu}>CANCEL</span>
-                        {/* <span id={styles.editWatchlist} onClick={openMenu}>Edit</span> */}
+                        <span onClick={deleteModal}>DELETE</span>
                     </>
                     }
                 </div>

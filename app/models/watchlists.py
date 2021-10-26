@@ -17,7 +17,7 @@ class Watchlist(db.Model):
 
 
     # create a many to one relationship with profiles (receiving end)
-    profile = db.relationship("Profile", back_populates='profile_watchlists', cascade="all, delete")
+    profile = db.relationship("Profile", back_populates='profile_watchlists')
 
     # create a many to many relationship with watchlist_shows
     shows = db.relationship("Show", secondary=watchlist_shows, back_populates='watchlists')

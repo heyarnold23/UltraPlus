@@ -3,6 +3,7 @@ import { Modal } from '../../context/Modal';
 import {toggleModalView} from "../../store/session"
 import {useDispatch,useSelector} from "react-redux"
 import DeleteProfile from '../DeleteProfile'
+import DeleteWatchlist from '../DeleteWatchlist';
 import CreateWatchlist from '../CreateWatchlist';
 
 import "./UserForm.css"
@@ -18,9 +19,9 @@ function FormModal() {
   else if (modalView && modalType === "addWatchlist"){
     userForm = (<CreateWatchlist/>)
   }
-  // else if (modalView && modalType === "loading"){
-  //   userForm = (<LoadSpinner/>)
-  // }
+  else if (modalView && modalType === "deleteWatchlist"){
+    userForm = (<DeleteWatchlist/>)
+  }
 
 
 
