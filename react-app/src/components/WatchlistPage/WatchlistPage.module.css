@@ -17,6 +17,11 @@
     font-size: 50px;
 }
 
+#editWatchlistForm{
+    /* display: flex; */
+}
+
+
 #showContainer{
     margin-top: 25px;
     display: flex;
@@ -65,8 +70,10 @@
 }
 
 #saveButton{
-    width: 369px;
-    height: 54px;
+    /* width: 369px;
+    height: 54px; */
+    width: 100px;
+    height: 50px;
     padding: 10px;
     margin-top: 25px;
     border: none;
@@ -77,4 +84,6 @@
     color: white;
     cursor: pointer;
     transition: background-color 300ms;
+    /* position: absolute;
+    right: 380px; */
 }

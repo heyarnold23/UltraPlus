@@ -40,6 +40,7 @@ export default function WatchlistPage() {
     const closeMenu = (e) => {
         e.preventDefault()
         setShowMenu(false)
+        setBody(watchlistName)
     }
 
     // maybe make a delete modal and an edit modal?
@@ -108,7 +109,7 @@ export default function WatchlistPage() {
                         </>
                     ) : <>
                         <span id={styles.nameText}>
-                            <form onSubmit={handleSubmit}>
+                            <form id={styles.editWatchlistForm} onSubmit={handleSubmit}>
                                 <div id={styles.errors}>
                                     {errors.map((error, ind) => (
                                         <div key={ind}>{error}</div>
@@ -127,8 +128,8 @@ export default function WatchlistPage() {
                                 <button type='submit' id={styles.saveButton}>SAVE</button>
                             </form>
                         </span>
+                        <span onClick={closeMenu}>CANCEL</span>
                         {/* <span id={styles.editWatchlist} onClick={openMenu}>Edit</span> */}
-                        <span id={styles.editProfile} onClick={closeMenu}>CANCEL</span>
                     </>
                     }
                 </div>
