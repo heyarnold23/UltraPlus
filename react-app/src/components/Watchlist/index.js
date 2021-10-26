@@ -85,11 +85,11 @@ export default function Watchlist() {
                                 // (sessionUser.id === profile.user_id) && (
                                 <div key={watchlist.id} className={styles.profileDiv}>
                                     {!showMenu ? (
-                                        <a href={`/watchlists/${watchlist.id}`}>
+                                        <NavLink to={{ pathname: `/watchlists/${watchlist.id}`, state: { watchlist_name: `${watchlist.name}` } }}>
                                             <div id={styles.profilePic} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                                                 placeholder
                                             </div>
-                                        </a>
+                                        </NavLink>
                                     ) : (
                                         <>
                                             <div id={styles.profilePicEdit} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>

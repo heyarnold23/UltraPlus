@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import styles from './WatchlistPage.module.css';
 import { addModal, toggleModalView, passData } from '../../store/session';
@@ -12,6 +12,11 @@ export default function WatchlistPage() {
     const sessionUser = useSelector(state => state.session.user);
     const showsArr = useSelector(state => state?.watchlists?.shows)
     // console.log('SHOWTIME BAYBEE', showsArr);
+    let location = useLocation();
+    const watchlistName = location?.state?.watchlist_name;
+
+    const [body, setBody] = useState(watchlistName);
+    const [errors, setErrors] = useState([]);
     const profileId = localStorage?.getItem('profile')
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
@@ -53,13 +58,31 @@ export default function WatchlistPage() {
         e.preventDefault()
         // console.log(id);
         const data = {
-            id:id
+            id: id
         }
         dispatch(addModal("deleteWatchlist"))
         dispatch(toggleModalView(true))
         dispatch(passData(data))
     }
 
+    const handleSubmit = async (e) => {
+        // e.preventDefault();
+        // setErrors([])
+
+        // const newWatchlist = {
+        // name: body,
+        // profile_id: id
+        // };
+
+        // const data = await dispatch(addWatchlist(newWatchlist));
+        // if (Array.isArray(data)) {
+        //     await setErrors(data)
+        // } else{
+        //     history.push('/watchlists')
+        //     dispatch(toggleModalView(false))
+        // }
+
+    };
     // Add onclick function here to dispatch the setProfile thunk
     // const setProfile = (id) => {
     //     // dispatch(setProfileThunk(id))
@@ -77,13 +100,37 @@ export default function WatchlistPage() {
                 {/* {!showMenu ? (
                     <span id={styles.editProfile} onClick={openMenu}>EDIT PROFILES</span>
                 ) : <span id={styles.editProfile} onClick={closeMenu}>CANCEL</span>} */}
-                {/* <div id={styles.midContainer}>
-                    <div id={styles.whosDiv}>
-                        <span id={styles.whosText}>Watchlists</span>
-                    </div> */}
                 <div id={styles.watchlistNameDiv}>
-                   <span id={styles.nameText}>WATCHLIST NAME</span>
-                   <div>Edit</div>
+                    {!showMenu ? (
+                        <>
+                            <span id={styles.nameText}>{watchlistName}</span>
+                            <span id={styles.editWatchlist} onClick={openMenu}>Edit</span>
+                        </>
+                    ) : <>
+                        <span id={styles.nameText}>
+                            <form onSubmit={handleSubmit}>
+                                <div id={styles.errors}>
+                                    {errors.map((error, ind) => (
+                                        <div key={ind}>{error}</div>
+                                    ))}
+                                </div>
+                                <div>
+                                    <input
+                                        id={styles.nameInput}
+                                        type='text'
+                                        name='name'
+                                        placeholder='Enter Name'
+                                        onChange={(e) => setBody(e.target.value)}
+                                        value={body}
+                                    ></input>
+                                </div>
+                                <button type='submit' id={styles.saveButton}>SAVE</button>
+                            </form>
+                        </span>
+                        {/* <span id={styles.editWatchlist} onClick={openMenu}>Edit</span> */}
+                        <span id={styles.editProfile} onClick={closeMenu}>CANCEL</span>
+                    </>
+                    }
                 </div>
                 <div id={styles.showContainer}>
                     {showsArr?.map((show) => {
