@@ -34,7 +34,7 @@ export default function CreateWatchlist() {
         if (Array.isArray(data)) {
             await setErrors(data)
         } else{
-            history.push('/watchlist')
+            history.push('/watchlists')
             dispatch(toggleModalView(false))
         }
 

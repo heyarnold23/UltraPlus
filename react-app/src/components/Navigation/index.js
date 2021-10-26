@@ -54,7 +54,7 @@ export default function Navigation() {
             <AiFillHome className={styles.icon} />
             <span className={styles.text}>HOME</span>
           </NavLink>
-          <a href='/watchlist' className={styles.link}>
+          <a href='/watchlists' className={styles.link}>
             <AiOutlinePlus className={styles.icon} />
             <span className={styles.text}>WATCHLIST</span>
           </a>

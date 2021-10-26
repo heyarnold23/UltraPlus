@@ -63,7 +63,7 @@ function App() {
           <NavBar />
           <MainSplash/>
         </ProtectedRoute>
-        <ProtectedRoute path='/watchlist' exact={true} >
+        <ProtectedRoute path='/watchlists' exact={true} >
           <NavBar />
           <Watchlist/>
         </ProtectedRoute>

@@ -10,21 +10,21 @@ import { getWatchlistsThunk } from '../../store/watchlist';
 
 export default function Watchlist() {
     const sessionUser = useSelector(state => state.session.user);
-    const watchlistsObj = useSelector(state => state?.watchlists)
-    const watchlistsArr = Object?.values(watchlistsObj)
     const profileId = localStorage?.getItem('profile')
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
 
-    const modalView = useSelector(state => state.session.modalView)
+    const modalView = useSelector(state => state?.session?.modalView)
 
-    console.log("THIS WATCHLISTS ARR", watchlistsArr);
 
 
     useEffect(() => {
         dispatch(getWatchlistsThunk(profileId))
     }, [dispatch, profileId])
 
+    const watchlistsObj = useSelector(state => state?.watchlists)
+    const watchlistsArr = Object?.values(watchlistsObj)
+    console.log("THIS WATCHLISTS ARR", watchlistsArr);
 
     const openMenu = () => {
         if (showMenu) return;
