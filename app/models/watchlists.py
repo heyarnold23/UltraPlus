@@ -29,7 +29,8 @@ class Watchlist(db.Model):
         return {
             'id': self.id,
             'name': self.name,
-            'profile_id': self.profile_id
+            'profile_id': self.profile_id,
+            'shows': [show.main_to_dict() for show in self.shows]
             # can establish new keys for relationships above like below
             # 'user_name': self.runnings.to_dict(),
             # 'comments': [comment.to_dict() for comment in self.comments]

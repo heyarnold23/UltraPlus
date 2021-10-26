@@ -54,14 +54,14 @@ export default function Navigation() {
             <AiFillHome className={styles.icon} />
             <span className={styles.text}>HOME</span>
           </NavLink>
-          <NavLink to='/watchlist' className={styles.link}>
+          <a href='/watchlist' className={styles.link}>
             <AiOutlinePlus className={styles.icon} />
             <span className={styles.text}>WATCHLIST</span>
-          </NavLink>
-          <NavLink to='/search' className={styles.link}>
+          </a>
+          {/* <NavLink to='/search' className={styles.link}>
             <AiOutlineSearch className={styles.icon} />
             <span className={styles.text}>SEARCH</span>
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
       <div id={styles.profileDiv} >

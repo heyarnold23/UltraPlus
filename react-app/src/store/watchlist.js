@@ -1,4 +1,5 @@
 const GET_WATCHLIST = 'watchlists/GET_WATCHLIST'
+const GET_WATCHLIST_SHOWS = 'shows/GET_WATCHLIST_SHOWS'
 const ADD_WATCHLIST = 'watchlists/ADD_WATCHLIST'
 const UPDATE_WATCHLIST = "watchlists/UPDATE_WATCHLIST";
 const DELETE_WATCHLIST = 'watchlists/DELETE_WATCHLIST'
@@ -7,6 +8,13 @@ const getWatchlists = (watchlists) => {
     return {
         type: GET_WATCHLIST,
         payload: watchlists
+    }
+}
+
+const getWatchlistShows = (shows) => {
+    return {
+        type: GET_WATCHLIST_SHOWS,
+        payload: shows
     }
 }
 
@@ -29,12 +37,22 @@ const deleteWatchlist = (deletedWatchlist) => {
 
 
 // this gets all watchlists one profile has
-export const getWatchlistsThunk = (id) => async (dispatch) => {
-    const response = await fetch(`/api/watchlists/${id}`)
+export const getWatchlistsThunk = (profileId) => async (dispatch) => {
+    const response = await fetch(`/api/watchlists/${profileId}`)
 
     if (response.ok){
         let data = await response.json();
         dispatch(getWatchlists(data))
+        return data
+    }
+}
+
+export const getWatchlistShowsThunk = (watchlistId) => async (dispatch) => {
+    const response = await fetch(`/api/watchlists/${watchlistId}/shows`)
+
+    if (response.ok){
+        let data = await response.json();
+        dispatch(getWatchlistShows(data))
         return data
     }
 }
@@ -102,6 +120,11 @@ export default function watchlistsReducer(state= initialState, action) {
         case GET_WATCHLIST:
             newState = {...state, ...action.payload}
             return newState
+        case GET_WATCHLIST_SHOWS:{
+            // newState.watchlistShows=action.payload
+            newState = {...state, ...action.payload}
+            return newState
+        }
         case ADD_WATCHLIST:
             return {
                 ...state,

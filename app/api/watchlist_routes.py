@@ -7,12 +7,19 @@ from app.api.auth_routes import validation_errors_to_error_messages
 
 watchlist_routes = Blueprint('watchlists', __name__)
 
+# this route for getting a profiles watchlists
 @watchlist_routes.route('/<int:id>')
 def watchlists_by_profile_id(id):
     watchlists = Watchlist.query.filter(
         Watchlist.profile_id == id
     )
     return {watchlist.id:watchlist.to_dict() for watchlist in watchlists}
+
+# this route for getting a watchlists shows
+@watchlist_routes.route('/<int:id>/shows')
+def watchlists_shows(id):
+    watchlist = Watchlist.query.get(id)
+    return {'shows': [show.main_to_dict() for show in watchlist.shows]}
 
 @watchlist_routes.route('', methods=["POST"])
 @login_required

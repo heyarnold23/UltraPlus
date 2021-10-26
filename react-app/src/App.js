@@ -18,6 +18,7 @@ import CreateProfile from './components/CreateProfile';
 import EditProfile from './components/EditProfile';
 import { authenticate } from './store/session';
 import Watchlist from './components/Watchlist';
+import WatchlistPage from './components/WatchlistPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -65,6 +66,10 @@ function App() {
         <ProtectedRoute path='/watchlist' exact={true} >
           <NavBar />
           <Watchlist/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/watchlists/:id' exact={true} >
+          <NavBar />
+          <WatchlistPage/>
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

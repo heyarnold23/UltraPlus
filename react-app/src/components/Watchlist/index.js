@@ -11,7 +11,7 @@ import { getWatchlistsThunk } from '../../store/watchlist';
 export default function Watchlist() {
     const sessionUser = useSelector(state => state.session.user);
     const watchlistsObj = useSelector(state => state?.watchlists)
-    const watchlistsArr = Object.values(watchlistsObj)
+    const watchlistsArr = Object?.values(watchlistsObj)
     const profileId = localStorage?.getItem('profile')
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
@@ -72,6 +72,9 @@ export default function Watchlist() {
     return (
         <>
             <div id={styles.page}>
+                {/* {!showMenu ? (
+                    <span id={styles.editProfile} onClick={openMenu}>EDIT PROFILES</span>
+                ) : <span id={styles.editProfile} onClick={closeMenu}>CANCEL</span>} */}
                 <div id={styles.midContainer}>
                     <div id={styles.whosDiv}>
                         <span id={styles.whosText}>Watchlists</span>
@@ -82,7 +85,7 @@ export default function Watchlist() {
                                 // (sessionUser.id === profile.user_id) && (
                                 <div key={watchlist.id} className={styles.profileDiv}>
                                     {!showMenu ? (
-                                        <a href='/watchlists/:id'>
+                                        <a href={`/watchlists/${watchlist.id}`}>
                                             <div id={styles.profilePic} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                                                 placeholder
                                             </div>
