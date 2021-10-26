@@ -9,13 +9,13 @@ import { useParams } from 'react-router-dom';
 export default function ShowPage() {
     const dispatch = useDispatch();
     const {id} = useParams()
-    const showObj = useSelector(state => state?.shows)
-    console.log("This is show object", showObj);
 
     // dispatch for shows
     useEffect(() => {
         dispatch(getOneShowThunk(id))
     }, [dispatch, id])
+    const show = useSelector(state => state?.shows)
+
 
     // const showsObj = useSelector(state => state?.shows)
     // const showsArr = Object.values(showsObj)
@@ -24,12 +24,11 @@ export default function ShowPage() {
     // console.log(profileId);
 
     return (
-        <div id={styles.page}>
-            <div id={styles.titlePicDiv}>
-                TitlePic
+        <div id={styles.page} style={{ backgroundImage: `url(${show?.background_art_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
+            <div id={styles.titlePicDiv} style={{ backgroundImage: `url(${show?.title_pic_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
             </div>
             <div id={styles.yearGenreDiv}>
-                <div id={styles.year}>year</div>
+                <div id={styles.year}>{show?.year}</div>
                 <div id={styles.genre}>genres</div>
             </div>
             <div id={styles.playAddDiv}>
@@ -37,7 +36,7 @@ export default function ShowPage() {
                 <button id={styles.addButton}>+</button>
             </div>
             <div id={styles.showDetailsDiv}>
-                Show Details
+                {show?.details_body}
             </div>
         </div>
     );
