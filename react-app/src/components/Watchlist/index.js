@@ -85,7 +85,7 @@ export default function Watchlist() {
                                 // (sessionUser.id === profile.user_id) && (
                                 <div key={watchlist.id} className={styles.profileDiv}>
                                     {!showMenu ? (
-                                        <NavLink to={{ pathname: `/watchlists/${watchlist.id}`, state: { watchlist_name: `${watchlist.name}` } }}>
+                                        <NavLink to={`/watchlists/${watchlist.id}`}>
                                             <div id={styles.profilePic} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                                                 placeholder
                                             </div>
