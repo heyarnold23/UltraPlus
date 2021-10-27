@@ -63,7 +63,8 @@ export const addShowThunk = (data) => async dispatch => {
     } else if (response.status < 500) {
         const data = await response.json();
         if (data.errors) {
-          return data.errors;
+            const errors = Object.values(data)
+            return errors;
         }
     } else {
         return ['An error occurred. Please try again.']

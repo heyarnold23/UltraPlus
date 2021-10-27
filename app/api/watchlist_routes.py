@@ -44,9 +44,12 @@ def addShow(id):
     show_id = int(request.json['show_id'])
     watchlist = Watchlist.query.get(id)
     show = Show.query.get(show_id)
-    watchlist.shows.append(show)
-    db.session.commit()
-    return watchlist.to_dict()
+    if show not in watchlist.shows:
+        watchlist.shows.append(show)
+        db.session.commit()
+        return watchlist.to_dict()
+    else:
+        return {'errors': 'This show already on list'}, 401
 
 @watchlist_routes.route('/edit/<int:id>', methods=["PUT"])
 @login_required
