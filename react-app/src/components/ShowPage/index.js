@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import styles from './ShowPage.module.css'
 import { getOneShowThunk } from '../../store/shows';
-import { useParams } from 'react-router-dom';
-
+import { NavLink, useParams } from 'react-router-dom';
 
 export default function ShowPage() {
     const dispatch = useDispatch();
@@ -32,7 +31,9 @@ export default function ShowPage() {
                 <div id={styles.genre}>genres</div>
             </div>
             <div id={styles.playAddDiv}>
+            <NavLink to={`/shows/${id}/video`}>
                 <button id={styles.playButton}>PLAY</button>
+            </NavLink>
                 <button id={styles.addButton}>+</button>
             </div>
             <div id={styles.showDetailsDiv}>

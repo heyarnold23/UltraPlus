@@ -20,6 +20,8 @@ import { authenticate } from './store/session';
 import Watchlist from './components/Watchlist';
 import WatchlistPage from './components/WatchlistPage';
 import ShowPage from './components/ShowPage';
+import ShowVideo from './components/ShowVideo';
+
 
 
 function App() {
@@ -76,6 +78,10 @@ function App() {
         <ProtectedRoute path='/shows/:id' exact={true} >
           <NavBar />
           <ShowPage/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/shows/:id/video' exact={true} >
+          <NavBar />
+          <ShowVideo/>
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
