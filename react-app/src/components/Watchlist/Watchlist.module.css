@@ -95,6 +95,15 @@
     height: 140px;
     border-radius: 50%;
     transition: box-shadow 300ms, transform 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;;
+    cursor: pointer;
+}
+
+#navLink{
+    text-decoration: none;
 }
 
 #profilePicEdit{

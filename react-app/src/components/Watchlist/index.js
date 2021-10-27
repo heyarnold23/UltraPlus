@@ -84,20 +84,16 @@ export default function Watchlist() {
                             return (
                                 // (sessionUser.id === profile.user_id) && (
                                 <div key={watchlist.id} className={styles.profileDiv}>
-                                    {!showMenu ? (
+                                    {watchlist?.shows.length > 0 ? (
                                         <NavLink to={`/watchlists/${watchlist.id}`}>
-                                            <div id={styles.profilePic} style={{ backgroundImage: `url(${watchlist?.shows['0']?.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                            </div>
+                                            <div id={styles.profilePic} style={{ backgroundImage: `url(${watchlist?.shows['0']?.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                                         </NavLink>
                                     ) : (
-                                        <>
-                                            <div id={styles.profilePicEdit} style={{ backgroundImage: `url()`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                                <div id={styles.buttonDiv}>
-                                                    <div id={styles.editButton}>Edit Modal</div>
-                                                    <div id={styles.deleteButton} onClick={(e) => { deleteModal(e, watchlist?.id, watchlist.name) }}>Delete modal</div>
-                                                </div>
+                                        <NavLink id={styles.navLink} to={`/watchlists/${watchlist.id}`}>
+                                            <div id={styles.profilePic}>
+                                                <span>Start Adding!</span>
                                             </div>
-                                        </>
+                                        </NavLink>
                                     )
                                     }
                                     <div id={styles.profileName}>
