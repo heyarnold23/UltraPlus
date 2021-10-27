@@ -6,7 +6,8 @@ import styles from './WatchlistPage.module.css';
 import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
 import { editWatchlist, getWatchlistsThunk } from '../../store/watchlist';
-import { getWatchlistShowsThunk } from '../../store/watchlistShows';
+import { getWatchlistShowsThunk, removeShowThunk } from '../../store/watchlistShows';
+import {TiDelete} from 'react-icons/ti';
 
 export default function WatchlistPage() {
     const sessionUser = useSelector(state => state.session.user);
@@ -66,6 +67,26 @@ export default function WatchlistPage() {
         dispatch(toggleModalView(true))
         dispatch(passData(data))
     }
+
+    // removeShowThunk
+    const removeShow = async (e, showId) => {
+        e.preventDefault();
+        setErrors([])
+
+        const removing = {
+            show_id: showId,
+            watchlist_id: id
+        };
+
+        const data = await dispatch(removeShowThunk(removing));
+        if (Array.isArray(data)) {
+            await setErrors(data)
+        }
+        else {
+            // history.push(`/watchlists/${id}`)
+            // setShowMenu(false)
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -133,7 +154,9 @@ export default function WatchlistPage() {
                         return (
                             <>
                                 {/* wrap this with a navlink to /show/id and pass in the showid with the navlink component */}
-                                <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                    <div id={styles.deleteShowButton} onClick={(e) => {removeShow(e, show.id)}}><TiDelete /></div>
+                                </div>
                             </>
                         )
                     })}

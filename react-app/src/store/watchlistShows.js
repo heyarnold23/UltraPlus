@@ -1,5 +1,6 @@
 const GET_WATCHLIST_SHOWS = 'shows/GET_WATCHLIST_SHOWS'
 const ADD_SHOW = 'watchlistShows/ADD_SHOW'
+const REMOVE_SHOW = 'watchlistShows/REMOVE_SHOW'
 
 const getWatchlistShows = (shows) => {
     return {
@@ -10,8 +11,13 @@ const getWatchlistShows = (shows) => {
 
 const addShow = (data) => ({
     type: ADD_SHOW,
-    data
+    payload: data
 })
+
+// const removeShow = (data) => ({
+//     type: REMOVE_SHOW,
+//     payload: data
+// })
 
 // const updateWatchlist = (watchlist) => ({
 //     type: UPDATE_WATCHLIST,
@@ -71,6 +77,35 @@ export const addShowThunk = (data) => async dispatch => {
       }
 
 }
+
+export const removeShowThunk = (data) => async dispatch => {
+    const response = await fetch(`/api/watchlists/${data.watchlist_id}/shows`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    if (response.ok) {
+        const data = await response.json();
+        let shows = []
+
+        for (let show of data.shows) {
+            shows.push(show)
+        }
+
+        dispatch(getWatchlistShows({ "shows": shows }))
+        return null;
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            return data.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
+    }
+}
+
 
 
 // export const editWatchlist = (watchlist) => async (dispatch) => {
