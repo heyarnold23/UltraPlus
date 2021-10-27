@@ -9,6 +9,7 @@ import * as profileActions from './store/profiles'
 import * as avatarActions from './store/avatars'
 import * as showActions from './store/shows'
 import * as watchlistActions from './store/watchlist'
+import * as watchlistsShowsAction from './store/watchlistShows'
 
 
 const store = configureStore();
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV !== "production") {
   window.avatarActions = avatarActions;
   window.showActions = showActions;
   window.watchlistActions = watchlistActions;
+  window.watchlistsShowsAction = watchlistsShowsAction;
 }
 
 

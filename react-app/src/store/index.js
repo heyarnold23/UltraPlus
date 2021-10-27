@@ -4,6 +4,7 @@ import profilesReducer from './profiles';
 import avatarsReducer from './avatars';
 import showsReducer from './shows';
 import watchlistsReducer from './watchlist';
+import watchlistsShowsReducer from './watchlistShows';
 import session from './session'
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   profiles: profilesReducer,
   avatars: avatarsReducer,
   shows: showsReducer,
-  watchlists: watchlistsReducer
+  watchlists: watchlistsReducer,
+  watchlistShows: watchlistsShowsReducer
 });
 
 

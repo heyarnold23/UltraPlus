@@ -54,9 +54,7 @@ def delete_watchlist(id):
     watchlist = Watchlist.query.get(id)
     db.session.delete(watchlist)
     db.session.commit()
-    return {
-        'deleted_watchlist': watchlist.to_dict()
-    }
+    return watchlist.to_dict()
 
 # @comment_routes.route('')
 # def comments():

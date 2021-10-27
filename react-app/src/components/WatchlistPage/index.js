@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import styles from './WatchlistPage.module.css';
 import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
-import { editWatchlist, getWatchlistShowsThunk, getWatchlistsThunk } from '../../store/watchlist';
-
+import { editWatchlist, getWatchlistsThunk } from '../../store/watchlist';
+import { getWatchlistShowsThunk } from '../../store/watchlistShows';
 
 export default function WatchlistPage() {
     const sessionUser = useSelector(state => state.session.user);
-    const showsArr = useSelector(state => state?.watchlists?.watchlistShows?.shows)
+    const showsArr = useSelector(state => state?.watchlistShows?.shows)
 
 
     // console.log('SHOWTIME BAYBEE', showsArr);

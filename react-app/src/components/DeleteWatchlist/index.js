@@ -21,8 +21,8 @@ export default function DeleteWatchlist() {
         };
         const data = dispatch(deleteWatchlistThunk(watchlistData));
         if (data) {
-            history.push('/watchlists')
-             dispatch(toggleModalView(false))
+            setTimeout(() => {history.push('/watchlists')}, 100)
+            setTimeout(() => {dispatch(toggleModalView(false))}, 100)
         }
     };
 
