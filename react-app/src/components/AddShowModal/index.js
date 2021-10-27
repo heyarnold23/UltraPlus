@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addWatchlist, getWatchlistsThunk } from '../../store/watchlist';
 import styles from './AddShowModal.module.css'
 import { toggleModalView } from '../../store/session';
+import { addShowThunk } from '../../store/watchlistShows';
 
 export default function AddShowModal() {
     const sessionUser = useSelector(state => state.session.user);
@@ -33,11 +34,11 @@ export default function AddShowModal() {
             watchlist_id: body
         };
 
-        // const data = await dispatch((appending));
+        const data = await dispatch(addShowThunk(appending));
         if (Array.isArray(data)) {
             await setErrors(data)
         } else {
-            history.push('/watchlists')
+            history.push(`/shows/${id}`)
             dispatch(toggleModalView(false))
         }
 

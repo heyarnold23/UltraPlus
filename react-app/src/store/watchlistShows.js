@@ -1,4 +1,5 @@
 const GET_WATCHLIST_SHOWS = 'shows/GET_WATCHLIST_SHOWS'
+const ADD_SHOW = 'watchlistShows/ADD_SHOW'
 
 const getWatchlistShows = (shows) => {
     return {
@@ -7,10 +8,10 @@ const getWatchlistShows = (shows) => {
     }
 }
 
-// const postWatchlist = (watchlist) => ({
-//     type: ADD_WATCHLIST,
-//     watchlist
-// })
+const addShow = (data) => ({
+    type: ADD_SHOW,
+    data
+})
 
 // const updateWatchlist = (watchlist) => ({
 //     type: UPDATE_WATCHLIST,
@@ -46,29 +47,29 @@ export const getWatchlistShowsThunk = (watchlistId) => async (dispatch) => {
     }
 }
 
-// export const addWatchlist = (watchlist) => async dispatch => {
-//     const response = await fetch('/api/watchlists', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(watchlist)
-//     });
+export const addShowThunk = (data) => async dispatch => {
+    const response = await fetch(`/api/watchlists/${data.watchlist_id}/shows`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
 
-//     if(response.ok){
-//         const data = await response.json();
-//         dispatch(postWatchlist(data));
-//         return (data);
-//     } else if (response.status < 500) {
-//         const data = await response.json();
-//         if (data.errors) {
-//           return data.errors;
-//         }
-//     } else {
-//         return ['An error occurred. Please try again.']
-//       }
+    if(response.ok){
+        const data = await response.json();
+        dispatch(addShow(data));
+        return (data);
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+          return data.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
+      }
 
-// }
+}
 
 
 // export const editWatchlist = (watchlist) => async (dispatch) => {
@@ -111,11 +112,13 @@ export default function watchlistsShowsReducer(state= initialState, action) {
             newState = {...state, ...action.payload}
             return newState
         }
-        // case ADD_WATCHLIST:
-        //     return {
-        //         ...state,
-        //             [action.watchlist.id]: action.watchlist,
-        //         };
+        case ADD_SHOW:
+            // return {
+            //     ...state,
+            //         [action.watchlist.id]: action.watchlist,
+            //     };
+            newState = {...state, ...action.payload}
+            return newState
         // case UPDATE_WATCHLIST: {
         //     return {
         //         ...state,
