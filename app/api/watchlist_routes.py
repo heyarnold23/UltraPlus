@@ -36,11 +36,10 @@ def postWatchlist():
         return watchlist.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
+# This route for adding shows to a watchlist
 @watchlist_routes.route('/<int:id>/shows', methods=["POST"])
 @login_required
-def addShow(id):
-    # print('this is ID IN BACKEND \n\n\n\n\n\n', id, '\n\n\n\n\n')
-    # return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+def add_show(id):
     show_id = int(request.json['show_id'])
     watchlist = Watchlist.query.get(id)
     show = Show.query.get(show_id)
@@ -50,6 +49,17 @@ def addShow(id):
         return watchlist.to_dict()
     else:
         return {'errors': 'This show already on list'}, 401
+
+@watchlist_routes.route("/<int:id>/shows",methods=["DELETE"])
+@login_required
+def remove_show(id):
+    show_id = int(request.json['show_id'])
+    watchlist = Watchlist.query.get(id)
+    show = Show.query.get(show_id)
+    watchlist.shows.remove(show)
+    db.session.commit()
+    return watchlist.to_dict()
+
 
 @watchlist_routes.route('/edit/<int:id>', methods=["PUT"])
 @login_required
