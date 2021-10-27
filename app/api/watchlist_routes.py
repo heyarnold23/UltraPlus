@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
 from app.forms.watchlist_form import WatchlistForm
-from app.models import Watchlist, db
+from app.models import Watchlist, db, Show
 from app.api.auth_routes import validation_errors_to_error_messages
 
 
@@ -35,6 +35,21 @@ def postWatchlist():
         db.session.commit()
         return watchlist.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+@watchlist_routes.route('/<int:id>/shows', methods=["POST"])
+@login_required
+def addShow(id):
+    # print('this is ID IN BACKEND \n\n\n\n\n\n', id, '\n\n\n\n\n')
+    # return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    show_id = int(request.json['show_id'])
+    watchlist = Watchlist.query.get(id)
+    show = Show.query.get(show_id)
+    if show not in watchlist.shows:
+        watchlist.shows.append(show)
+        db.session.commit()
+        return watchlist.to_dict()
+    else:
+        return {'errors': 'This show already on list'}, 401
 
 @watchlist_routes.route('/edit/<int:id>', methods=["PUT"])
 @login_required

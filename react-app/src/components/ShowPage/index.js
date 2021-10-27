@@ -4,10 +4,13 @@ import { useEffect, useState } from 'react';
 import styles from './ShowPage.module.css'
 import { getOneShowThunk } from '../../store/shows';
 import { NavLink, useParams } from 'react-router-dom';
+import { addModal, toggleModalView, passData } from '../../store/session';
+import FormModal from '../Modal';
 
 export default function ShowPage() {
     const dispatch = useDispatch();
     const {id} = useParams()
+    const modalView = useSelector(state => state?.session?.modalView)
 
     // dispatch for shows
     useEffect(() => {
@@ -15,7 +18,15 @@ export default function ShowPage() {
     }, [dispatch, id])
     const show = useSelector(state => state?.shows)
 
-
+    const addShowModal = (e) => {
+        e.preventDefault()
+        const data = {
+            id: id
+        }
+        dispatch(addModal("addShow"))
+        dispatch(toggleModalView(true))
+        dispatch(passData(data))
+    }
     // const showsObj = useSelector(state => state?.shows)
     // const showsArr = Object.values(showsObj)
     // console.log('shows in MAINSPLASH',showsArr);
@@ -23,6 +34,7 @@ export default function ShowPage() {
     // console.log(profileId);
 
     return (
+        <>
         <div id={styles.page} style={{ backgroundImage: `url(${show?.background_art_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
             <div id={styles.titlePicDiv} style={{ backgroundImage: `url(${show?.title_pic_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
             </div>
@@ -34,11 +46,14 @@ export default function ShowPage() {
             <NavLink to={`/shows/${id}/video`}>
                 <button id={styles.playButton}>PLAY</button>
             </NavLink>
-                <button id={styles.addButton}>+</button>
+                <button id={styles.addButton} onClick={(e) => { addShowModal(e) }}>+</button>
             </div>
             <div id={styles.showDetailsDiv}>
                 {show?.details_body}
             </div>
         </div>
+        {modalView ? (<FormModal />) : null}
+        </>
+
     );
 }

@@ -136,7 +136,7 @@ export default function WatchlistPage() {
                                 <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                             </>
                         )
-                    })};
+                    })}
                 </div>
                 {/* </div> */}
             </div>
