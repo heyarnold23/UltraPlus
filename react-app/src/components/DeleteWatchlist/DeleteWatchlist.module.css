@@ -1,0 +1,45 @@
+#main{
+    background-color: rgb(26, 29, 41);
+    border-radius:4px;
+    color: white;
+    width: 560px;
+    padding: 20px 24px;
+}
+
+#warning{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: rgb(165, 165, 165);
+}
+
+#buttonDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cancelButton{
+    display: flex;
+    width: 112px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+#deleteButton{
+    display: flex;
+    width: 112px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgb(202, 31, 23);
+    transition: background-color 200ms;
+    border-radius:4px;
+}
+
+#deleteButton:hover{
+    background-color: rgb(218, 31, 21);
+}

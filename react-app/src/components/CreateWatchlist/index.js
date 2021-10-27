@@ -2,58 +2,55 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAvatarsThunk } from '../../store/avatars'
-import { addProfile } from '../../store/profiles';
-import styles from './CreateProfile.module.css'
+import { addWatchlist } from '../../store/watchlist';
+import styles from './CreateWatchlist.module.css'
+import { toggleModalView } from '../../store/session';
 
-export default function CreateProfile() {
+export default function CreateWatchlist() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
-    let location = useLocation();
-    const avatarId = location?.state?.avatar_id;
-    const avatarImageUrl = location?.state?.avatar_image_url;
     const [body, setBody] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const profileId = localStorage?.getItem('profile')
+    let data = useSelector(state => state.session.passingData)
+    const [id] = useState(data.id)
 
-    useEffect(() => {
-        dispatch(getAvatarsThunk())
-    }, [dispatch])
+
+    // useEffect(() => {
+    //     dispatch(getAvatarsThunk())
+    // }, [dispatch])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([])
 
-
-        const newProfile = {
+        const newWatchlist = {
         name: body,
-        user_id: sessionUser.id,
-        avatar_id: avatarId
+        profile_id: id
         };
 
-        const data = await dispatch(addProfile(newProfile));
+        const data = await dispatch(addWatchlist(newWatchlist));
         if (Array.isArray(data)) {
             await setErrors(data)
         } else{
-            history.push('/whos-watching')
+            history.push('/watchlists')
+            dispatch(toggleModalView(false))
         }
 
+    };
 
+    const closeModal = async () => {
+        dispatch(toggleModalView(false))
     };
 
     return (
         <>
-            <div id={styles.navContainer}>
-                <div id={styles.navPic} />
-                {/* <NavLink id={styles.skipButton} to='/edit-profile'>
-                    <span id={styles.skip}>SKIP</span>
-                </NavLink> */}
-            </div>
             <div id={styles.page}>
                 <div id={styles.midContainer}>
                     <div id={styles.addProfileDiv}>
                         <div id={styles.text}>
-                            ADD PROFILE
+                            ADD A WATCHLIST
                         </div>
                         <div id={styles.profileForm}>
                             <form onSubmit={handleSubmit}>
@@ -75,9 +72,6 @@ export default function CreateProfile() {
                                 <button type='submit' id={styles.saveButton}>SAVE</button>
                             </form>
                         </div>
-                    </div>
-                    <div id={styles.picDiv} style={{ backgroundImage: `url(${avatarImageUrl})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-
                     </div>
                 </div>
             </div>

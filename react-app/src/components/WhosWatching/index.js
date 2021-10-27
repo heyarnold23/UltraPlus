@@ -2,9 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import LogoutButton from '../auth/LogoutButton';
-import { Redirect } from 'react-router-dom';
-import { getProfilesThunk, setProfileThunk } from '../../store/profiles'
+import { getProfilesThunk } from '../../store/profiles'
 import { MdOutlineEditLocationAlt } from 'react-icons/md'
 import { TiDeleteOutline } from 'react-icons/ti'
 import styles from './WhosWatching.module.css';

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Modal } from '../../context/Modal';
-import LoginForm from '../auth/LoginForm';
-import SignupForm from "../auth/SignUpForm"
 import {toggleModalView} from "../../store/session"
 import {useDispatch,useSelector} from "react-redux"
 import DeleteProfile from '../DeleteProfile'
+import DeleteWatchlist from '../DeleteWatchlist';
+import CreateWatchlist from '../CreateWatchlist';
 
 import "./UserForm.css"
 function FormModal() {
@@ -16,12 +16,12 @@ function FormModal() {
   if(modalView && modalType==="deleteProfile"){
     userForm = (<DeleteProfile/>)
   }
-  // else if (modalView && modalType === "signup"){
-  //   userForm = (<SignupForm/>)
-  // }
-  // else if (modalView && modalType === "loading"){
-  //   userForm = (<LoadSpinner/>)
-  // }
+  else if (modalView && modalType === "addWatchlist"){
+    userForm = (<CreateWatchlist/>)
+  }
+  else if (modalView && modalType === "deleteWatchlist"){
+    userForm = (<DeleteWatchlist/>)
+  }
 
 
 

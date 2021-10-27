@@ -11,7 +11,7 @@ def seed_shows():
         details_body="It's been four years since the Scout Regiment reached the shoreline, and the world looks different now. Things are heating up as the fate of the Scout Regiment—and the people of Paradis—are determined at last. However, Eren is missing. Will he reappear before age-old tensions between Marleyans and Eldians result in the war of all wars?",
         studio='Kodansha',
         year='2013',
-        video_url='https://r2---sn-jvhj5nu-nh4l.googlevideo.com/videoplayback?expire=1635137965&ei=TeV1YZ7WHpiBkwbl56-oCw&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-ANkIq5fzHG8S0skvHVsUT1en0_u57927zn31JBMu_0hw&itag=22&source=youtube&requiressl=yes&mh=Ox&mm=31,29&mn=sn-jvhj5nu-nh4l,sn-n4v7sn76&ms=au,rdu&mv=m&mvi=2&pcm2cms=yes&pl=34&gcr=us&initcwndbps=2227500&vprv=1&mime=video/mp4&ns=lokdKykIbzvqVwybhJZ2FIAG&cnr=14&ratebypass=yes&dur=146.239&lmt=1601118707402751&mt=1635116214&fvip=2&fexp=24001373,24007246&beids=9466585&c=WEB&txp=5535432&n=eFPQO8BtAhMgXyaB2Ab&sparams=expire,ei,ip,id,itag,source,requiressl,gcr,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRgIhAMkBEEvpkfmEIZZGPaO3Jorq1gGIvEcpwrA7eQksHCkiAiEAqp2EI3uf7qQQr5k15aF9YO-qh2cI9B88BrLcd-l8dTM=&lsparams=mh,mm,mn,ms,mv,mvi,pcm2cms,pl,initcwndbps&lsig=AG3C_xAwRQIhAIj1jSMzrO7sNYZTr_KqkG2ldB6DoeUR6MSex1fKwUoZAiBJY7UYbPTocR5UhRWxaAh_0fESDtsZjBohCzJGfa1ftw=='
+        video_url='https://www.youtube.com/watch?v=4XoWJV88_MA'
     )
     dragonball = Show(
         name='DragonBall Super',
@@ -21,7 +21,7 @@ def seed_shows():
         details_body="With Majin Buu defeated, Goku has taken a completely new role as a…radish farmer?! With Earth at peace, our heroes have settled into normal lives. But they can’t get too comfortable. Far away, a powerful God awakens to a prophecy revealing his demise at the hands of a formidable being. When his search for the Saiyan God brings him to Earth, can Goku and his friends take on their strongest foe yet?",
         studio='TOEI ANIMATION',
         year='2015',
-        video_url='https://r5---sn-a5meknle.googlevideo.com/videoplayback?expire=1635140406&ei=1u51YceAG9W9kwbSvYn4Dg&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-ADLDQNrkosijRKOxpV68LCiUl60Wh6ZEqtw9aHdlrS9C&itag=22&source=youtube&requiressl=yes&vprv=1&mime=video/mp4&ns=FjbVJ6kLHQ10V6RfSkaJ5OQG&cnr=14&ratebypass=yes&dur=80.967&lmt=1601933589004672&fexp=9466585,24001373,24007246&beids=9466585&c=WEB&txp=5316222&n=_d6MwShQlslhcno_5lp&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRQIgOHiCsR2T4Dinmez4bTX5k7GSuSbVpBr3iw-eWXcOZHYCIQCRP4g8RzAFRO4AdcvjM4HFoJX4_znBIuH-ffW8GpxpaQ==&cm2rm=sn-jvhj5nu-nh4e76,sn-n4vek7s&req_id=23616df60d09a3ee&ipbypass=yes&redirect_counter=2&cms_redirect=yes&mh=3C&mm=34&mn=sn-a5meknle&ms=ltu&mt=1635118595&mv=m&mvi=5&pl=34&lsparams=ipbypass,mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAN64VQDMhyNfdewyVXGzzbRAMVhZmABjdIoKy3mNg5RmAiEAj8bRskGAB2fczDwm8aLv_vQ8BRL45JbQ9-KaRRKd9OM%3D'
+        video_url='https://www.youtube.com/watch?v=oYWL1hgPIuM'
     )
     cowboy_bebop = Show(
         name='Cowboy Bebop',
@@ -31,7 +31,8 @@ def seed_shows():
         details_body="Explore the galaxy in this undeniably hip series that inspired a generation - and redefined anime as an indisputable art form. The Bebop crew is just trying to make a buck, and they're the most entertaining gang of bounty hunters in the year 2071.",
         studio='Sunrise Inc.',
         year='1998',
-        video_url='https://r2---sn-jvhj5nu-nh4e.googlevideo.com/videoplayback?expire=1635141140&ei=tPF1YeexMI2Jkwar16CADQ&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-AMWQjvAn0XZTIcteWMstMfXo1pTNB_3e5ZIQ-aHGj-0U&itag=22&source=youtube&requiressl=yes&mh=yz&mm=31,29&mn=sn-jvhj5nu-nh4e,sn-n4v7sne7&ms=au,rdu&mv=m&mvi=2&pl=34&gcr=us&initcwndbps=1977500&vprv=1&mime=video/mp4&ns=47jJRpLK8_4Kd_eFU8nYT-kG&ratebypass=yes&dur=89.954&lmt=1632597267820555&mt=1635119336&fvip=2&fexp=24001373,24007246&beids=9466585&c=WEB&txp=5532434&n=VNYlXLQZu4sM1jp766_&sparams=expire,ei,ip,id,itag,source,requiressl,gcr,vprv,mime,ns,ratebypass,dur,lmt&sig=AOq0QJ8wRgIhAPTiLAF1xn34X_CD2NiIURVGkMd8I7-S-UaEA6NUzioVAiEAoBgrb0Loys3IxXiwkR20FnbVGWaJjuJLP_F4Uoz5-Ko=&lsparams=mh,mm,mn,ms,mv,mvi,pl,initcwndbps&lsig=AG3C_xAwRgIhAM3Y3DlVAlj8FrVCHAUynAl9SCwrK8FCFFBOouSiOJkaAiEA4SNxzbEBzYt46RmpMy9BO_h8ZpYd0J8eYYZUj2TVGVU='
+        # video_url='https://r2---sn-jvhj5nu-nh4e.googlevideo.com/videoplayback?expire=1635141140&ei=tPF1YeexMI2Jkwar16CADQ&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-AMWQjvAn0XZTIcteWMstMfXo1pTNB_3e5ZIQ-aHGj-0U&itag=22&source=youtube&requiressl=yes&mh=yz&mm=31,29&mn=sn-jvhj5nu-nh4e,sn-n4v7sne7&ms=au,rdu&mv=m&mvi=2&pl=34&gcr=us&initcwndbps=1977500&vprv=1&mime=video/mp4&ns=47jJRpLK8_4Kd_eFU8nYT-kG&ratebypass=yes&dur=89.954&lmt=1632597267820555&mt=1635119336&fvip=2&fexp=24001373,24007246&beids=9466585&c=WEB&txp=5532434&n=VNYlXLQZu4sM1jp766_&sparams=expire,ei,ip,id,itag,source,requiressl,gcr,vprv,mime,ns,ratebypass,dur,lmt&sig=AOq0QJ8wRgIhAPTiLAF1xn34X_CD2NiIURVGkMd8I7-S-UaEA6NUzioVAiEAoBgrb0Loys3IxXiwkR20FnbVGWaJjuJLP_F4Uoz5-Ko=&lsparams=mh,mm,mn,ms,mv,mvi,pl,initcwndbps&lsig=AG3C_xAwRgIhAM3Y3DlVAlj8FrVCHAUynAl9SCwrK8FCFFBOouSiOJkaAiEA4SNxzbEBzYt46RmpMy9BO_h8ZpYd0J8eYYZUj2TVGVU='
+        video_url='https://www.youtube.com/watch?v=EL-D9LrFJd4'
     )
     demon_slayer = Show(
         name='Demon Slayer',
@@ -41,7 +42,7 @@ def seed_shows():
         details_body="It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a demon slayer so that he can turn his sister back into a human, and kill the demon that massacred his family. A sorrowful tale of siblings in which the fates of humans and demons intertwine... begins now!",
         studio='Aniplex',
         year='2019',
-        video_url='https://r1---sn-n4v7sney.googlevideo.com/videoplayback?expire=1635141916&ei=vPR1YYzeG5WvkgbS95q4DQ&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-AEv6MhmxqRRfnY3xdf-44aU0Ey6t-9OQ7vVmykvBo75N&itag=22&source=youtube&requiressl=yes&vprv=1&mime=video/mp4&ns=we3R7RI_eE_M7PxLZ6NTUcUG&cnr=14&ratebypass=yes&dur=180.047&lmt=1619752992116117&fexp=9466585,24001373,24007246&beids=9466585&c=WEB&txp=5432432&n=L6fTx1uEdcwYBrFxR1k&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRAIgIV9syM1C4De69gDwf1hg1raXagAEKLqiHcmR5VsG7ucCICgi4bvO-ZQlYUo7hT3OEBdO-_Q2P4BlZbo-TXUXpFPS&redirect_counter=1&cm2rm=sn-jvhj5nu-nh4z7e&req_id=61dc40c8b677a3ee&cms_redirect=yes&ipbypass=yes&mh=y2&mm=29&mn=sn-n4v7sney&ms=rdu&mt=1635120295&mv=m&mvi=1&pl=34&lsparams=ipbypass,mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAOeuamgwTdcA9VzYPE9l25QCnhLeILnF4ve2xlqJzu-wAiBzW7u2kQm9eSTAXFG6ykVT0K7rCbgpH1Gn1jJKZJTYrg%3D%3D'
+        video_url='https://www.youtube.com/watch?v=N_PDjHF_jWo&t=21s'
     )
     boruto = Show(
         name='Boruto: Naruto Next Generations',
@@ -51,7 +52,7 @@ def seed_shows():
         details_body="The life of the shinobi is beginning to change. Boruto Uzumaki, son of Seventh Hokage Naruto Uzumaki, has enrolled in the Ninja Academy to learn the ways of the ninja. Now, as a series of mysterious events unfolds, Boruto’s story is about to begin!",
         studio='Studio Pierrot',
         year='2017',
-        video_url='https://r4---sn-a5meknsy.googlevideo.com/videoplayback?expire=1635142580&ei=VPd1YYnmKoeHsfIPiJW9uAk&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-AOu1qeyo4k4XHUGoRVbp9HJ_WiZh-0T8yp0PKlHU9N0i&itag=22&source=youtube&requiressl=yes&gcr=us&vprv=1&mime=video/mp4&ns=ZGzRmUNY5nfGUMTutZ6oBtAG&cnr=14&ratebypass=yes&dur=135.743&lmt=1610171239601740&fexp=9466585,24001373,24007246&beids=9466585&c=WEB&txp=5535432&n=0gjJF1AiHbCUzDzYjPB&sparams=expire,ei,ip,id,itag,source,requiressl,gcr,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRAIgNE22sjGCVKMSRdjlP-81KcHoUKld6h3cmBWxNJ7gsBUCIEe2cuwCsqiWRoL5uvooax5XriN7CbrKw9c4VUE40nV0&cm2rm=sn-jvhj5nu-nh4e7z,sn-o09sl7s&req_id=c1cd1c259022a3ee&ipbypass=yes&redirect_counter=2&cms_redirect=yes&mh=27&mm=34&mn=sn-a5meknsy&ms=ltu&mt=1635120991&mv=m&mvi=4&pl=34&lsparams=ipbypass,mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgNzM3swD6Z3IASxGjyaBSPGGpc-E7Pfk_smnH6AJqR8UCIHxDXTnHQD9vmVWeJypcij1w4KDQxUOCC1nluLjDs2Z6'
+        video_url='https://www.youtube.com/watch?v=_ZJ10oZvY2o&list=PLRe9ARNnYSY6gxEr7iDQZWx6lFbuy0QgB&index=38'
     )
     one_piece = Show(
         name='One Piece',
@@ -61,7 +62,7 @@ def seed_shows():
         details_body="Monkey D. Luffy refuses to let anyone or anything stand in the way of his quest to become king of all pirates. With a course charted for the treacherous waters of the Grand Line, this is one captain who’ll never drop anchor until he’s claimed the greatest treasure on Earth—the Legendary One Piece!",
         studio='TOEI ANIMATION',
         year='1999',
-        video_url='https://r2---sn-jvhj5nu-nh4z.googlevideo.com/videoplayback?expire=1635143129&ei=efl1YaewC4eHsfIPiJW9uAk&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-ABXs3NBX85HI_XE25jfs6ztaPapUJUMnJw5z_SFpb4Wb&itag=22&source=youtube&requiressl=yes&mh=tV&mm=31,29&mn=sn-jvhj5nu-nh4z,sn-n4v7sney&ms=au,rdu&mv=m&mvi=2&pl=34&initcwndbps=2085000&vprv=1&mime=video/mp4&ns=dOQ8u5Duz6e5vE-DpBiU_sIG&cnr=14&ratebypass=yes&dur=33.181&lmt=1634756455484261&mt=1635121254&fvip=2&fexp=24001373,24007246&beids=9466585&c=WEB&txp=5532434&n=S8V1zQzhhYIFZnXR6-A&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRgIhALpQCorLPbv5tDdk6aneuXAKbP5Pl6N4fdabP5C87unXAiEA-o8TyZ1iCTGJzmDsBuaN8bmT5S2-eB6rNQFkubsyvLE=&lsparams=mh,mm,mn,ms,mv,mvi,pl,initcwndbps&lsig=AG3C_xAwRQIhANxlNpxKsyJWUiiJUp_jAUC7gu9EBndoCodpbOQrqz2AAiArKzAvPlYE8G3Ew8f7PpxGaZC82hiQkt488wKYqbZm-g==one'
+        video_url='https://www.youtube.com/watch?v=Yu4V3iTjpeY'
     )
     my_hero = Show(
         name='My Hero Academia',
@@ -71,7 +72,7 @@ def seed_shows():
         details_body="Despite being born powerless into a super-powered world, Izuku refuses to give up on his dream of becoming a hero. He enrolls himself in a prestigious hero academy with a deadly entrance exam. To make the grade, he’ll have to put in some serious study time with the mightiest hero of all.",
         studio='Toho Co Ltd',
         year='2016',
-        video_url='https://r5---sn-jvhj5nu-nh4l.googlevideo.com/videoplayback?expire=1635143704&ei=uPt1YfCiD6iBsfIP3oGFyAw&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-AJCvgVUFGK-LBHg8AqVYwmZzZPTlztACsME7UrRHNRhx&itag=22&source=youtube&requiressl=yes&mh=32&mm=31,29&mn=sn-jvhj5nu-nh4l,sn-o097znlk&ms=au,rdu&mv=m&mvi=5&pl=34&initcwndbps=2095000&vprv=1&mime=video/mp4&ns=XL6qARBoYbsxQlXElpJmHH0G&cnr=14&ratebypass=yes&dur=124.273&lmt=1627198302501069&mt=1635121733&fvip=5&fexp=24001373,24007246&beids=9466585&c=WEB&txp=5432432&n=XpT918yX1h-kyWtJa0I&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRgIhAIvvHrMbwILZ7QdFVzmA63dvlOK1B8X3JvbEQTN4zVFHAiEApsEAte5EtUt4SRwP5YGmO48DxQYpOSXb31n23Kj_vMY=&lsparams=mh,mm,mn,ms,mv,mvi,pl,initcwndbps&lsig=AG3C_xAwRAIgRZ7Ea9wwSywKF21MaF9Es_GRj08iTyshsILbAzk9JI4CICECnl3EStxqoN0nwRPB9Ot5ItY_ZgXMzi8Gd4YeG15Q'
+        video_url='https://www.youtube.com/watch?v=wpOhT35YtWg'
     )
     bleach = Show(
         name='Bleach',
@@ -81,7 +82,7 @@ def seed_shows():
         details_body="For as long as he can remember, Ichigo Kurosaki has been able to see ghosts. But when he meets Rukia, a Soul Reaper who battles evil spirits known as Hollows, he finds his life is changed forever…",
         studio='Viz',
         year='2004',
-        video_url='https://r2---sn-a5meknzk.googlevideo.com/videoplayback?expire=1635144424&ei=iP51YaPPJpKskwbkjLmwBA&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-AE5PBuOZWKl-j_1snQiYBWjMSHp98sqAlghJEoonzR7e&itag=22&source=youtube&requiressl=yes&gcr=us&vprv=1&mime=video/mp4&ns=M_TiIegYYGyb5dzptFw_q3sG&cnr=14&ratebypass=yes&dur=155.062&lmt=1607939188555674&fexp=9466585,24001373,24007246&beids=9466585&c=WEB&txp=5535432&n=LMlVVI4o--Lp_1-UWQ8&sparams=expire,ei,ip,id,itag,source,requiressl,gcr,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRAIgRWZ4EVfXciK9Yw3y5bVWNlEzQbERANfb2fQoDTKxr5MCIDHbCUfJ88pOOk4SItbgpELwSpxIhNUVenDj0vPrcbya&cm2rm=sn-jvhj5nu-nh4z7l,sn-o09ss7l&req_id=e1e0e02f000aa3ee&ipbypass=yes&redirect_counter=2&cms_redirect=yes&mh=mV&mm=34&mn=sn-a5meknzk&ms=ltu&mt=1635122192&mv=m&mvi=2&pl=34&lsparams=ipbypass,mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAJXlBvP565SKp2pz8Crgt209iziFnJz1CLI-nn15TEREAiBY4rGQSUEeeP_KZf6AvWD5djlxuqzEu8EpNvzyWK4pLQ%3D%3D'
+        video_url='https://www.youtube.com/watch?v=kBPWn6PjPIc&t=42s'
     )
     samurai_champloo = Show(
         name='Samurai Champloo',
@@ -91,7 +92,7 @@ def seed_shows():
         details_body="Mugen is a ferocious, animalistic warrior with a fighting style inspired by break-dancing. Jin is a ronin samurai who wanders the countryside alone. They may not be friends, but their paths continually cross. And when ditzy waitress Fuu gets them out of hot water with the local magistrate, they agree to join her search for the samurai who smells like sunflowers.",
         studio='FlyingDog Inc.',
         year='2004',
-        video_url='https://r4---sn-jvhj5nu-nh4z.googlevideo.com/videoplayback?expire=1635145815&ei=9wN2YYWoLsnxkgatyrSoCQ&ip=2601:205:4200:f850:511:6e51:50a2:c1e2&id=o-AJuLUouvMZ3LxB_nomxlGH19Ln8AGw_c2pm65op_jQOx&itag=22&source=youtube&requiressl=yes&mh=HI&mm=31,29&mn=sn-jvhj5nu-nh4z,sn-o097znsk&ms=au,rdu&mv=m&mvi=4&pl=34&gcr=us&initcwndbps=2131250&vprv=1&mime=video/mp4&ns=fTA924id1eG4v6IEh-RGSAcG&cnr=14&ratebypass=yes&dur=48.320&lmt=1558403848895786&mt=1635123171&fvip=4&fexp=24001373,24007246&beids=9466585&c=WEB&txp=5535432&n=xupJZAL_uB247n6mp9D&sparams=expire,ei,ip,id,itag,source,requiressl,gcr,vprv,mime,ns,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRQIhAIZtsMeH_eA-G-idG27YNbbkSbQWFfprmQudpjcOjtXUAiB9D_9q7UdMvrSo_eeptRrapmMC5mYaRGqPm3pDV5C6Og==&lsparams=mh,mm,mn,ms,mv,mvi,pl,initcwndbps&lsig=AG3C_xAwRAIgVYsaZ7DnVPKGexFEFY-lcHWWoJdz9V3edzAHkykvAewCIBkCbc7FML91RVvuZUkuOhpfzB5UPj8FuvEHtcLioeg8'
+        video_url='https://www.youtube.com/watch?v=hficV9yr2mA'
     )
 
     db.session.add(attack_on_titan)

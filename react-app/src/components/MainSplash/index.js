@@ -1,10 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
 import styles from './MainSplash.module.css'
 import { getShowsThunk } from '../../store/shows';
+import { NavLink } from 'react-router-dom';
 
 
 export default function MainSplash() {
@@ -17,7 +16,7 @@ export default function MainSplash() {
 
     const showsObj = useSelector(state => state?.shows)
     const showsArr = Object.values(showsObj)
-    console.log('shows in MAINSPLASH',showsArr);
+    console.log('shows in MAINSPLASH', showsArr);
     // const profileId = localStorage.getItem('profile')
     // console.log(profileId);
 
@@ -32,10 +31,11 @@ export default function MainSplash() {
             <div id={styles.showContainer}>
                 {/* map out the shows object */}
                 {showsArr.map((show) => {
-                    return(
+                    return (
                         <>
-                        {/* wrap this with a navlink to /show/id and pass in the showid with the navlink component */}
-                            <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
+                            <NavLink to={`/shows/${show.id}`}>
+                                <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                            </NavLink>
                         </>
                     )
                 })}

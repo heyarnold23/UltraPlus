@@ -18,6 +18,11 @@ import CreateProfile from './components/CreateProfile';
 import EditProfile from './components/EditProfile';
 import { authenticate } from './store/session';
 import Watchlist from './components/Watchlist';
+import WatchlistPage from './components/WatchlistPage';
+import ShowPage from './components/ShowPage';
+import ShowVideo from './components/ShowVideo';
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -62,9 +67,21 @@ function App() {
           <NavBar />
           <MainSplash/>
         </ProtectedRoute>
-        <ProtectedRoute path='/watchlist' exact={true} >
+        <ProtectedRoute path='/watchlists' exact={true} >
           <NavBar />
           <Watchlist/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/watchlists/:id' exact={true} >
+          <NavBar />
+          <WatchlistPage/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/shows/:id' exact={true} >
+          <NavBar />
+          <ShowPage/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/shows/:id/video' exact={true} >
+          <NavBar />
+          <ShowVideo/>
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

@@ -2,8 +2,6 @@ import React from 'react';
 import { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import LogoutButton from '../auth/LogoutButton';
-import { Redirect } from 'react-router-dom';
 import { getAvatarsThunk } from '../../store/avatars'
 import styles from './SelectAvatar.module.css'
 

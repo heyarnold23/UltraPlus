@@ -20,7 +20,7 @@ class Profile(db.Model):
     avatar = db.relationship("Avatar", back_populates='avatar_profiles', lazy='subquery')
 
     # create a one to many relationship with watchlists
-    profile_watchlists = db.relationship('Watchlist', back_populates="profile")
+    profile_watchlists = db.relationship('Watchlist', back_populates="profile", cascade="all, delete")
 
 
 

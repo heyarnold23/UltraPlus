@@ -2,51 +2,28 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAvatarsThunk } from '../../store/avatars'
-import { deleteProfileThunk } from '../../store/profiles';
-import styles from './DeleteProfile.module.css'
+import styles from './DeleteWatchlist.module.css'
 import { toggleModalView } from '../../store/session';
+import { deleteWatchlistThunk } from '../../store/watchlist';
 
 
-export default function DeleteProfile() {
+export default function DeleteWatchlist() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     let data = useSelector(state => state.session.passingData)
     const history = useHistory();
     const [id] = useState(data.id)
 
-
-    useEffect(() => {
-        dispatch(getAvatarsThunk())
-    }, [dispatch])
-
-
-
-
-
-    // console.log("\n\n\n\n\n\n PASSING DATA", data, "\n\n\n\n\n\n\n\n\n\n");
-
-    // const updateBody = (e) => setBody(e.target.value);
-
-
     const handleDelete = async (e) => {
         e.preventDefault();
-
-
-        const profileData = {
+        const watchlistData = {
             id: id
         };
-
-        // console.log("\n\n\n\n\n\n PROFILE DATA", profileData, "\n\n\n\n\n\n\n\n\n\n");
-
-        const data = dispatch(deleteProfileThunk(profileData));
+        const data = dispatch(deleteWatchlistThunk(watchlistData));
         if (data) {
-            history.push('/whos-watching')
-             dispatch(toggleModalView(false))
-
+            setTimeout(() => {history.push('/watchlists')}, 100)
+            setTimeout(() => {dispatch(toggleModalView(false))}, 100)
         }
-
-
     };
 
     const closeModal = async () => {
@@ -57,10 +34,10 @@ export default function DeleteProfile() {
         <>
             <div id={styles.main}>
                 <div id={styles.heading}>
-                    Delete {data?.name}'s profile?
+                    Delete {data?.name}?
                 </div>
                 <div id={styles.warning}>
-                    This profile along with its watchlist will also be deleted. There is no way to undo this.
+                    This watchlist will be deleted. There is no way to undo this.
                 </div>
                 <div id={styles.buttonDiv}>
                     <div id={styles.cancelButton} onClick={closeModal}>

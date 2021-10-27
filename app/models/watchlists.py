@@ -17,7 +17,7 @@ class Watchlist(db.Model):
 
 
     # create a many to one relationship with profiles (receiving end)
-    profile = db.relationship("Profile", back_populates='profile_watchlists', cascade="all, delete")
+    profile = db.relationship("Profile", back_populates='profile_watchlists')
 
     # create a many to many relationship with watchlist_shows
     shows = db.relationship("Show", secondary=watchlist_shows, back_populates='watchlists')
@@ -29,7 +29,8 @@ class Watchlist(db.Model):
         return {
             'id': self.id,
             'name': self.name,
-            'profile_id': self.profile_id
+            'profile_id': self.profile_id,
+            'shows': [show.main_to_dict() for show in self.shows]
             # can establish new keys for relationships above like below
             # 'user_name': self.runnings.to_dict(),
             # 'comments': [comment.to_dict() for comment in self.comments]
