@@ -43,7 +43,10 @@
 #titlePicDiv{
     width: 341px;
     height: 192px;
+}
 
+#yearGenreDiv{
+    margin-top: 40px;
 }
 
 #playAddDiv{
