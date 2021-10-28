@@ -1,6 +1,6 @@
 #page{
     display: flex;
-    height: 960px;
+    /* height: ; */
     background-color: crimson;
     flex-direction: column;
     align-items: center;
