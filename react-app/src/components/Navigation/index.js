@@ -73,9 +73,11 @@ export default function Navigation() {
         <div id={styles.profilePic} style={{ backgroundImage: `url(${foundProfile?.avatar_pic?.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
         {showMenu && (
           <div className={styles.popOut} onMouseEnter={openMenu} onMouseLeave={closeMenu}>
-            <span className={styles.account}>Account</span>
-            <div className={styles.listing}>username</div>
-            <div className={styles.listing}>placeholder</div>
+            {/* <span className={styles.account}>Account</span>
+            <div className={styles.listing}>username</div> */}
+            <NavLink to='/whos-watching'>
+            <div className={styles.change}>Change Profiles</div>
+            </NavLink>
             <div className={styles.listing}>
               <button className={styles.logOutButton} onClick={logout}>Log Out</button>
             </div>
