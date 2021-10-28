@@ -27,6 +27,10 @@ export default function Navigation() {
     setShowMenu(true);
   };
 
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
@@ -64,11 +68,11 @@ export default function Navigation() {
           </NavLink> */}
         </div>
       </div>
-      <div id={styles.profileDiv} >
+      <div id={styles.profileDiv} onMouseEnter={openMenu}>
         <div id={styles.nameText}>{foundProfile?.name}</div>
-        <div id={styles.profilePic} onClick={openMenu} style={{ backgroundImage: `url(${foundProfile?.avatar_pic?.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+        <div id={styles.profilePic} style={{ backgroundImage: `url(${foundProfile?.avatar_pic?.image_url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
         {showMenu && (
-          <div className={styles.popOut}>
+          <div className={styles.popOut} onMouseEnter={openMenu} onMouseLeave={closeMenu}>
             <span className={styles.account}>Account</span>
             <div className={styles.listing}>username</div>
             <div className={styles.listing}>placeholder</div>
