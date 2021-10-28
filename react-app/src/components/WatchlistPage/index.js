@@ -7,10 +7,11 @@ import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
 import { editWatchlist, getWatchlistsThunk } from '../../store/watchlist';
 import { getWatchlistShowsThunk, removeShowThunk } from '../../store/watchlistShows';
-import {TiDelete} from 'react-icons/ti';
+import { FaEdit } from 'react-icons/fa';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
 
 export default function WatchlistPage() {
-    const sessionUser = useSelector(state => state.session.user);
     const showsArr = useSelector(state => state?.watchlistShows?.shows)
 
 
@@ -20,6 +21,7 @@ export default function WatchlistPage() {
     const profileId = localStorage?.getItem('profile')
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
+    const [showNotif, setshowNotif] = useState(false);
     const { id } = useParams()
 
 
@@ -82,10 +84,10 @@ export default function WatchlistPage() {
         if (Array.isArray(data)) {
             await setErrors(data)
         }
-        else {
-            // history.push(`/watchlists/${id}`)
-            // setShowMenu(false)
-        }
+
+        setshowNotif(true)
+        setTimeout(() => {setshowNotif(false)}, 3000)
+
     };
 
     const handleSubmit = async (e) => {
@@ -119,7 +121,7 @@ export default function WatchlistPage() {
                         <>
 
                             <span id={styles.nameText}>{foundName?.name}</span>
-                            <span id={styles.editWatchlist} onClick={openMenu}>Edit</span>
+                            <span id={styles.editWatchlist} onClick={openMenu}><FaEdit /></span>
 
 
                         </>
@@ -141,26 +143,49 @@ export default function WatchlistPage() {
                                         value={body}
                                     ></input>
                                 </div>
-                                <button type='submit' id={styles.saveButton}>SAVE</button>
+                                <div id={styles.saveCancelDiv}>
+                                    <button onClick={closeMenu} id={styles.cancelButton}>CANCEL</button>
+                                    <button type='submit' id={styles.saveButton}>SAVE</button>
+                                </div>
                             </form>
                         </span>
-                        <span onClick={closeMenu}>CANCEL</span>
-                        <span onClick={deleteModal}>DELETE</span>
+                        <div id={styles.deleteButton}>
+                            <span id={styles.deleteListButton} onClick={deleteModal} ><RiDeleteBin2Fill /></span>
+                        </div>
                     </>
                     }
                 </div>
-                <div id={styles.showContainer}>
-                    {showsArr?.map((show) => {
-                        return (
-                            <>
-                                {/* wrap this with a navlink to /show/id and pass in the showid with the navlink component */}
-                                <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                    <div id={styles.deleteShowButton} onClick={(e) => {removeShow(e, show.id)}}><TiDelete /></div>
-                                </div>
-                            </>
-                        )
-                    })}
-                </div>
+                {showsArr?.length > 0 ? (
+                    <div id={styles.showContainer}>
+                        {showsArr?.map((show) => {
+                            return (
+                                <>
+                                    <div id={styles.showBox}>
+                                        <NavLink to={`/shows/${show.id}`}>
+                                        <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
+                                        </NavLink>
+                                        <span id={styles.showText}>{show?.name}</span>
+                                        <div id={styles.deleteShowButton} onClick={(e) => { removeShow(e, show.id) }}><RiDeleteBin2Line /></div>
+                                        {/* <div id={styles.deleteShowText} onClick={(e) => { removeShow(e, show.id) }}>DELETE</div> */}
+                                    </div>
+                                </>
+                            )
+                        })}
+                    {showNotif && (
+                        <div id={styles.notif}>Show was removed!</div>
+                    )}
+                    </div>
+                ) : (
+                    <div id={styles.showContainer}>
+                        <span>NO SHOWS YET!</span>
+                        <span>START ADDING!</span>
+                        {showNotif && (
+                        <div id={styles.notif}>Show was removed!</div>
+                        )}
+                    </div>
+                )
+                }
+
                 {/* </div> */}
             </div>
             {modalView ? (<FormModal />) : null}

@@ -57,6 +57,7 @@ export default function AddShowModal() {
                             ADD TO A WATCHLIST
                         </div>
                         <div id={styles.profileForm}>
+                        {watchlistsArr.length > 0 ? (
                             <form onSubmit={handleSubmit}>
                                 <div id={styles.errors}>
                                     {errors.map((error, ind) => (
@@ -88,6 +89,7 @@ export default function AddShowModal() {
                                 </div>
                                 <button type='submit' id={styles.saveButton}>SAVE</button>
                             </form>
+                        ) : <div>No watchlist to add to!</div>}
                         </div>
                     </div>
                 </div>

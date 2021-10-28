@@ -1,16 +1,19 @@
 #page{
     display: flex;
     height: 960px;
-    background-color: crimson;
+    /* background-color: crimson; */
+    background-color: rgb(26, 29, 41);
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 #watchlistNameDiv{
     display: flex;
-    /* width: 90%; */
+    width: 90%;
     margin-top: 125px;
-    margin-left: 125px;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 #nameText{
@@ -31,7 +34,19 @@
     justify-content: center;
     gap: 20px 25px;
     margin-bottom: 100px;
-    background-color: blue;
+    /* background-color: blue; */
+}
+
+
+#editWatchlist{
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 200ms;
+}
+
+#editWatchlist:hover{
+    color: rgb(109, 177, 233);
 }
 
 #showImage{
@@ -42,6 +57,7 @@
 
 #nameInput{
     margin-top: 5px;
+    text-align: center;
     width: 350px;
     height: 35px;
     padding: 10px;
@@ -52,22 +68,18 @@
     border: none;
 }
 
-#cancelButton{
-    display: flex;
-    width: 160px;
-    height: 40px;
-    background-color: rgb(75, 78, 90);
-    border-radius: 5px;
-    margin-right: 30px;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    padding: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 200ms, color 200ms ;
+#deleteButton{
+    /* position: sticky; */
 }
+
+#saveCancelDiv{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+
+}
+
+
 
 #saveButton{
     /* width: 369px;
@@ -75,7 +87,7 @@
     width: 100px;
     height: 50px;
     padding: 10px;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     border: none;
     border-radius: 4px;
     font-family: 'Montserrat', sans-serif;
@@ -86,4 +98,85 @@
     transition: background-color 300ms;
     /* position: absolute;
     right: 380px; */
+}
+
+#saveButton:hover{
+    background-color: rgb(1, 129, 233);
+}
+
+#cancelButton{
+    /* width: 369px;
+    height: 54px; */
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    /* margin-top: 25px; */
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: rgb(75, 78, 90);
+    color: white;
+    cursor: pointer;
+    transition: background-color 300ms;
+    /* position: absolute;
+    right: 380px; */
+}
+
+#cancelButton:hover{
+    background-color: rgba(99, 99, 99);
+}
+
+#showBox{
+    text-align: center;
+    border: 1px solid rgb(75, 78, 90);
+    border-radius: 5px;
+    transition: box-shadow 300ms, transform 300ms;
+}
+
+#showBox:hover{
+    /* box-shadow: 0px 0px 15px rgb(158, 157, 157); */
+    box-shadow: 0px 0px 15px rgb(85, 84, 84);
+    transform:scale(1.05);
+}
+
+
+#showText{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    width: 240px;
+    height: 40px;
+    align-items: center;
+
+}
+
+#deleteListButton{
+    color: red;
+    cursor: pointer;
+}
+
+
+#deleteShowButton{
+    /* display: flex; */
+    /* margin-top: 10px; */
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border-top: 1px solid rgb(75, 78, 90);
+    /* color: red; */
+    font-size: 18px;
+    transition: background-color 300ms;
+}
+
+#deleteShowButton:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+#notif{
+    position: fixed;
+    top: 185px;
+    /* background-color: red; */
+    color: red;
 }

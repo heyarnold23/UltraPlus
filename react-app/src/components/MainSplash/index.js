@@ -32,11 +32,9 @@ export default function MainSplash() {
                 {/* map out the shows object */}
                 {showsArr.map((show) => {
                     return (
-                        <>
-                            <NavLink to={`/shows/${show.id}`}>
-                                <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                            <NavLink key={show.id} to={`/shows/${show.id}`}>
+                                <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
                             </NavLink>
-                        </>
                     )
                 })}
             </div>
