@@ -8,7 +8,8 @@ import FormModal from '../Modal';
 import { editWatchlist, getWatchlistsThunk } from '../../store/watchlist';
 import { getWatchlistShowsThunk, removeShowThunk } from '../../store/watchlistShows';
 import { FaEdit } from 'react-icons/fa';
-import { TiDelete } from 'react-icons/ti';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
 
 export default function WatchlistPage() {
     const showsArr = useSelector(state => state?.watchlistShows?.shows)
@@ -141,11 +142,15 @@ export default function WatchlistPage() {
                                         value={body}
                                     ></input>
                                 </div>
-                                <button type='submit' id={styles.saveButton}>SAVE</button>
+                                <div id={styles.saveCancelDiv}>
+                                    <button onClick={closeMenu} id={styles.cancelButton}>CANCEL</button>
+                                    <button type='submit' id={styles.saveButton}>SAVE</button>
+                                </div>
                             </form>
                         </span>
-                        <span onClick={closeMenu}>CANCEL</span>
-                        <span onClick={deleteModal}>DELETE</span>
+                        <div id={styles.deleteButton}>
+                            <span id={styles.deleteListButton} onClick={deleteModal} ><RiDeleteBin2Fill /></span>
+                        </div>
                     </>
                     }
                 </div>
@@ -154,8 +159,11 @@ export default function WatchlistPage() {
                         {showsArr?.map((show) => {
                             return (
                                 <>
-                                    <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                        <div id={styles.deleteShowButton} onClick={(e) => { removeShow(e, show.id) }}><TiDelete /></div>
+                                    <div id={styles.showBox}>
+                                        <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
+                                        <span id={styles.showText}>{show?.name}</span>
+                                        <div id={styles.deleteShowButton}><RiDeleteBin2Line onClick={(e) => { removeShow(e, show.id) }}/></div>
+                                        {/* <div id={styles.deleteShowText} onClick={(e) => { removeShow(e, show.id) }}>DELETE</div> */}
                                     </div>
                                 </>
                             )
