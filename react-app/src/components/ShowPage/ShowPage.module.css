@@ -3,7 +3,21 @@
     height: 920px;
     background-color: rgb(26, 29, 41);
     flex-direction: column;
+    color: white;
     /* align-items: center; */
+
+}
+
+
+#showInfoDiv{
+    margin-top: 200px;
+    margin-left:65px;
+}
+
+#test{
+    background: linear-gradient(to left, rgba(0,0,0,0.7), transparent, transparent, rgba(0,0,0,0.7));
+    /* background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent, rgba(0,0,0,0.3)); */
+    height: 100%;
 }
 
 #showDetailsDiv{
@@ -15,10 +29,58 @@
     justify-content: center;
     gap: 20px 25px;
     margin-bottom: 100px;
-    background-color: blue;
+    width: 874px;
+    font-size: 20px;
+    /* border: 1px solid green; */
+    background-color: rgba(15, 15, 15, 0.4);
+    border-radius: 4px;
+}
+
+#showDetailText{
+    padding: 10px;
 }
 
 #titlePicDiv{
     width: 341px;
     height: 192px;
+}
+
+#yearGenreDiv{
+    margin-top: 40px;
+}
+
+#playAddDiv{
+    display: flex;
+    margin-top: 30px;
+}
+
+#playButton{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    /* margin-top: 25px; */
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: rgb(0, 114, 210);
+    color: white;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+#playButton:hover{
+    background-color: rgb(1, 129, 233);
+}
+
+
+#addButton{
+    font-size:50px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: color 300ms;
+}
+
+#addButton:hover{
+    color: rgb(1, 129, 233);
 }
