@@ -7,10 +7,10 @@ import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
 import { editWatchlist, getWatchlistsThunk } from '../../store/watchlist';
 import { getWatchlistShowsThunk, removeShowThunk } from '../../store/watchlistShows';
-import {TiDelete} from 'react-icons/ti';
+import { FaEdit } from 'react-icons/fa';
+import { TiDelete } from 'react-icons/ti';
 
 export default function WatchlistPage() {
-    const sessionUser = useSelector(state => state.session.user);
     const showsArr = useSelector(state => state?.watchlistShows?.shows)
 
 
@@ -119,7 +119,7 @@ export default function WatchlistPage() {
                         <>
 
                             <span id={styles.nameText}>{foundName?.name}</span>
-                            <span id={styles.editWatchlist} onClick={openMenu}>Edit</span>
+                            <span id={styles.editWatchlist} onClick={openMenu}><FaEdit /></span>
 
 
                         </>
@@ -149,18 +149,26 @@ export default function WatchlistPage() {
                     </>
                     }
                 </div>
-                <div id={styles.showContainer}>
-                    {showsArr?.map((show) => {
-                        return (
-                            <>
-                                {/* wrap this with a navlink to /show/id and pass in the showid with the navlink component */}
-                                <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                                    <div id={styles.deleteShowButton} onClick={(e) => {removeShow(e, show.id)}}><TiDelete /></div>
-                                </div>
-                            </>
-                        )
-                    })}
-                </div>
+                {showsArr?.length > 0 ? (
+                    <div id={styles.showContainer}>
+                        {showsArr?.map((show) => {
+                            return (
+                                <>
+                                    <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                                        <div id={styles.deleteShowButton} onClick={(e) => { removeShow(e, show.id) }}><TiDelete /></div>
+                                    </div>
+                                </>
+                            )
+                        })}
+                    </div>
+                ) : (
+                    <div id={styles.showContainer}>
+                        <span>NO SHOWS YET!</span>
+                        <span>START ADDING!</span>
+                    </div>
+                )
+                }
+
                 {/* </div> */}
             </div>
             {modalView ? (<FormModal />) : null}
