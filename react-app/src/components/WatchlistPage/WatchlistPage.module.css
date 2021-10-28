@@ -140,11 +140,16 @@
     transform:scale(1.05);
 }
 
+
 #showText{
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: center;
+    width: 240px;
+    height: 40px;
+    align-items: center;
+
 }
 
 #deleteListButton{
@@ -156,7 +161,7 @@
 #deleteShowButton{
     /* display: flex; */
     /* margin-top: 10px; */
-    padding-top: 2px;
+    padding-top: 3px;
     padding-bottom: 2px;
     border-top: 1px solid rgb(75, 78, 90);
     /* color: red; */
@@ -167,4 +172,11 @@
 #deleteShowButton:hover{
     background-color: red;
     cursor: pointer;
+}
+
+#notif{
+    position: fixed;
+    top: 185px;
+    /* background-color: red; */
+    color: red;
 }

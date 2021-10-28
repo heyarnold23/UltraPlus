@@ -21,6 +21,7 @@ export default function WatchlistPage() {
     const profileId = localStorage?.getItem('profile')
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false);
+    const [showNotif, setshowNotif] = useState(false);
     const { id } = useParams()
 
 
@@ -83,10 +84,10 @@ export default function WatchlistPage() {
         if (Array.isArray(data)) {
             await setErrors(data)
         }
-        else {
-            // history.push(`/watchlists/${id}`)
-            // setShowMenu(false)
-        }
+
+        setshowNotif(true)
+        setTimeout(() => {setshowNotif(false)}, 3000)
+
     };
 
     const handleSubmit = async (e) => {
@@ -170,11 +171,17 @@ export default function WatchlistPage() {
                                 </>
                             )
                         })}
+                    {showNotif && (
+                        <div id={styles.notif}>Show was removed!</div>
+                    )}
                     </div>
                 ) : (
                     <div id={styles.showContainer}>
                         <span>NO SHOWS YET!</span>
                         <span>START ADDING!</span>
+                        {showNotif && (
+                        <div id={styles.notif}>Show was removed!</div>
+                        )}
                     </div>
                 )
                 }
