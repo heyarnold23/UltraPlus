@@ -8,9 +8,65 @@
 
 #carousel{
     margin-top: 100px;
-    height: 440px;
-    width: 90%;
-    background-color: blue
+    height: 500px;
+    width: 100%;
+    background-color: rgb(26, 29, 41);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#leftarrow{
+    display: flex;
+    color: white;
+    font-size: 25px;
+    /* background-color: rgba(15, 15, 15, 0.5); */
+    background: linear-gradient(to left, rgba(0,0,0,0.7), transparent, transparent);
+    /* background: linear-gradient(to right, rgba(0,0,0,0.7), transparent, transparent); */
+    width: 2%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 300ms;
+    cursor: pointer;
+}
+
+#leftarrow:hover{
+    background-color: rgba(15, 15, 15, 0.7);
+}
+
+#middle{
+    display: flex;
+    width: 1750px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#middlePic{
+    width: 250px;
+    height: 250px;
+}
+
+#rightarrow{
+    display: flex;
+    color: white;
+    font-size: 25px;
+    /* background-color: rgba(15, 15, 15, 0.5); */
+    /* background: linear-gradient(to left, rgba(0,0,0,0.7), transparent, transparent); */
+    background: linear-gradient(to right, rgba(0,0,0,0.7), transparent, transparent);
+    width: 2%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 300ms;
+    cursor: pointer;
+}
+
+#rightarrow:hover{
+    background-color: rgba(15, 15, 15, 0.7);
 }
 
 #studiosContainer{

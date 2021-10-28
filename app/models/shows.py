@@ -53,5 +53,7 @@ class Show(db.Model):
         return {
             'id': self.id,
             'name': self.name,
-            'thumbnail_url': self.thumbnail_url
+            'thumbnail_url': self.thumbnail_url,
+            'background_art_url': self.background_art_url,
+            'title_pic_url': self.title_pic_url
         }
