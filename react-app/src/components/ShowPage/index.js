@@ -6,6 +6,7 @@ import { getOneShowThunk } from '../../store/shows';
 import { NavLink, useParams } from 'react-router-dom';
 import { addModal, toggleModalView, passData } from '../../store/session';
 import FormModal from '../Modal';
+import { MdAddCircle } from 'react-icons/md';
 
 export default function ShowPage() {
     const dispatch = useDispatch();
@@ -48,7 +49,7 @@ export default function ShowPage() {
                             <NavLink to={`/shows/${id}/video`}>
                                 <button id={styles.playButton}>PLAY</button>
                             </NavLink>
-                            <button id={styles.addButton} onClick={(e) => { addShowModal(e) }}>+</button>
+                            <span id={styles.addButton} onClick={(e) => { addShowModal(e) }}><MdAddCircle/></span>
                         </div>
                         <div id={styles.showDetailsDiv}>
                             <span id={styles.showDetailText}>{show?.details_body}</span>
