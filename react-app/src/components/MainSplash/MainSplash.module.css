@@ -34,7 +34,9 @@
 
 
 #showImage{
-    width: 240px;
-    height: 135px;
+    /* width: 240px;
+    height: 135px; */
+    width: 329px;
+    height: 185px;
     border-radius: 4px;
 }
