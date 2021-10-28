@@ -24,7 +24,7 @@ export default function MainSplash() {
 
     // const images = [{image: 'https://i.ibb.co/PTww0sY/Webp-net-resizeimage.jpg', id:4, title:'https://i.ibb.co/7r47MJD/5ede4a3fb760540004f2c5e9.png'   }, 'https://i.ibb.co/X2tfPJ4/dragon-ball-desktop-tournament-of-power-wallpapers-wallpaper-cave-jpg.jpg', 'https://i.ibb.co/CHP2cns/2.jpg']
 
-    const images = [showsArr[3], showsArr[1], showsArr[8]]
+    const images = [showsArr[3], showsArr[1], showsArr[8], showsArr[6]]
 
     const upOne = () => {
         if (num < images.length-1) {
