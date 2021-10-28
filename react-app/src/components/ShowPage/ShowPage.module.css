@@ -3,7 +3,21 @@
     height: 920px;
     background-color: rgb(26, 29, 41);
     flex-direction: column;
+    color: white;
     /* align-items: center; */
+
+}
+
+
+#showInfoDiv{
+    margin-top: 200px;
+    margin-left:65px;
+}
+
+#test{
+    background: linear-gradient(to left, rgba(0,0,0,0.7), transparent, transparent, rgba(0,0,0,0.7));
+    /* background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent, rgba(0,0,0,0.3)); */
+    height: 100%;
 }
 
 #showDetailsDiv{
@@ -15,10 +29,19 @@
     justify-content: center;
     gap: 20px 25px;
     margin-bottom: 100px;
-    background-color: blue;
+    width: 874px;
+    font-size: 20px;
+    /* border: 1px solid green; */
+    background-color: rgba(15, 15, 15, 0.4);
+    border-radius: 4px;
+}
+
+#showDetailText{
+    padding: 10px;
 }
 
 #titlePicDiv{
     width: 341px;
     height: 192px;
+
 }
