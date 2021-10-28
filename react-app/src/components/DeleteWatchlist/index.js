@@ -19,11 +19,15 @@ export default function DeleteWatchlist() {
         const watchlistData = {
             id: id
         };
-        const data = dispatch(deleteWatchlistThunk(watchlistData));
-        if (data) {
-            setTimeout(() => {history.push('/watchlists')}, 100)
-            setTimeout(() => {dispatch(toggleModalView(false))}, 100)
-        }
+        // const data = await dispatch(deleteWatchlistThunk(watchlistData));
+        await dispatch(deleteWatchlistThunk(watchlistData));
+
+        // if (data) {
+            // setTimeout(() => {history.push('/watchlists')}, 100)
+            history.push('/watchlists')
+            // setTimeout(() => {dispatch(toggleModalView(false))}, 100)
+            dispatch(toggleModalView(false))
+        // }
     };
 
     const closeModal = async () => {

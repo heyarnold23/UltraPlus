@@ -160,9 +160,11 @@ export default function WatchlistPage() {
                             return (
                                 <>
                                     <div id={styles.showBox}>
+                                        <NavLink to={`/shows/${show.id}`}>
                                         <div key={show.id} id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}/>
+                                        </NavLink>
                                         <span id={styles.showText}>{show?.name}</span>
-                                        <div id={styles.deleteShowButton}><RiDeleteBin2Line onClick={(e) => { removeShow(e, show.id) }}/></div>
+                                        <div id={styles.deleteShowButton} onClick={(e) => { removeShow(e, show.id) }}><RiDeleteBin2Line /></div>
                                         {/* <div id={styles.deleteShowText} onClick={(e) => { removeShow(e, show.id) }}>DELETE</div> */}
                                     </div>
                                 </>
