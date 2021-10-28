@@ -1,7 +1,7 @@
 #page{
     display: flex;
     /* height: ; */
-    background-color: crimson;
+    background-color: rgb(26, 29, 41);
     flex-direction: column;
     align-items: center;
 }
@@ -29,7 +29,7 @@
     justify-content: center;
     gap: 20px 25px;
     margin-bottom: 100px;
-    background-color: blue;
+    background-color: transparent
 }
 
 
