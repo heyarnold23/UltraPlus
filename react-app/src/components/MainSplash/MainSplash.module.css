@@ -71,10 +71,20 @@
 }
 
 #studiosContainer{
+    display: flex;
     margin-top: 40px;
-    height: 135px;
+    height: 185px;
     width: 90%;
     background-color: brown;
+    gap: 20px 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+#genreBox{
+    width: 329px;
+    height: 185px;
+    background-color: white;
 }
 
 #showContainer{
