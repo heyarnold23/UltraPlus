@@ -48,8 +48,8 @@ export default function MainSplash() {
         <div id={styles.page}>
             <div id={styles.carousel} style={{ backgroundImage: `url(${images[num]?.background_art_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                 <div id={styles.leftarrow} onClick={downOne}><AiOutlineArrowLeft /></div>
-                <NavLink to={`/shows/${images[num]?.id}`}>
-                <div id={styles.middle} >
+                <NavLink id={styles.middle} to={`/shows/${images[num]?.id}`}>
+                <div>
                     <div id={styles.middlePic} style={{ backgroundImage: `url(${images[num]?.title_pic_url})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}/>
                 </div>
                 </NavLink>
