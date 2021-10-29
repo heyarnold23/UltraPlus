@@ -12,10 +12,12 @@
 
 #midContainer{
     display: flex;
-    width: 700px;
+    /* width: 700px; */
     height: 310px;
-    margin-top: 80px;
-    background-color: transparent
+    /* margin-top: 80px; */
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
 }
 
 #nameInput{
@@ -34,6 +36,7 @@
     color: white;
     font-size: 30px;
     font-weight: bold;
+    /* margin-left: 15px; */
 }
 
 #picDiv{
@@ -52,9 +55,10 @@
 }
 
 #addProfileDiv{
-    margin-top: 20px;
-    margin-left: 50px;
-    width: 70%;
+    /* margin-top: 20px; */
+    /* margin-left: 50px; */
+    /* width: 70%; */
+    text-align: center;
 }
 
 #cancelButton{
@@ -72,6 +76,14 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 200ms, color 200ms ;
+}
+
+#selectDropdown{
+    background-color: rgb(62, 65, 78);
+    color: white;
+    width: 369px;
+    height: 35px;
+    text-align: center;
 }
 
 #saveButton{
