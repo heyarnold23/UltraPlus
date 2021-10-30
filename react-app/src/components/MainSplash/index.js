@@ -68,20 +68,15 @@ export default function MainSplash() {
             <div id={styles.studiosContainer}>
             {!filtered ? (
                 <>
-                    <div onClick={() => filterThis('MAPPA')} id={styles.studioBox}>
-                        <span>MAPPA</span>
+                    <div onClick={() => filterThis('MAPPA')} className={styles.studioBox} id={styles.mappa}>
                     </div>
-                    <div onClick={() => filterThis('bones')} id={styles.studioBox}>
-                        <span>BONES</span>
+                    <div onClick={() => filterThis('bones')} className={styles.studioBox} id={styles.bones}>
                     </div>
-                    <div onClick={() => filterThis('Madhouse')} id={styles.studioBox}>
-                        <span>MADHOUSE</span>
+                    <div onClick={() => filterThis('Madhouse')} className={styles.studioBox} id={styles.madhouse}>
                     </div>
-                    <div onClick={() => filterThis('Wit Studio')} id={styles.studioBox}>
-                        <span>WIT STUDIO</span>
+                    <div onClick={() => filterThis('Wit Studio')} className={styles.studioBox} id={styles.wit}>
                     </div>
-                    <div onClick={() => filterThis('A-1 Pictures')} id={styles.studioBox}>
-                        <span>A-1 PICTURES</span>
+                    <div onClick={() => filterThis('TOEI ANIMATION')} className={styles.studioBox} id={styles.toei}>
                     </div>
                 </>
             ): (

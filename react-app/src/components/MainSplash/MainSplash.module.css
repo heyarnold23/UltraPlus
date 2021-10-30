@@ -81,7 +81,7 @@
     align-items: center;
 }
 
-#studioBox{
+.studioBox{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,6 +89,76 @@
     height: 185px;
     background-color: white;
     cursor: pointer;
+}
+
+#mappa{
+    background-image: url('https://i.ibb.co/WvQ3N9D/508px-MAPPA-Logo-svg.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#mappa:hover{
+    background-image: url('https://i.ibb.co/4m4NBKZ/jujutsu-kaisen.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#bones{
+    background-image: url('https://i.ibb.co/RScxd4D/829-8290680-48kib-2000x410-bones-bones-studio-anime-logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#bones:hover{
+    background-image: url('https://i.ibb.co/LhZn9HV/163c9dbd2a54134ce5f6728176d2b442.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#madhouse{
+    background-image: url('https://i.ibb.co/D9z9LkH/1200px-Madhouse-studio-logo-svg.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#madhouse:hover{
+    background-image: url('https://i.ibb.co/BCxt78c/FBQ1i19.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#wit{
+    background-image: url('https://i.ibb.co/P9P7mLx/220px-Wit-studio-svg.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#wit:hover{
+    background-image: url('https://i.ibb.co/K2SdnNY/anime-vinland-saga.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#toei{
+    background-image: url('https://i.ibb.co/vB5wcq6/1200px-Toei-Animation-logo-svg.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#toei:hover{
+    background-image: url('https://i.ibb.co/G0LT2NB/208598.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #showContainer{
