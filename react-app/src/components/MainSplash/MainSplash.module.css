@@ -70,12 +70,21 @@
     background-color: rgba(15, 15, 15, 0.7);
 }
 
+#topStudiosText{
+    width: 90%;
+    text-align: center;
+    position: relative;
+    top: 40px;
+    color: white;
+    font-weight: bold;
+}
+
 #studiosContainer{
     display: flex;
     margin-top: 40px;
     height: 185px;
     width: 90%;
-    background-color: brown;
+    background-color: transparent;
     gap: 20px 25px;
     justify-content: center;
     align-items: center;
@@ -85,10 +94,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 329px;
-    height: 185px;
-    background-color: rgb(117, 111, 111);
+    width: 300px;
+    height: 140px;
+    background-color: rgb(53, 56, 66);
     cursor: pointer;
+    box-shadow: 5px 5px 15px 5px #000000;
+    padding: 5px;
+    border-radius: 4px;
+    border: 3px solid rgb(87, 88, 104);
 }
 
 /* #mappa{
@@ -185,8 +198,10 @@
     width: 329px;
     height: 185px;
     border-radius: 4px;
+    box-shadow: 5px 5px 15px 5px #000000;
 }
 
 #studioText{
     cursor: pointer;
+    color: white;
 }

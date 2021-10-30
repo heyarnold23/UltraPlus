@@ -65,6 +65,7 @@ export default function MainSplash() {
                 </NavLink>
                 <div id={styles.rightarrow} onClick={upOne}><AiOutlineArrowRight /></div>
             </div>
+            {/* <div id={styles.topStudiosText}>TOP STUDIOS</div> */}
             <div id={styles.studiosContainer}>
             {!filtered ? (
                 <>
@@ -72,21 +73,21 @@ export default function MainSplash() {
                         <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/WvQ3N9D/508px-MAPPA-Logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
                     </div>
                     <div onClick={() => filterThis('bones')} className={styles.studioBox} id={styles.bones}>
-                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/RScxd4D/829-8290680-48kib-2000x410-bones-bones-studio-anime-logo.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/mtZZB0Q/829-8290680-48kib-2000x410-bones-bones-studio-anime-logo.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
                     </div>
                     <div onClick={() => filterThis('Madhouse')} className={styles.studioBox} id={styles.madhouse}>
-                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/D9z9LkH/1200px-Madhouse-studio-logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/MCCXrv7/1200px-Madhouse-studio-logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
                     </div>
                     <div onClick={() => filterThis('Wit Studio')} className={styles.studioBox} id={styles.wit}>
-                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/P9P7mLx/220px-Wit-studio-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/rvgwfTs/220px-Wit-studio-svg-1.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
                     </div>
                     <div onClick={() => filterThis('TOEI ANIMATION')} className={styles.studioBox} id={styles.toei}>
-                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/vB5wcq6/1200px-Toei-Animation-logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/w7gXqDF/1200px-Toei-Animation-logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
                     </div>
                 </>
             ): (
                 <>
-                    <span onClick={() => setFiltered(false)} id={styles.studioText}>Back to all shows</span>
+                    <span onClick={() => setFiltered(false)} id={styles.studioText}> <AiOutlineArrowLeft /> Back to all shows</span>
                 </>
             )}
             </div>
