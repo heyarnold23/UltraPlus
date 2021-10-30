@@ -81,10 +81,14 @@
     align-items: center;
 }
 
-#genreBox{
+#studioBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 329px;
     height: 185px;
     background-color: white;
+    cursor: pointer;
 }
 
 #showContainer{
@@ -106,4 +110,8 @@
     width: 329px;
     height: 185px;
     border-radius: 4px;
+}
+
+#studioText{
+    cursor: pointer;
 }

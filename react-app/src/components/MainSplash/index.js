@@ -68,25 +68,25 @@ export default function MainSplash() {
             <div id={styles.studiosContainer}>
             {!filtered ? (
                 <>
-                    <div onClick={() => filterThis('MAPPA')} id={styles.genreBox}>
+                    <div onClick={() => filterThis('MAPPA')} id={styles.studioBox}>
                         <span>MAPPA</span>
                     </div>
-                    <div onClick={() => filterThis('bones')} id={styles.genreBox}>
+                    <div onClick={() => filterThis('bones')} id={styles.studioBox}>
                         <span>BONES</span>
                     </div>
-                    <div onClick={() => filterThis('Madhouse')} id={styles.genreBox}>
+                    <div onClick={() => filterThis('Madhouse')} id={styles.studioBox}>
                         <span>MADHOUSE</span>
                     </div>
-                    <div onClick={() => filterThis('Wit Studio')} id={styles.genreBox}>
+                    <div onClick={() => filterThis('Wit Studio')} id={styles.studioBox}>
                         <span>WIT STUDIO</span>
                     </div>
-                    <div onClick={() => filterThis('A-1 Pictures')} id={styles.genreBox}>
+                    <div onClick={() => filterThis('A-1 Pictures')} id={styles.studioBox}>
                         <span>A-1 PICTURES</span>
                     </div>
                 </>
             ): (
                 <>
-                <span onClick={() => setFiltered(false)} >Back to all shows</span>
+                    <span onClick={() => setFiltered(false)} id={styles.studioText}>Back to all shows</span>
                 </>
             )}
             </div>
