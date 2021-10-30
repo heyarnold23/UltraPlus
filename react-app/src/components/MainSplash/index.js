@@ -10,6 +10,8 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 export default function MainSplash() {
     const dispatch = useDispatch();
     let [num, setNum] = useState(0);
+    const [filteredShows, setFilteredShows] = useState()
+    const [filtered, setFiltered] = useState(false)
 
     // dispatch for shows
     useEffect(() => {
@@ -17,7 +19,7 @@ export default function MainSplash() {
     }, [dispatch])
 
     const showsObj = useSelector(state => state?.shows)
-    const showsArr = Object.values(showsObj)
+    let showsArr = Object.values(showsObj)
     console.log('shows in MAINSPLASH', showsArr);
     // const profileId = localStorage.getItem('profile')
     // console.log(profileId);
@@ -44,6 +46,14 @@ export default function MainSplash() {
         }
     }
 
+    const filterThis = (studioName) => {
+        const filteredShows = showsArr.filter((show) => show.studio === studioName)
+        setFilteredShows(filteredShows)
+        setFiltered(!filtered)
+    }
+
+    console.log("THIS IS FILTEREDD", filteredShows);
+
     return (
         <div id={styles.page}>
             <div id={styles.carousel} style={{ backgroundImage: `url(${images[num]?.background_art_url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
@@ -55,18 +65,57 @@ export default function MainSplash() {
                 </NavLink>
                 <div id={styles.rightarrow} onClick={upOne}><AiOutlineArrowRight /></div>
             </div>
+            {/* <div id={styles.topStudiosText}>TOP STUDIOS</div> */}
             <div id={styles.studiosContainer}>
-                studios placeholder
+            {!filtered ? (
+                <>
+                    <div onClick={() => filterThis('MAPPA')} className={styles.studioBox} id={styles.mappa}>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/WvQ3N9D/508px-MAPPA-Logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                    </div>
+                    <div onClick={() => filterThis('bones')} className={styles.studioBox} id={styles.bones}>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/mtZZB0Q/829-8290680-48kib-2000x410-bones-bones-studio-anime-logo.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                    </div>
+                    <div onClick={() => filterThis('Madhouse')} className={styles.studioBox} id={styles.madhouse}>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/MCCXrv7/1200px-Madhouse-studio-logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                    </div>
+                    <div onClick={() => filterThis('Wit Studio')} className={styles.studioBox} id={styles.wit}>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/rvgwfTs/220px-Wit-studio-svg-1.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                    </div>
+                    <div onClick={() => filterThis('TOEI ANIMATION')} className={styles.studioBox} id={styles.toei}>
+                        <div id={styles.logo}style={{ backgroundImage: `url(https://i.ibb.co/w7gXqDF/1200px-Toei-Animation-logo-svg.png)`, backgroundSize: 'contain', backgroundPosition:'center', backgroundRepeat: 'no-repeat' }}></div>
+                    </div>
+                </>
+            ): (
+                <>
+                    <span onClick={() => setFiltered(false)} id={styles.studioText}> <AiOutlineArrowLeft /> Back to all shows</span>
+                </>
+            )}
             </div>
             <div id={styles.showContainer}>
                 {/* map out the shows object */}
-                {showsArr.map((show) => {
-                    return (
-                            <NavLink key={show.id} to={`/shows/${show.id}`}>
-                                <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
-                            </NavLink>
-                    )
-                })}
+                {!filtered ? (
+                <>
+                    {showsArr.map((show) => {
+                        return (
+                                <NavLink key={show.id} to={`/shows/${show.id}`}>
+                                    <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                </NavLink>
+                        )
+                    })}
+                </>
+                ): (
+                <>
+                    {filteredShows.map((show) => {
+                        return (
+                                <NavLink key={show.id} to={`/shows/${show.id}`}>
+                                    <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                </NavLink>
+                        )
+                    })}
+                </>
+                )
+
+                }
             </div>
         </div>
     );
