@@ -70,14 +70,14 @@
     background-color: rgba(15, 15, 15, 0.7);
 }
 
-#topStudiosText{
+/* #topStudiosText{
     width: 90%;
     text-align: center;
     position: relative;
     top: 40px;
     color: white;
     font-weight: bold;
-}
+} */
 
 #studiosContainer{
     display: flex;
