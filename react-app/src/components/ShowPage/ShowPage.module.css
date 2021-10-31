@@ -47,6 +47,12 @@
 
 #yearGenreDiv{
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#studio{
+    margin-top: 10px;
 }
 
 #playAddDiv{
