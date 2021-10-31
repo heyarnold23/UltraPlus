@@ -43,6 +43,7 @@ export default function ShowPage() {
                         </div>
                         <div id={styles.yearGenreDiv}>
                             <div id={styles.year}>Premiere Year: {show?.year}</div>
+                            <div id={styles.studio}>Studio: {show?.studio}</div>
                             {/* <div id={styles.genre}>genres</div> */}
                         </div>
                         <div id={styles.playAddDiv}>

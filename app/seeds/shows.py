@@ -9,7 +9,7 @@ def seed_shows():
         title_pic_url='https://www.pngmart.com/files/13/Attack-On-Titan-Word-Logo-Transparent-PNG.png',
         background_art_url=f'https://i.ibb.co/s5RwfN6/wp1837539.jpg',
         details_body="It's been four years since the Scout Regiment reached the shoreline, and the world looks different now. Things are heating up as the fate of the Scout Regiment—and the people of Paradis—are determined at last. However, Eren is missing. Will he reappear before age-old tensions between Marleyans and Eldians result in the war of all wars?",
-        studio='Kodansha',
+        studio='Wit Studio',
         year='2013',
         video_url='https://www.youtube.com/watch?v=4XoWJV88_MA'
     )
@@ -113,6 +113,66 @@ def seed_shows():
         year='2012',
         video_url='https://www.youtube.com/watch?v=jRHJntLYMh0'
     )
+    jujutsu = Show(
+        name='Jujutsu Kaisen',
+        thumbnail_url='https://i.ibb.co/YQdTLdx/jujutsu-kaisen-61024e6b98cbf.jpg',
+        title_pic_url='https://i.ibb.co/xq2Zfkp/AAAABen-F3-Unaazjv-Wtx-Jrkg-O66-DOTKi-Mqa-HO4k-Wi1-Hs5-T2-Hm-Ctjw-Vopyt-B2-Vk9mdqe-Iit-U3-Bwv-USs-Mm.png',
+        background_art_url=f'https://i.ibb.co/VxgrXvz/6652232.jpg',
+        details_body="Itadori Yuji is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a friend who has been attacked by Curses, he eats the finger of the Double-Faced Specter, taking the Curse into his own soul. From then on, he shares one body with the Double-Faced Specter. Guided by the most powerful of sorcerers, Gojou Satoru, Itadori is admitted to the Tokyo Metropolitan Technical High School of Sorcery, an organization that fights the Curses... and thus begins the heroic tale of a boy who became a Curse to exorcise a Curse, a life from which he could never turn back.",
+        studio='MAPPA',
+        year='2020',
+        video_url='https://www.youtube.com/watch?v=NyPf5ipLFkU'
+    )
+    mob = Show(
+        name='Mob Psycho 100',
+        thumbnail_url='https://i.ibb.co/pLzjtRx/mob-psycho-100-60f8bcfb5a81d.jpg',
+        title_pic_url='https://i.ibb.co/ncqT664/222-2227848-mob-psycho-100-english-logo-mob-psycho-100-1.png',
+        background_art_url=f'https://i.ibb.co/jZ0qhFZ/1338448.png',
+        details_body='The story revolves around "Mob," a boy who will explode if his emotional capacity reaches 100%. This boy with psychic powers earned his nickname "Mob" because he does not stand out among other people. He keeps his psychic powers bottled up so he can live normally, but if his emotional level reaches 100, something will overwhelm his entire body.',
+        studio='bones',
+        year='2016',
+        video_url='https://www.youtube.com/watch?v=SSV2KUMf3aQ'
+    )
+    opm = Show(
+        name='One Punch Man',
+        thumbnail_url='https://i.ibb.co/rQFTmYP/54a25fcf-a472-4d40-9968-13e2957e5abf-base-image-bucket-name-image-manager-base-image-7fe5491a-1ac9-4.jpg',
+        title_pic_url='https://i.ibb.co/NSC719v/one-punch-man-large-title-logo-png-by-thequeenotaku-dadxdrz-fullview.png',
+        background_art_url=f'https://i.ibb.co/tp32Zyd/3742277.jpg',
+        details_body="Saitama has a rather peculiar hobby, being a superhero, but despite his heroic deeds and superhuman abilities, a shadow looms over his life. He's become much too powerful, to the point that every opponent ends up defeated with a single punch. The lack of challenge has driven him into a state of apathy, as he watches his life pass by having lost all enthusiasm, at least until he's unwillingly thrust in the role of being a mentor to the young and revenge-driven Genos.",
+        studio='Madhouse',
+        year='2015',
+        video_url='https://www.youtube.com/watch?v=km2OPUctni4'
+    )
+    vinland = Show(
+        name='Vinland Saga',
+        thumbnail_url='https://i.ibb.co/ZBhYKp3/81-Aa-Er-Fc-DUL-RI.jpg',
+        title_pic_url='https://i.ibb.co/c88M5Xq/AAAABT2-Ba-TVy-zjsp-Vi-S60-Zv-XOPhlxa-E9-DFhl-YGw-VTg-UVh-Pmc-s-F6v7-Dak-H4ad-H1c-Vv11-Un-Sj-D3p-Wu.png',
+        background_art_url=f'https://i.ibb.co/DCk8FvL/ln6v0brzc4651.png',
+        details_body="Thorfinn is son to one of the Vikings' greatest warriors, but when his father is killed in battle by the mercenary leader Askeladd, he swears to have his revenge. Thorfinn joins Askeladd's band in order to challenge him to a duel, and ends up caught in the middle of a war for the crown of England.",
+        studio='Wit Studio',
+        year='2019',
+        video_url='https://www.youtube.com/watch?v=7U7BDn-gU18'
+    )
+    hunter = Show(
+        name='Hunter X Hunter',
+        thumbnail_url='https://i.ibb.co/thhXdG4/4160deed-5e27-4f23-aa9a-a8e4f126e9cb-base-image-bucket-name-image-manager-base-image-86d73021-c991-4.jpg',
+        title_pic_url='https://i.ibb.co/KFJVS18/462-4627708-hunter-x-hunter-hunter-x-hunter-title-hd.png',
+        background_art_url=f'https://i.ibb.co/981LmVL/1078973.jpg',
+        details_body="After becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate and high probability of death to become an official Hunter. He befriends the revenge-driven Kurapika, the doctor-to-be Leorio and the rebellious ex-assassin Killua in the exam, with their friendship prevailing throughout the many trials and threats they come upon taking on the dangerous career of a Hunter.",
+        studio='Madhouse',
+        year='2011',
+        video_url='https://www.youtube.com/watch?v=Txl2imn11bM'
+    )
+    # placeholder = Show(
+    #     name='',
+    #     thumbnail_url='',
+    #     title_pic_url='',
+    #     background_art_url=f'',
+    #     details_body="",
+    #     studio='',
+    #     year='',
+    #     video_url=''
+    # )
 
     db.session.add(attack_on_titan)
     db.session.add(dragonball)
@@ -125,6 +185,11 @@ def seed_shows():
     db.session.add(samurai_champloo)
     db.session.add(carole_and_tuesday)
     db.session.add(kids_on_the_slope)
+    db.session.add(jujutsu)
+    db.session.add(mob)
+    db.session.add(opm)
+    db.session.add(vinland)
+    db.session.add(hunter)
 
 
     db.session.commit()
