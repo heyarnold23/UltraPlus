@@ -20,7 +20,7 @@ export default function MainSplash() {
 
     const showsObj = useSelector(state => state?.shows)
     let showsArr = Object.values(showsObj)
-    console.log('shows in MAINSPLASH', showsArr);
+
     // const profileId = localStorage.getItem('profile')
     // console.log(profileId);
 
@@ -52,7 +52,7 @@ export default function MainSplash() {
         setFiltered(!filtered)
     }
 
-    console.log("THIS IS FILTEREDD", filteredShows);
+
 
     return (
         <div id={styles.page}>

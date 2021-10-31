@@ -141,7 +141,7 @@ export default function profilesReducer(state= initialState, action) {
     let newState = {...state}
     switch (action.type) {
         case GET_PROFILES:
-            console.log("THIS IS ACTION PAYLOAD",action.payload)
+
             newState = {...state, ...action.payload}
             return newState
         case SET_PROFILE:

@@ -24,7 +24,7 @@ export default function Watchlist() {
 
     const watchlistsObj = useSelector(state => state?.watchlists)
     const watchlistsArr = Object?.values(watchlistsObj)
-    console.log("THIS WATCHLISTS ARR", watchlistsArr);
+
 
     const openMenu = () => {
         if (showMenu) return;
@@ -49,7 +49,7 @@ export default function Watchlist() {
 
     const deleteModal = (e, id) => {
         e.preventDefault()
-        console.log(id);
+
         const data = {
             id
         }
