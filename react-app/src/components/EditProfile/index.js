@@ -47,7 +47,7 @@ export default function EditProfile() {
             user_id: sessionUser.id,
             avatar_id: avatarId
         };
-        console.log(updateProfile);
+
 
 
         const data = await dispatch(editProfile(updateProfile));

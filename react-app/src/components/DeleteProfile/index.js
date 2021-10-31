@@ -9,7 +9,6 @@ import { toggleModalView } from '../../store/session';
 
 
 export default function DeleteProfile() {
-    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     let data = useSelector(state => state.session.passingData)
     const history = useHistory();

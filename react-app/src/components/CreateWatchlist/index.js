@@ -1,18 +1,16 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { addWatchlist } from '../../store/watchlist';
 import styles from './CreateWatchlist.module.css'
 import { toggleModalView } from '../../store/session';
 
 export default function CreateWatchlist() {
-    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [body, setBody] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
-    const profileId = localStorage?.getItem('profile')
     let data = useSelector(state => state.session.passingData)
     const [id] = useState(data.id)
 
@@ -40,9 +38,6 @@ export default function CreateWatchlist() {
 
     };
 
-    const closeModal = async () => {
-        dispatch(toggleModalView(false))
-    };
 
     return (
         <>

@@ -1,14 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import { addWatchlist, getWatchlistsThunk } from '../../store/watchlist';
+import { getWatchlistsThunk } from '../../store/watchlist';
 import styles from './AddShowModal.module.css'
 import { toggleModalView } from '../../store/session';
 import { addShowThunk } from '../../store/watchlistShows';
 
 export default function AddShowModal() {
-    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [body, setBody] = useState('');
     const [errors, setErrors] = useState([]);
@@ -44,9 +43,6 @@ export default function AddShowModal() {
 
     };
 
-    const closeModal = async () => {
-        dispatch(toggleModalView(false))
-    };
 
     return (
         <>

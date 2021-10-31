@@ -20,7 +20,7 @@ export default function Navigation() {
   const foundProfile = userArr?.find((profile) => profile?.id == profileId)
   const [showMenu, setShowMenu] = useState(false);
 
-  console.log('foundProfile in nav', foundProfile);
+
 
   const openMenu = () => {
     if (showMenu) return;

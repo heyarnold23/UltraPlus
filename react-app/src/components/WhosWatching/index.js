@@ -52,7 +52,7 @@ export default function WhosWatching() {
 
     const profiles = useSelector(store => store?.profiles)
     const profileArr = Object.values(profiles)
-    console.log("\n\n\n\n\n\n profilessss", profileArr, "\n\n\n\n\n\n\n\n\n\n");
+
 
 
     return (
