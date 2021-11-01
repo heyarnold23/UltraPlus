@@ -38,7 +38,7 @@ Although Express could have done the job as well, Flask was my choice for this p
 
 #### PostgreSQL
 
-PostgreSQL was the database of choice because it is simple to work with, and is easily manipulable using Sequelize.
+PostgreSQL was the database of choice because it is simple to work with, and is easily manipulable using SQLAlchemy.
 
 #### SQLAlchemy
 
