@@ -40,9 +40,9 @@ Although Express could have done the job as well, Flask was my choice for this p
 
 PostgreSQL was the database of choice because it is simple to work with, and is easily manipulable using Sequelize.
 
-#### Sequelize
+#### SQLAlchemy
 
-Sequelize was the ORM of choice for UltraPlus because of how nicely it integrates with PostgreSQL. All table management and data seeding was handled neatly and simply by way of Sequelize.
+SQLAlchemy was the ORM of choice for UltraPlus because of how nicely it integrates with PostgreSQL. All table management and data seeding was handled neatly and simply by way of SQLAlchemy.
 
 ## Conclusion and Next Steps
 
