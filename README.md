@@ -1,12 +1,10 @@
 # UltraPlus
 
-![Image of UltraPlus splash page](https://i.ibb.co/CHB7wCr/Hnet-image.gif)
+![Image of UltraPlus splash page](https://i.ibb.co/bQf40w4/Screen-Shot-2021-11-03-at-9-53-31-AM.png)
 
 ## What is UltraPlus?
 
 [UltraPlus](https://ultraplus.herokuapp.com/) is a full stack app utilizing PostgreSQL, Flask, and React. Ultraplus allows users to browse a variety of anime shows and watch content from that show (In this case only clips from YouTube). Logged in users can create a number of profiles per account as well as have a number of watchlists per profile. With these watchlists, users can add shows as well as remove them. Currently, UltraPlus is only seeded with a few demo users as well as a handful of shows to interact with.
-
-![Image of UltraPlus main splash page](https://i.ibb.co/wgFSNMG/Hnet-image-1.gif)
 
 ## Application Architecture
 
