@@ -18,7 +18,7 @@ export default function Footer() {
                     <a className={styles.icon} href="https://github.com/heyarnold23" target="_blank" rel="noopener noreferrer">
                         Github
                     </a>
-                    <a className={styles.icon} href="https://www.linkedin.com/in/arnold-cabang-615932216/" target="_blank" rel="noopener noreferrer">
+                    <a className={styles.icon} href="https://www.linkedin.com/in/arnold-cabang-jr-615932216" target="_blank" rel="noopener noreferrer">
                         LinkedIn
                     </a>
                 </div>
