@@ -6,7 +6,7 @@ def seed_avatars():
     tanjiro = Avatar(
         image_url='https://i.ibb.co/7jNHhtY/img-chara-01.png')
     goku = Avatar(
-        image_url='https://www.seekpng.com/png/full/384-3846696_goku-face-dragon-ball-z-the-complete-collection.png')
+        image_url='https://i.ibb.co/Z1d1JL5/goku-in-front-of-cooler-and-frieza-from-dragon-ball-z.png')
     naruto = Avatar(
         image_url='https://i.ibb.co/B60zb0g/Naruto-Shippuden-Uzumaki-Naruto-Jacket.png')
 
