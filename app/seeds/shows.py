@@ -141,7 +141,8 @@ def seed_shows():
         details_body="Saitama has a rather peculiar hobby, being a superhero, but despite his heroic deeds and superhuman abilities, a shadow looms over his life. He's become much too powerful, to the point that every opponent ends up defeated with a single punch. The lack of challenge has driven him into a state of apathy, as he watches his life pass by having lost all enthusiasm, at least until he's unwillingly thrust in the role of being a mentor to the young and revenge-driven Genos.",
         studio='Madhouse',
         year='2015',
-        video_url='https://www.youtube.com/watch?v=km2OPUctni4'
+        # video_url='https://www.youtube.com/watch?v=km2OPUctni4'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Saitama+vs+Genos+Fight+_+One+Punch+Man+(60FPS).mp4'
     )
     vinland = Show(
         name='Vinland Saga',
