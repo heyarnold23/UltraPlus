@@ -11,7 +11,8 @@ def seed_shows():
         details_body="It's been four years since the Scout Regiment reached the shoreline, and the world looks different now. Things are heating up as the fate of the Scout Regiment—and the people of Paradis—are determined at last. However, Eren is missing. Will he reappear before age-old tensions between Marleyans and Eldians result in the war of all wars?",
         studio='Wit Studio',
         year='2013',
-        video_url='https://www.youtube.com/watch?v=4XoWJV88_MA'
+        # video_url='https://www.youtube.com/watch?v=4XoWJV88_MA'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Attack+on+Titan+-+Colossal+Titan+Appears+%5BEnglish+Subbed%5D.mp4'
     )
     dragonball = Show(
         name='DragonBall Super',
@@ -21,7 +22,8 @@ def seed_shows():
         details_body="With Majin Buu defeated, Goku has taken a completely new role as a…radish farmer?! With Earth at peace, our heroes have settled into normal lives. But they can’t get too comfortable. Far away, a powerful God awakens to a prophecy revealing his demise at the hands of a formidable being. When his search for the Saiyan God brings him to Earth, can Goku and his friends take on their strongest foe yet?",
         studio='TOEI ANIMATION',
         year='2015',
-        video_url='https://www.youtube.com/watch?v=oYWL1hgPIuM'
+        # video_url='https://www.youtube.com/watch?v=oYWL1hgPIuM'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Dragon+Ball+Super+-+Official+Clip+-+Goku+vs.+Goku+Black.mp4'
     )
     cowboy_bebop = Show(
         name='Cowboy Bebop',
@@ -31,7 +33,8 @@ def seed_shows():
         details_body="Explore the galaxy in this undeniably hip series that inspired a generation - and redefined anime as an indisputable art form. The Bebop crew is just trying to make a buck, and they're the most entertaining gang of bounty hunters in the year 2071.",
         studio='Sunrise Inc.',
         year='1998',
-        video_url='https://www.youtube.com/watch?v=EL-D9LrFJd4'
+        # video_url='https://www.youtube.com/watch?v=EL-D9LrFJd4'
+        video_url=f'https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Cowboy+Bebop+%E2%80%93+Opening+Theme+%E2%80%93+Tank!.mp4'
     )
     demon_slayer = Show(
         name='Demon Slayer',
@@ -41,7 +44,8 @@ def seed_shows():
         details_body="It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a demon slayer so that he can turn his sister back into a human, and kill the demon that massacred his family. A sorrowful tale of siblings in which the fates of humans and demons intertwine... begins now!",
         studio='Aniplex',
         year='2019',
-        video_url='https://www.youtube.com/watch?v=N_PDjHF_jWo&t=21s'
+        # video_url='https://www.youtube.com/watch?v=N_PDjHF_jWo&t=21s'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Zenitsu+shows+his+real+strength+_+Demon+Slayer+_+HD.mp4'
     )
     boruto = Show(
         name='Boruto: Naruto Next Generations',
@@ -51,7 +55,8 @@ def seed_shows():
         details_body="The life of the shinobi is beginning to change. Boruto Uzumaki, son of Seventh Hokage Naruto Uzumaki, has enrolled in the Ninja Academy to learn the ways of the ninja. Now, as a series of mysterious events unfolds, Boruto’s story is about to begin!",
         studio='Studio Pierrot',
         year='2017',
-        video_url='https://www.youtube.com/watch?v=_ZJ10oZvY2o&list=PLRe9ARNnYSY6gxEr7iDQZWx6lFbuy0QgB&index=38'
+        # video_url='https://www.youtube.com/watch?v=_ZJ10oZvY2o&list=PLRe9ARNnYSY6gxEr7iDQZWx6lFbuy0QgB&index=38'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/The+Bell+Test+_+Boruto+-+Naruto+Next+Generations.mp4'
     )
     one_piece = Show(
         name='One Piece',
@@ -61,7 +66,8 @@ def seed_shows():
         details_body="Monkey D. Luffy refuses to let anyone or anything stand in the way of his quest to become king of all pirates. With a course charted for the treacherous waters of the Grand Line, this is one captain who’ll never drop anchor until he’s claimed the greatest treasure on Earth—the Legendary One Piece!",
         studio='TOEI ANIMATION',
         year='1999',
-        video_url='https://www.youtube.com/watch?v=Yu4V3iTjpeY'
+        # video_url='https://www.youtube.com/watch?v=Yu4V3iTjpeY'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/CHARGE!+_+One+Piece.mp4'
     )
     my_hero = Show(
         name='My Hero Academia',
@@ -71,7 +77,8 @@ def seed_shows():
         details_body="Despite being born powerless into a super-powered world, Izuku refuses to give up on his dream of becoming a hero. He enrolls himself in a prestigious hero academy with a deadly entrance exam. To make the grade, he’ll have to put in some serious study time with the mightiest hero of all.",
         studio='Toho Co Ltd',
         year='2016',
-        video_url='https://www.youtube.com/watch?v=wpOhT35YtWg'
+        # video_url='https://www.youtube.com/watch?v=wpOhT35YtWg'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Deku+vs+Todoroki+_+My+Hero+Academia.mp4'
     )
     bleach = Show(
         name='Bleach',
@@ -81,7 +88,8 @@ def seed_shows():
         details_body="For as long as he can remember, Ichigo Kurosaki has been able to see ghosts. But when he meets Rukia, a Soul Reaper who battles evil spirits known as Hollows, he finds his life is changed forever…",
         studio='Viz',
         year='2004',
-        video_url='https://www.youtube.com/watch?v=kBPWn6PjPIc&t=42s'
+        # video_url='https://www.youtube.com/watch?v=kBPWn6PjPIc&t=42s'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Ichigo+vs+Oko+_+Bleach.mp4'
     )
     samurai_champloo = Show(
         name='Samurai Champloo',
@@ -91,7 +99,8 @@ def seed_shows():
         details_body="Mugen is a ferocious, animalistic warrior with a fighting style inspired by break-dancing. Jin is a ronin samurai who wanders the countryside alone. They may not be friends, but their paths continually cross. And when ditzy waitress Fuu gets them out of hot water with the local magistrate, they agree to join her search for the samurai who smells like sunflowers.",
         studio='FlyingDog Inc.',
         year='2004',
-        video_url='https://www.youtube.com/watch?v=hficV9yr2mA'
+        # video_url='https://www.youtube.com/watch?v=hficV9yr2mA'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Samurai+Champloo+_+Trailer.mp4'
     )
     carole_and_tuesday = Show(
         name='Carole And Tuesday',
@@ -101,7 +110,8 @@ def seed_shows():
         details_body="Tuesday, the teenaged daughter of the prominent politician Valerie Simmons, runs away from home on terraformed Mars to be able to play music. In Alba City, chance brings her together with Carole, another aspiring young musician who's just been fired from her dead-end job. The two decide to make music together.",
         studio='bones',
         year='2019',
-        video_url='https://www.youtube.com/watch?v=cxFpNkOD5UE'
+        # video_url='https://www.youtube.com/watch?v=cxFpNkOD5UE'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Carole+.mp4'
     )
     kids_on_the_slope = Show(
         name='Kids On The Slope',
@@ -111,7 +121,8 @@ def seed_shows():
         details_body="Introverted classical pianist and top student Kaoru Nishimi has just arrived in Kyushu for his first year of high school. Having constantly moved from place to place since his childhood, he abandons all hope of fitting in, preparing himself for another lonely, meaningless year. That is, until he encounters the notorious delinquent Sentarou Kawabuchi. Sentarou's immeasurable love for jazz music inspires Kaoru to learn more about the genre, and as a result, he slowly starts to break out of his shell, making his very first friend. Kaoru begins playing the piano at after-school jazz sessions, located in the basement of fellow student Ritsuko Mukae's family-owned record shop. As he discovers the immense joy of using his musical talents to bring enjoyment to himself and others, Kaoru's summer might just crescendo into one that he will remember forever.",
         studio='MAPPA',
         year='2012',
-        video_url='https://www.youtube.com/watch?v=jRHJntLYMh0'
+        # video_url='https://www.youtube.com/watch?v=jRHJntLYMh0'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Sakamichi+no+Apollon+-+Medley.mp4'
     )
     jujutsu = Show(
         name='Jujutsu Kaisen',
@@ -121,7 +132,8 @@ def seed_shows():
         details_body="Itadori Yuji is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a friend who has been attacked by Curses, he eats the finger of the Double-Faced Specter, taking the Curse into his own soul. From then on, he shares one body with the Double-Faced Specter. Guided by the most powerful of sorcerers, Gojou Satoru, Itadori is admitted to the Tokyo Metropolitan Technical High School of Sorcery, an organization that fights the Curses... and thus begins the heroic tale of a boy who became a Curse to exorcise a Curse, a life from which he could never turn back.",
         studio='MAPPA',
         year='2020',
-        video_url='https://www.youtube.com/watch?v=NyPf5ipLFkU'
+        # video_url='https://www.youtube.com/watch?v=NyPf5ipLFkU'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Gojo+vs+Sukuna+_+JUJUTSU+KAISEN.mp4'
     )
     mob = Show(
         name='Mob Psycho 100',
@@ -131,7 +143,8 @@ def seed_shows():
         details_body='The story revolves around "Mob," a boy who will explode if his emotional capacity reaches 100%. This boy with psychic powers earned his nickname "Mob" because he does not stand out among other people. He keeps his psychic powers bottled up so he can live normally, but if his emotional level reaches 100, something will overwhelm his entire body.',
         studio='bones',
         year='2016',
-        video_url='https://www.youtube.com/watch?v=SSV2KUMf3aQ'
+        # video_url='https://www.youtube.com/watch?v=SSV2KUMf3aQ'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/My+Animosity+_+Mob+Psycho+100.mp4'
     )
     opm = Show(
         name='One Punch Man',
@@ -152,7 +165,8 @@ def seed_shows():
         details_body="Thorfinn is son to one of the Vikings' greatest warriors, but when his father is killed in battle by the mercenary leader Askeladd, he swears to have his revenge. Thorfinn joins Askeladd's band in order to challenge him to a duel, and ends up caught in the middle of a war for the crown of England.",
         studio='Wit Studio',
         year='2019',
-        video_url='https://www.youtube.com/watch?v=7U7BDn-gU18'
+        # video_url='https://www.youtube.com/watch?v=7U7BDn-gU18'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Vinland+saga+OP+1+(720p).mp4'
     )
     hunter = Show(
         name='Hunter X Hunter',
@@ -162,7 +176,8 @@ def seed_shows():
         details_body="After becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate and high probability of death to become an official Hunter. He befriends the revenge-driven Kurapika, the doctor-to-be Leorio and the rebellious ex-assassin Killua in the exam, with their friendship prevailing throughout the many trials and threats they come upon taking on the dangerous career of a Hunter.",
         studio='Madhouse',
         year='2011',
-        video_url='https://www.youtube.com/watch?v=Txl2imn11bM'
+        # video_url='https://www.youtube.com/watch?v=Txl2imn11bM'
+        video_url='https://project-videos-ultraplus.s3.us-west-1.amazonaws.com/Gon+vs+Hisoka+_+Hunter+X+Hunter.mp4'
     )
     # placeholder = Show(
     #     name='',
