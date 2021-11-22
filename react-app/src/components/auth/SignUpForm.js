@@ -57,6 +57,7 @@ const SignUpForm = () => {
             id={styles.emailDiv}
             type='email'
             name='email'
+            placeholder='Email'
             onChange={updateEmail}
             value={email}
           ></input>
