@@ -5,6 +5,18 @@
 
 #player{
     position: absolute;
+    background-color: black;
+    z-index: 0;
     /* top: 0;
     left: 0; */
+}
+
+#button{
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 50px;
+    color: white;
+    z-index: 1;
+    text-decoration: none;
 }
