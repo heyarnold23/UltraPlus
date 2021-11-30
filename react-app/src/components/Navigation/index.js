@@ -58,14 +58,14 @@ export default function Navigation() {
             <AiFillHome className={styles.icon} />
             <span className={styles.text}>HOME</span>
           </NavLink>
-          <a href='/watchlists' className={styles.link}>
-            <AiOutlinePlus className={styles.icon} />
-            <span className={styles.text}>WATCHLIST</span>
-          </a>
           <NavLink to='/search' className={styles.link}>
             <AiOutlineSearch className={styles.icon} />
             <span className={styles.text}>SEARCH</span>
           </NavLink>
+          <a href='/watchlists' className={styles.link}>
+            <AiOutlinePlus className={styles.icon} />
+            <span className={styles.text}>WATCHLIST</span>
+          </a>
         </div>
       </div>
       <div id={styles.profileDiv} onMouseEnter={openMenu}>
