@@ -62,10 +62,10 @@ export default function Navigation() {
             <AiOutlinePlus className={styles.icon} />
             <span className={styles.text}>WATCHLIST</span>
           </a>
-          {/* <NavLink to='/search' className={styles.link}>
+          <NavLink to='/search' className={styles.link}>
             <AiOutlineSearch className={styles.icon} />
             <span className={styles.text}>SEARCH</span>
-          </NavLink> */}
+          </NavLink>
         </div>
       </div>
       <div id={styles.profileDiv} onMouseEnter={openMenu}>
