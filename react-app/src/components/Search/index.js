@@ -1,19 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getSearchedShowsThunk } from '../../store/shows';
 
 import styles from './Search.module.css'
 
 export default function Search() {
-
-    // const [searchInput, setSearchInput] = useState();
+    const dispatch = useDispatch();
+    const [showNone, setShowNone] = useState(true);
     const [searchResults, setSearchResults] = useState();
 
-    const sendSearch = (e) => {
-        console.log(e.target.value);
+    const sendSearch = async (e) => {
         const searchInput = e.target.value;
 
-        // assign to variable: await dispatch thunk action for searching
-        // console.log the variable
+        const results = await dispatch(getSearchedShowsThunk(searchInput));
+
+        if (!results) {
+            setShowNone(true)
+            return
+        }
+
+        const arrOfResults = Object.values(results);
+
+        if (!arrOfResults.length || !arrOfResults) {
+            setShowNone(true)
+        } else{
+            setShowNone(false)
+            setSearchResults(results)
+        }
 
     }
 
@@ -32,6 +45,13 @@ export default function Search() {
                             />
                         </form>
                     </div>
+                    {showNone ?
+                    <div>NONE</div>
+                    :
+                    <div>SHOWS</div>
+                }
+                    {/* put another div here for a shows container */}
+                    {/* refer to the filtered thing from the main shows page */}
                 </div>
             </div>
         </>
