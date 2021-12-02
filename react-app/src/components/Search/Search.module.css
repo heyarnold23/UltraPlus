@@ -26,3 +26,23 @@
     font-size: 32px;
     padding: 10px;
 }
+
+#showContainer{
+    margin-top: 25px;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 25px;
+    margin-bottom: 100px;
+    background-color: transparent
+}
+
+
+#showImage{
+    width: 329px;
+    height: 185px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px 5px #000000;
+}

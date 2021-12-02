@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSearchedShowsThunk } from '../../store/shows';
+import { NavLink } from 'react-router-dom';
 
 import styles from './Search.module.css'
 
@@ -22,14 +23,13 @@ export default function Search() {
         const arrOfResults = Object.values(results);
 
         if (!arrOfResults.length || !arrOfResults) {
-            setShowNone(true)
+            await setShowNone(true)
         } else{
-            setShowNone(false)
-            setSearchResults(results)
+            await setShowNone(false)
+            setSearchResults(arrOfResults)
         }
 
     }
-
     return (
         <>
             <div id={styles.page}>
@@ -45,10 +45,18 @@ export default function Search() {
                             />
                         </form>
                     </div>
-                    {showNone ?
+                    {(showNone || !searchResults) ?
                     <div>NONE</div>
                     :
-                    <div>SHOWS</div>
+                    <div id={styles.showContainer}>
+                        {searchResults?.map((show) => {
+                            return (
+                                <NavLink key={show.id} to={`/shows/${show.id}`}>
+                                    <div id={styles.showImage} style={{ backgroundImage: `url(${show.thumbnail_url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
+                                </NavLink>
+                            )
+                        })}
+                    </div>
                 }
                     {/* put another div here for a shows container */}
                     {/* refer to the filtered thing from the main shows page */}
