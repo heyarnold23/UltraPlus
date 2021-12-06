@@ -68,4 +68,18 @@
     height: 185px;
     border-radius: 4px;
     box-shadow: 5px 5px 15px 5px #000000;
+    animation-duration: 1s;
+    animation-name: slidein;
 }
+
+@keyframes slidein {
+    from {
+      transform: translateY(15%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
