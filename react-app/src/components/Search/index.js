@@ -39,14 +39,15 @@ export default function Search() {
                             <input
                                 type="search"
                                 name="searchVal"
-                                id="searchBar"
+                                id={styles.searchBar}
                                 placeholder="Search by title..."
                                 onChange={sendSearch}
+                                autoComplete="off"
                             />
                         </form>
                     </div>
                     {(showNone || !searchResults) ?
-                    <div>NONE</div>
+                    <div id={styles.showContainer}>NONE</div>
                     :
                     <div id={styles.showContainer}>
                         {searchResults?.map((show) => {
