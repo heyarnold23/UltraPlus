@@ -1,0 +1,85 @@
+#page{
+    display: flex;
+    /* height: 910px; */
+    height: auto;
+    justify-content: center;
+    /* align-items: center; */
+    /* margin-top: 80px; */
+    background-color: rgb(26, 29, 41);
+}
+
+#midContainer{
+    display: flex;
+    /* width: 1343px; */
+    width: 100%;
+    height: 800px;
+    background-color: rgb(26, 29, 41);
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+#searchDiv{
+    /* display: flex; */
+    margin-top: 60.5px;
+    height: 62px;
+    align-items: center;
+    font-size: 32px;
+    padding: 10px;
+    width: 100%;
+
+}
+
+#searchBar{
+    width: 100%;
+    height: 100px;
+    padding-left: 90px;
+    /* text-align: center; */
+    font-size: 45px;
+    background-color: rgb(75, 78, 90);
+    color: rgb(168, 169, 173);
+    border: none;
+    outline: none;
+    transition: background-color 300ms, color 300ms;
+}
+
+#searchBar:focus{
+    background-color: rgb(98, 102, 118);
+    color: rgb(249, 249, 249);
+
+
+}
+
+#showContainer{
+    margin-top: 50px;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 25px;
+    margin-bottom: 100px;
+    background-color: transparent
+}
+
+
+#showImage{
+    width: 329px;
+    height: 185px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px 5px #000000;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      transform: translateY(15%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }

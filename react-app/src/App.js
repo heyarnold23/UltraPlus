@@ -21,7 +21,7 @@ import Watchlist from './components/Watchlist';
 import WatchlistPage from './components/WatchlistPage';
 import ShowPage from './components/ShowPage';
 import ShowVideo from './components/ShowVideo';
-
+import Search from './components/Search';
 
 
 function App() {
@@ -82,6 +82,10 @@ function App() {
         <ProtectedRoute path='/shows/:id/video' exact={true} >
           <NavBar />
           <ShowVideo/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/search' exact={true} >
+          <NavBar />
+          <Search/>
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

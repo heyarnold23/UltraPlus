@@ -119,7 +119,22 @@
     height: 200px;
     justify-content: center;
     width: 220px;
+    animation-duration: 0.5s;
+    animation-name: slidein;
 }
+
+@keyframes slidein {
+    from {
+      transform: translateY(-5%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
 
 .logOutButton{
     margin-top: 40px;
