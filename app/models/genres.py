@@ -12,7 +12,10 @@ class Genre(db.Model):
 
 
     # create a many to many relationship with show_genre
-    genre_shows = db.relationship("Show", secondary="show_genres", back_populates='genres')
+    # genre_shows = db.relationship("Show", secondary="show_genres", back_populates='genres')
+
+    # trying a many to one relationship with shows
+    genre_show = db.relationship("Show", back_populates='show_genre')
 
 
 

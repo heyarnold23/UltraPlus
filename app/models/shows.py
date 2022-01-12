@@ -1,11 +1,11 @@
 from .db import db
 
 # create a helper table show_genres
-show_genres = db.Table(
-    "show_genres",
-    db.Column("show_id", db.Integer, db.ForeignKey("shows.id"), primary_key=True),
-    db.Column("genre_id", db.Integer, db.ForeignKey("genres.id"), primary_key=True)
-    )
+# show_genres = db.Table(
+#     "show_genres",
+#     db.Column("show_id", db.Integer, db.ForeignKey("shows.id"), primary_key=True),
+#     db.Column("genre_id", db.Integer, db.ForeignKey("genres.id"), primary_key=True)
+#     )
 
 
 class Show(db.Model):
@@ -26,7 +26,10 @@ class Show(db.Model):
     watchlists = db.relationship("Watchlist", secondary="watchlist_shows", back_populates="shows")
 
     # create a many to many relationship with show_genre
-    genres = db.relationship("Genre", secondary="show_genres", back_populates="genre_shows")
+    # genres = db.relationship("Genre", secondary="show_genres", back_populates="genre_shows")
+
+    # trying one to many relationships with genre
+    show_genre = db.relationship('Genre', back_populates="genre_show", cascade="all, delete")
 
 
 
