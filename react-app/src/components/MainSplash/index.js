@@ -32,6 +32,7 @@ export default function MainSplash() {
             setNum(0)
         }
     }
+    
 
     const downOne = () => {
         if (num > 0){
